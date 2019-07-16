@@ -1,16 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { NotFound } from './NotFound';
+import { MovieItem } from './MovieItem';
 
 export const MoviesList = ({ movies }) => {
-    return (
-        <ul className="movie-list">
-            {movies.map((movie, i) => (
-                <li key={i} className="movie-item">
-                    {movie.label}
-                </li>
-            ))}
-        </ul>
-    );
+    if (movies.length > 0) {
+        return (
+            <ul className="movies">
+                {movies.map(movie => (
+                    <MovieItem key={movie.id} movie={movie} />
+                ))}
+            </ul>
+        );
+    }
+    return <NotFound caption="Not films found" />;
 };
 
 MoviesList.propTypes = {
