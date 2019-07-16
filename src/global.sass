@@ -1,0 +1,80 @@
+*
+    box-sizing: border-box
+    margin: 0
+    padding: 0
+
+body
+    background: #fff
+    color: #333
+    font: 16px/1.5 Roboto, Arial
+
+.container
+    max-width: 1020px
+    width: 100%
+    margin: 0 auto
+
+.search-container
+    padding: 40px 160px
+    background: #333 url('assets/img/charisse-kenion-cJkVMAKDYl0-unsplash.jpg') no-repeat center
+    background-size: cover
+    color: #fff
+    position: relative
+    z-index: 2
+    &::before
+        content: ''
+        display: block
+        position: absolute
+        top: 0
+        right: 0
+        bottom: 0
+        left: 0
+        background: #000
+        opacity: .8
+        z-index: -1
+        
+.search__input
+    padding: 14px 20px
+    background: #333
+    color: #fff
+    border: none
+    border-bottom: 2px solid #333
+    width: 100%
+    &:focus
+        border-bottom: 2px solid #EC407A
+        outline: none
+
+.search__title
+    margin-bottom: 20px
+
+.searchBy__container
+    display: flex
+    align-items: center
+    margin-top: 20px
+
+.searchBy__title
+    text-transform: uppercase
+    margin-right: 10px
+
+
+.toggle
+    margin-left: 10px
+    background: #444
+    border-radius: 4px
+    overflow: auto
+    float: left
+    cursor: pointer
+    label
+        float: left
+        width: 2.0em
+    span
+        text-align: center
+        display: block
+        cursor: pointer
+        text-transform: uppercase
+        padding: 8px 20px
+    input
+        position: absolute
+        top: -20px
+    .input-checked
+        background-color: #404040
+        color: #F7F7F7
