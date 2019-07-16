@@ -8,13 +8,18 @@ body
     color: #333
     font: 16px/1.5 Roboto, Arial
 
+header, footer
+    background: #333
+    padding: 20px 40px
+    color: #EC407A
+
 .container
     max-width: 1020px
     width: 100%
     margin: 0 auto
 
-.search-container
-    padding: 40px 160px
+.search
+    padding: 40px 100px
     background: #333 url('assets/img/charisse-kenion-cJkVMAKDYl0-unsplash.jpg') no-repeat center
     background-size: cover
     color: #fff
@@ -31,30 +36,25 @@ body
         background: #000
         opacity: .8
         z-index: -1
-        
-.search__input
-    padding: 14px 20px
-    background: #333
-    color: #fff
-    border: none
-    border-bottom: 2px solid #333
-    width: 100%
-    &:focus
-        border-bottom: 2px solid #EC407A
-        outline: none
-
-.search__title
-    margin-bottom: 20px
-
-.searchBy__container
-    display: flex
-    align-items: center
-    margin-top: 20px
-
-.searchBy__title
-    text-transform: uppercase
-    margin-right: 10px
-
+    &__input
+        padding: 14px 20px
+        background: #333
+        color: #fff
+        border: none
+        border-bottom: 2px solid #333
+        width: 100%
+        &:focus
+            border-bottom: 2px solid #EC407A
+            outline: none
+    &__title
+        margin-bottom: 20px
+    &__searchBy
+        display: flex
+        align-items: center
+        margin-top: 20px
+        &__title
+            text-transform: uppercase
+            margin-right: 10px
 
 .toggle
     margin-left: 10px
@@ -63,18 +63,34 @@ body
     overflow: auto
     float: left
     cursor: pointer
-    label
-        float: left
-        width: 2.0em
-    span
+    &__text
         text-align: center
         display: block
         cursor: pointer
         text-transform: uppercase
         padding: 8px 20px
-    input
+    &__input
         position: absolute
-        top: -20px
-    .input-checked
-        background-color: #404040
-        color: #F7F7F7
+        top: -500px
+        &:checked .toggle
+            background-color: #fff
+            color: #F7F7F7
+.movies
+    display: grid
+    grid-template-columns: repeat(3, 1fr)
+    grid-gap: 10px
+    list-style: none
+    &__item
+        width: 100%
+        padding: 0 40px
+        background: #000
+        &__image
+            width: 100%
+        &__title
+            font-size: 20px
+        &__genre
+            color: #666
+    &__notFound
+        font-size: 40px
+        text-align: center 
+        margin: 200px 0
