@@ -1,3 +1,4 @@
+@import './vars.sass'
 *
     box-sizing: border-box
     margin: 0
@@ -11,7 +12,7 @@ body
 header, footer
     background: #333
     padding: 20px 40px
-    color: #EC407A
+    color: $accent-color
 
 .container
     max-width: 1020px
@@ -44,7 +45,7 @@ header, footer
         border-bottom: 2px solid #333
         width: 100%
         &:focus
-            border-bottom: 2px solid #EC407A
+            border-bottom: 2px solid $accent-color
             outline: none
     &__title
         margin-bottom: 20px
@@ -58,7 +59,6 @@ header, footer
 
 .toggle
     margin-left: 10px
-    background: #444
     border-radius: 4px
     overflow: auto
     float: left
@@ -69,11 +69,12 @@ header, footer
         cursor: pointer
         text-transform: uppercase
         padding: 8px 20px
+        background: #444
     &__input
         position: absolute
         top: -500px
-        &:checked .toggle
-            background-color: #fff
+        &:checked + span
+            background: $accent-color
             color: #F7F7F7
 .movies
     display: grid
