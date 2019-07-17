@@ -19,44 +19,9 @@ module.exports = {
                 loader: 'babel-loader'
             },
             {
-                test: /\.css$/,
-                use: [
-                    'style-loader',
-                    {
-                        loader: 'css-loader',
-                        options: {
-                            modules: false
-                        }
-                    },
-                    {
-                        loader: 'postcss-loader',
-                        options: {
-                            ident: 'postcss',
-                            plugins: [require('autoprefixer')()]
-                        }
-                    }
-                ]
-            },
-            {
-                test: /\.sass$/,
+                test: /\.css|sass$/,
                 exclude: /\.module\.sass$/,
-                use: [
-                    'style-loader',
-                    {
-                        loader: 'css-loader',
-                        options: {
-                            modules: false
-                        }
-                    },
-                    {
-                        loader: 'postcss-loader',
-                        options: {
-                            ident: 'postcss',
-                            plugins: [require('autoprefixer')()]
-                        }
-                    },
-                    'sass-loader'
-                ]
+                use: ['style-loader', 'css-loader', 'sass-loader']
             },
             {
                 test: /\.module.sass$/,
@@ -66,13 +31,6 @@ module.exports = {
                         loader: 'css-loader',
                         options: {
                             modules: true
-                        }
-                    },
-                    {
-                        loader: 'postcss-loader',
-                        options: {
-                            ident: 'postcss',
-                            plugins: [require('autoprefixer')()]
                         }
                     },
                     'sass-loader'
