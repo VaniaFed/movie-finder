@@ -1,6 +1,7 @@
 import React from 'react';
-import { SearchInput } from './SearchInput';
-import { ToggleContainer } from './ToggleContainer';
+import { SearchInput } from '../SearchInput';
+import { ToggleContainer } from '../ToggleContainer';
+import { ToggleButton } from '../ToggleButton';
 
 export const Search = () => {
     return (
@@ -10,7 +11,10 @@ export const Search = () => {
                 <SearchInput />
                 <div className="search__searchBy">
                     <span className="searchBy__title">Search by</span>
-                    <ToggleContainer />
+                    <ToggleContainer>
+                        <ToggleButton label="Title" />
+                        <ToggleButton label="Genre" />
+                    </ToggleContainer>
                 </div>
             </div>
         </div>

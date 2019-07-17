@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { NotFound } from './NotFound';
-import { MovieItem } from './MovieItem';
+import { MovieItem } from '../MovieItem';
 
 export const MoviesList = ({ movies }) => {
     if (movies.length > 0) {
