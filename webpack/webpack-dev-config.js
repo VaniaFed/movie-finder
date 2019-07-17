@@ -1,12 +1,7 @@
-const HtmlWebPackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
     plugins: [
-        new HtmlWebPackPlugin({
-            template: './src/index.html',
-            filename: './index.html'
-        }),
         new MiniCssExtractPlugin({
             filename: '[name].css',
             chunkFilename: '[id].css'
@@ -15,13 +10,13 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.(js|jsx)$/,
+                test: /\.jsx|js$/,
                 loader: 'babel-loader'
             },
             {
                 test: /\.css|sass$/,
-                exclude: /\.module\.sass$/,
-                use: ['style-loader', 'css-loader', 'sass-loader']
+                use: ['style-loader', 'css-loader', 'sass-loader'],
+                exclude: /\.module.sass$/
             },
             {
                 test: /\.module.sass$/,
