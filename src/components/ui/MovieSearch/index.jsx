@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import { MoviesList } from 'Components/ui/MoviesList';
 import { v4 } from 'uuid';
-import { Search } from './Search';
+import { SearchBlock } from 'Components/ui/SearchBlock';
 
 export const MovieSearch = () => {
     const movies = [
@@ -28,7 +28,7 @@ export const MovieSearch = () => {
     ];
     return (
         <Fragment>
-            <Search />
+            <SearchBlock />
             <MoviesList movies={movies} />
         </Fragment>
     );

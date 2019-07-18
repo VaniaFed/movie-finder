@@ -37,7 +37,9 @@ header, footer
         background: #000
         opacity: .8
         z-index: -1
-    &__input
+    &__title
+        margin-bottom: 20px
+    &-input
         padding: 14px 20px
         background: #333
         color: #fff
@@ -47,17 +49,17 @@ header, footer
         &:focus
             border-bottom: 2px solid $accent-color
             outline: none
-    &__title
-        margin-bottom: 20px
     &__searchBy
-        display: flex
-        align-items: center
         margin-top: 20px
-        &__title
-            text-transform: uppercase
-            margin-right: 10px
 
-.toggle
+.searchBy
+    display: flex
+    align-items: center
+    &__title
+        text-transform: uppercase
+        margin-right: 10px
+
+.toggle-button
     margin-left: 10px
     border-radius: 4px
     overflow: auto

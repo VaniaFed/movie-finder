@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 // here will be get external class name as element
 export const MovieItem = ({ movie, className }) => {
     return (
-        <li key={movie.id} className="">
+        <li key={movie.id} className={className}>
             {/* here will be static block class name */}
             {movie.label}
         </li>
@@ -12,5 +12,6 @@ export const MovieItem = ({ movie, className }) => {
 };
 
 MovieItem.propTypes = {
-    movie: PropTypes.object.isRequired
+    movie: PropTypes.object.isRequired,
+    className: PropTypes.string
 };
