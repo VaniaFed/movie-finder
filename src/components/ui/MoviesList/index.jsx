@@ -6,11 +6,15 @@ import { MovieItem } from 'Components/ui/MovieItem';
 export const MoviesList = ({ movies }) => {
     if (movies.length > 0) {
         return (
-            <ul className="movies">
+            <div className="movies">
                 {movies.map(movie => (
-                    <MovieItem key={movie.id} movie={movie} />
+                    <MovieItem
+                        key={movie.id}
+                        movie={movie}
+                        className="movies__item"
+                    />
                 ))}
-            </ul>
+            </div>
         );
     }
     return <NotFound caption="Not films found" />;

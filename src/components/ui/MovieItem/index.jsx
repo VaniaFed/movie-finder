@@ -1,13 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
+import './movieItem.sass';
 
-// here will be get external class name as element
 export const MovieItem = ({ movie, className }) => {
+    const resultClass = classNames('movie', className);
     return (
-        <li key={movie.id} className={className}>
-            {/* here will be static block class name */}
-            {movie.label}
-        </li>
+        <div className={resultClass}>
+            <img src={movie.posterPath} alt={movie.title} />
+            <h2 className="movie__title">{movie.title}</h2>
+            <p>{movie.genres}</p>
+            <p>{movie.releaseDate}</p>
+        </div>
     );
 };
 
