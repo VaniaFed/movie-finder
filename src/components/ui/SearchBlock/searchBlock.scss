@@ -26,7 +26,14 @@
         border-bottom: 2px solid $accent-color;
         outline: none;
     }
-    &__searchBy {
+    &__controll {
         margin-top: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    &__btnSearch {
+        margin-left: 10px;
+        padding: 8px 40px;
     }
 }

@@ -1,6 +1,7 @@
 import React from 'react';
 import { SearchInput } from 'Components/ui/SearchInput';
 import { SearchBy } from 'Components/ui/SearchBy';
+import { Button } from 'Components/ui/Button';
 
 import './searchBlock.scss';
 
@@ -9,7 +10,10 @@ export const SearchBlock = ({ className }) => {
         <div className="searchBlock">
             <h3 className="searchBlock__title">Find your movie</h3>
             <SearchInput />
-            <SearchBy className="searchBlock__searchBy" />
+            <div className="searchBlock__controll">
+                <SearchBy className="searchBlock__searchBy" />
+                <Button className="searchBlock__btnSearch">Find</Button>
+            </div>
         </div>
     );
 };
