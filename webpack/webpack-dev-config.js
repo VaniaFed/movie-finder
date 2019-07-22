@@ -14,12 +14,12 @@ module.exports = {
                 loader: 'babel-loader'
             },
             {
-                test: /\.css|sass$/,
+                test: /\.css|sass|scss$/,
                 use: ['style-loader', 'css-loader', 'sass-loader'],
                 exclude: /\.module.sass$/
             },
             {
-                test: /\.module.sass$/,
+                test: /\.module.sass|module.scss$/,
                 use: [
                     'style-loader',
                     {
