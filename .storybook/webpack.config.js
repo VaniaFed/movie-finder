@@ -1,11 +1,16 @@
-const merge = require('webpack-merge');
-
-const baseConfig = require('../webpack/webpack-config');
-const devConfig = require('../webpack/webpack-dev-config');
-const aliasConfig = require('../webpack/webpack-alias-config.js');
-
-const config = merge([baseConfig, devConfig, aliasConfig]);
+const path = require('path');
 
 module.exports = async ({ config, mode }) => {
-    return { ...config };
+    config.module.rules.push({
+        test: /\.sass|scss$/,
+        use: ['style-loader', 'css-loader', 'sass-loader'],
+        include: path.resolve(__dirname, '../')
+    });
+    config.module.rules.push({
+        test: /\.jsx$/,
+        use: ['babel-loader'],
+        include: path.resolve(__dirname, '../')
+    });
+
+    return config;
 };
