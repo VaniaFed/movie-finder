@@ -6,10 +6,10 @@ import './searchBlock.scss';
 
 export const SearchBlock = ({ className }) => {
     return (
-        <div className="search">
-            <h3 className="search__title">Find your movie</h3>
+        <div className="searchBlock">
+            <h3 className="searchBlock__title">Find your movie</h3>
             <SearchInput />
-            <SearchBy />
+            <SearchBy className="searchBlock__searchBy" />
         </div>
     );
 };
