@@ -1,9 +1,9 @@
 import React, { Fragment } from 'react';
-import { MoviesList } from 'Components/ui/MoviesList';
+import { Movies } from 'Components/ui/Movies';
 import { v4 } from 'uuid';
 import { SearchBlock } from 'Components/ui/SearchBlock';
 
-export const MovieSearch = () => {
+export const SearchPage = () => {
     const movies = [
         {
             title: 'movei1',
@@ -36,7 +36,7 @@ export const MovieSearch = () => {
     return (
         <Fragment>
             <SearchBlock />
-            <MoviesList movies={movies} />
+            <Movies movies={movies} />
         </Fragment>
     );
 };

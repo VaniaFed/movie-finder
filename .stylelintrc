@@ -4,5 +4,5 @@
     ],
     "defaultSeverity": "warning",
     "extends": "stylelint-config-recommended",
-    "syntax": "sass"
+    "syntax": "scss"
 }

@@ -1,0 +1,32 @@
+@import 'src/vars.scss';
+.search {
+    padding: 40px 100px;
+    background: #333 url('~Assets/img/charisse-kenion-cJkVMAKDYl0-unsplash.jpg')
+        no-repeat center;
+    background-size: cover;
+    color: #fff;
+    position: relative;
+    z-index: 2;
+    &::before {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: #000;
+        opacity: 0.8;
+        z-index: -1;
+    }
+    &__title {
+        margin-bottom: 20px;
+    }
+    &:focus {
+        border-bottom: 2px solid $accent-color;
+        outline: none;
+    }
+    &__searchBy {
+        margin-top: 20px;
+    }
+}

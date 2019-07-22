@@ -1,0 +1,61 @@
+@import './vars.scss';
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #fff;
+    color: #333;
+    font: 16px/1.5 Roboto, Arial;
+}
+
+img {
+    width: 100%;
+}
+header,
+footer {
+    background: #333;
+    padding: 20px 40px;
+    color: $accent-color;
+}
+
+.container {
+    max-width: 1020px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.searchBy {
+    display: flex;
+    align-items: center;
+    &__title {
+        text-transform: uppercase;
+        margin-right: 10px;
+    }
+}
+
+.toggle-button {
+    margin-left: 10px;
+    border-radius: 4px;
+    overflow: auto;
+    float: left;
+    cursor: pointer;
+    &__text {
+        text-align: center;
+        display: block;
+        cursor: pointer;
+        text-transform: uppercase;
+        padding: 8px 20px;
+        background: #444;
+    }
+    &__input {
+        position: absolute;
+        top: -500px;
+    }
+    &:checked + span {
+        background: $accent-color;
+        color: #f7f7f7;
+    }
+}

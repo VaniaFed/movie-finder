@@ -1,0 +1,10 @@
+.movies {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 50px;
+    list-style: none;
+    padding: 50px;
+    &__notFound {
+        margin: 200px 0;
+    }
+}

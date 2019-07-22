@@ -1,14 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { NotFound } from 'Components/ui/NotFound';
-import { MovieItem } from 'Components/ui/MovieItem';
+import { Movie } from 'Components/ui/Movie';
 
-export const MoviesList = ({ movies }) => {
+import './movies.scss';
+
+export const Movies = ({ movies }) => {
     if (movies.length > 0) {
         return (
             <div className="movies">
                 {movies.map(movie => (
-                    <MovieItem
+                    <Movie
                         key={movie.id}
                         movie={movie}
                         className="movies__item"
@@ -17,9 +19,9 @@ export const MoviesList = ({ movies }) => {
             </div>
         );
     }
-    return <NotFound caption="Not films found" />;
+    return <NotFound caption="Not films found" className="movies__notFound" />;
 };
 
-MoviesList.propTypes = {
+Movies.propTypes = {
     movies: PropTypes.arrayOf(PropTypes.object).isRequired
 };
