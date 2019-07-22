@@ -1,5 +1,7 @@
 import React from 'react';
 
+import './toggleButton.scss';
+
 export const ToggleButton = ({ label }) => {
     return (
         <label className="toggle-button">

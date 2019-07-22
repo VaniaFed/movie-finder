@@ -26,36 +26,3 @@ footer {
     width: 100%;
     margin: 0 auto;
 }
-
-.searchBy {
-    display: flex;
-    align-items: center;
-    &__title {
-        text-transform: uppercase;
-        margin-right: 10px;
-    }
-}
-
-.toggle-button {
-    margin-left: 10px;
-    border-radius: 4px;
-    overflow: auto;
-    float: left;
-    cursor: pointer;
-    &__text {
-        text-align: center;
-        display: block;
-        cursor: pointer;
-        text-transform: uppercase;
-        padding: 8px 20px;
-        background: #444;
-    }
-    &__input {
-        position: absolute;
-        top: -500px;
-    }
-    &:checked + span {
-        background: $accent-color;
-        color: #f7f7f7;
-    }
-}
