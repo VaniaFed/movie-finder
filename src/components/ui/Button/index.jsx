@@ -7,7 +7,7 @@ import './button.scss';
 export const Button = ({ children, className, onClick }) => {
     const resultClass = classNames(className, 'button');
     return (
-        <button className={resultClass} onClick={onClick}>
+        <button className={resultClass} onClick={onClick} type="button">
             {children}
         </button>
     );
