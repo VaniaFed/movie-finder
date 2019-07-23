@@ -2,6 +2,9 @@ import React, { Fragment } from 'react';
 import { v4 } from 'uuid';
 import { Movies } from 'Components/ui/Movies';
 import { SearchBlock } from 'Components/ui/SearchBlock';
+import { ToggleContainer } from 'Components/ui/ToggleContainer';
+import { ToggleButton } from 'Components/ui/ToggleButton';
+import './SearchPage.scss';
 
 export const SearchPage = () => {
     const movies = [
@@ -36,6 +39,29 @@ export const SearchPage = () => {
     return (
         <Fragment>
             <SearchBlock />
+            <div className="searchPage-info">
+                <div className="searchPage-info__left">
+                    <span className="searchPage-info__text">
+                        7 movies found
+                    </span>
+                </div>
+                <div className="searchPage-info__right">
+                    <span className="searchPage-info__text">Sort by</span>
+                    <ToggleContainer className="searchPage-info__toggleContainer">
+                        <ToggleButton
+                            label="release date"
+                            className="toggle-button_noBg searchPage-info__toggleButton"
+                            checked="checked"
+                            name="sortBy"
+                        />
+                        <ToggleButton
+                            label="rating"
+                            className="toggle-button_noBg searchPage-info__toggleButton"
+                            name="sortBy"
+                        />
+                    </ToggleContainer>
+                </div>
+            </div>
             <Movies movies={movies} />
         </Fragment>
     );
