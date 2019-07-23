@@ -1,0 +1,7 @@
+.movieHeader {
+    display: flex;
+    justify-content: space-between;
+    &__searchButton {
+        text-transform: uppercase;
+    }
+}
