@@ -10,4 +10,8 @@
     &:focus {
         outline: none;
     }
+    &_reverse {
+        background: #fff;
+        color: $accent-color;
+    }
 }
