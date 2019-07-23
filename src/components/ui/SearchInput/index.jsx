@@ -1,5 +1,6 @@
 import React from 'react';
 import classNames from 'classnames';
+import PropTypes from 'prop-types';
 
 import './searchInput.scss';
 
@@ -13,3 +14,7 @@ export const SearchInput = ({ className }) => (
         <button className="search-input__btnIcon" type="button" />
     </div>
 );
+
+SearchInput.propTypes = {
+    className: PropTypes.string
+};

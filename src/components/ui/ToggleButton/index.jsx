@@ -1,4 +1,5 @@
 import React, { memo } from 'react';
+import PropTypes from 'prop-types';
 
 import './toggleButton.scss';
 
@@ -14,3 +15,6 @@ export const ToggleButton = memo(({ label }) => {
         </label>
     );
 });
+ToggleButton.propTypes = {
+    label: PropTypes.string.isRequired
+};
