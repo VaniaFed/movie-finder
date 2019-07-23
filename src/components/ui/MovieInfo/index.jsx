@@ -1,5 +1,6 @@
 import React from 'react';
 import classNames from 'classnames';
+import PropTypes from 'prop-types';
 
 import './movieInfo.scss';
 
@@ -14,4 +15,9 @@ export const MovieInfo = ({ movie, className }) => {
             <p className="movie-info__date">{movie.releaseDate}</p>
         </div>
     );
+};
+
+MovieInfo.propTypes = {
+    movie: PropTypes.object.isRequired,
+    className: PropTypes.string
 };
