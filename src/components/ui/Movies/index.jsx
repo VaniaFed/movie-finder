@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { NotFound } from 'Components/ui/NotFound';
 import { Movie } from 'Components/ui/Movie';
-
 import './movies.scss';
 
 export const Movies = ({ movies }) => {
