@@ -1,13 +1,46 @@
 import React from 'react';
 import { SearchPage } from 'Components/ui/SearchPage/';
+import { MoviePage } from 'Components/ui/MoviePage/index.jsx';
+import { Logo } from 'Components/ui/Logo';
+import { v4 } from 'uuid';
 
+const movies = [
+    {
+        title: 'movei1',
+        genres: 'action',
+        tagline: 'some tagline',
+        releaseDate: '2014',
+        posterPath:
+            'https://pp.userapi.com/c844521/v844521991/f808b/TCjtAXN8SdA.jpg',
+        id: v4()
+    },
+    {
+        title: 'movei1',
+        genres: 'action',
+        tagline: 'some tagline',
+        releaseDate: '2014',
+        posterPath:
+            'https://pp.userapi.com/c844521/v844521991/f808b/TCjtAXN8SdA.jpg',
+        id: v4()
+    },
+    {
+        title: 'movei1',
+        genres: 'action',
+        tagline: 'some tagline',
+        releaseDate: '2014',
+        posterPath:
+            'https://pp.userapi.com/c844521/v844521991/f808b/TCjtAXN8SdA.jpg',
+        id: v4()
+    }
+];
 export const App = () => {
     return (
         <div className="container">
-            <header>netfixroulette</header>
-            <SearchPage />
-            {/* <MoviePage /> */}
-            <footer>netfixroulette</footer>
+            {/* <SearchPage /> */}
+            <MoviePage movies={movies} />
+            <footer>
+                <Logo>netfixroulette</Logo>
+            </footer>
         </div>
     );
 };
