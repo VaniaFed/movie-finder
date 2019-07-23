@@ -6,8 +6,8 @@ import { ToggleButton } from '../ToggleButton';
 
 storiesOf('ToggleContainer', module).add('regular', () => (
     <ToggleContainer>
-        <ToggleButton label="hello" />
-        <ToggleButton label="world" />
-        <ToggleButton label="world2" />
+        <ToggleButton label="hello" name="specificButtonGroup" />
+        <ToggleButton label="world" name="specificButtonGroup" />
+        <ToggleButton label="world2" name="specificButtonGroup" />
     </ToggleContainer>
 ));
