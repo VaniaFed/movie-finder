@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { memo } from 'react';
 import PropTypes from 'prop-types';
 import { NotFound } from 'Components/ui/NotFound';
 import { Movie } from 'Components/ui/Movie';
 import './movies.scss';
 
-export const Movies = ({ movies }) => {
+export const Movies = memo(({ movies }) => {
     if (movies.length > 0) {
         return (
             <div className="movies">
@@ -19,7 +19,7 @@ export const Movies = ({ movies }) => {
         );
     }
     return <NotFound caption="Not films found" className="movies__notFound" />;
-};
+});
 
 Movies.propTypes = {
     movies: PropTypes.arrayOf(PropTypes.object).isRequired

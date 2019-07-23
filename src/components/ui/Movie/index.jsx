@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
@@ -6,7 +6,7 @@ import { MovieInfo } from '../MovieInfo';
 
 import './movie.scss';
 
-export const Movie = ({ movie, className }) => {
+export const Movie = memo(({ movie, className }) => {
     const resultClass = classNames('movie', className);
     return (
         <div className={resultClass}>
@@ -18,7 +18,7 @@ export const Movie = ({ movie, className }) => {
             <MovieInfo movie={movie} className="movie__info" />
         </div>
     );
-};
+});
 
 Movie.propTypes = {
     movie: PropTypes.object.isRequired,

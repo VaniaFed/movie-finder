@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import classNames from 'classnames';
 import { SearchInput } from 'Components/ui/SearchInput';
 import { SearchBy } from 'Components/ui/SearchBy';
@@ -6,7 +6,7 @@ import { Button } from 'Components/ui/Button';
 
 import './searchBlock.scss';
 
-export const SearchBlock = ({ className }) => {
+export const SearchBlock = memo(({ className }) => {
     const resultClass = classNames('searchBlock', className);
     return (
         <div className={resultClass}>
@@ -18,4 +18,4 @@ export const SearchBlock = ({ className }) => {
             </div>
         </div>
     );
-};
+});

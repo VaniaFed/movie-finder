@@ -1,17 +1,17 @@
-import React from 'react';
+import React, { memo } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
 import './button.scss';
 
-export const Button = ({ children, className, onClick }) => {
+export const Button = memo(({ children, className, onClick }) => {
     const resultClass = classNames(className, 'button');
     return (
         <button className={resultClass} onClick={onClick} type="button">
             {children}
         </button>
     );
-};
+});
 
 Button.propTypes = {
     children: PropTypes.string.isRequired,

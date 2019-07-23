@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { memo } from 'react';
 
 import './toggleButton.scss';
 
-export const ToggleButton = ({ label }) => {
+export const ToggleButton = memo(({ label }) => {
     return (
         <label className="toggle-button">
             <input
@@ -13,4 +13,4 @@ export const ToggleButton = ({ label }) => {
             <span className="toggle-button__text">{label}</span>
         </label>
     );
-};
+});

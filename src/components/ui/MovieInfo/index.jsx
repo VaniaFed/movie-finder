@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { memo } from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 
 import './movieInfo.scss';
 
-export const MovieInfo = ({ movie, className }) => {
+export const MovieInfo = memo(({ movie, className }) => {
     const resultClass = classNames('movie-info', className);
     return (
         <div className={resultClass}>
@@ -15,7 +15,7 @@ export const MovieInfo = ({ movie, className }) => {
             <p className="movie-info__date">{movie.releaseDate}</p>
         </div>
     );
-};
+});
 
 MovieInfo.propTypes = {
     movie: PropTypes.object.isRequired,
