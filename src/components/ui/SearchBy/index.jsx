@@ -11,8 +11,8 @@ export const SearchBy = memo(({ className }) => {
         <div className={resultClass}>
             <span className="searchBy__title">Search by</span>
             <ToggleContainer>
-                <ToggleButton label="Title" />
-                <ToggleButton label="Genre" />
+                <ToggleButton name="searchBy" label="Title" checked="checked" />
+                <ToggleButton name="searchBy" label="Genre" />
             </ToggleContainer>
         </div>
     );
