@@ -25,10 +25,6 @@
     &__title {
         margin-bottom: 20px;
     }
-    &:focus {
-        border-bottom: 2px solid $accent-color;
-        outline: none;
-    }
     &__controll {
         margin-top: 20px;
         display: flex;
