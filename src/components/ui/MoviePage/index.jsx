@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react';
-import { MovieBlock } from 'Components/ui/MovieBlock/';
+import { MovieBlock } from 'Components/ui/movie-block/';
 import { Movies } from 'Components/ui/Movies/';
 
 import './MoviePage.scss';
