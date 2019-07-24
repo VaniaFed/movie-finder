@@ -1,6 +1,6 @@
 import React from 'react';
 import { SearchPage } from 'Components/ui/SearchPage/';
-import { MoviePage } from 'Components/ui/MoviePage/index.jsx';
+import { MoviePage } from 'Components/ui/movie-page';
 import { Logo } from 'Components/ui/logo';
 import { v4 } from 'uuid';
 

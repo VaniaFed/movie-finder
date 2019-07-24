@@ -2,15 +2,15 @@ import React, { Fragment } from 'react';
 import { MovieBlock } from 'Components/ui/movie-block/';
 import { Movies } from 'Components/ui/Movies/';
 
-import './MoviePage.scss';
+import './movie-page.scss';
 
 export const MoviePage = ({ movies }) => {
     return (
         <Fragment>
             <MovieBlock />
-            <div className="moviePage-info">
-                <span className="moviePage-info__text">Films by</span>
-                <span className="moviePage-info__genre">Drama genre</span>
+            <div className="movie-page-info">
+                <span className="movie-page-info__text">Films by</span>
+                <span className="movie-page-info__genre">Drama genre</span>
             </div>
             <Movies movies={movies} />
         </Fragment>
