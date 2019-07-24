@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import { v4 } from 'uuid';
-import { Movies } from 'Components/ui/Movies';
-import { SearchBlock } from 'Components/ui/SearchBlock';
+import { Movies } from 'Components/ui/movies';
+import { SearchBlock } from 'Components/ui/search-block';
 import { ToggleContainer } from 'Components/ui/ToggleContainer';
 import { ToggleButton } from 'Components/ui/ToggleButton';
 import './SearchPage.scss';

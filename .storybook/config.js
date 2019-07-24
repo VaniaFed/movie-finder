@@ -10,7 +10,7 @@ function loadStories() {
 
     // requires alias for the following stories:
     // require('../src/components/ui/SearchInput/SearchInput.stories');
-    // require('../src/components/ui/SearchBlock/SearchBlock.stories');
+    // require('../src/components/ui/search-block/search-block.stories');
     // require('../src/components/ui/movies/movies.stories');
 }
 
