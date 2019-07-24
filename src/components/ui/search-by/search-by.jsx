@@ -1,7 +1,7 @@
 import React, { memo } from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
-import { ToggleContainer } from 'Components/ui/ToggleContainer';
+import { ToggleContainer } from 'Components/ui/toggle-container';
 import { ToggleButton } from 'Components/ui/toggle-button';
 import './search-by.scss';
 
