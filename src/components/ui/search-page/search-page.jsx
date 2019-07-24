@@ -4,7 +4,7 @@ import { Movies } from 'Components/ui/movies';
 import { SearchBlock } from 'Components/ui/search-block';
 import { ToggleContainer } from 'Components/ui/ToggleContainer';
 import { ToggleButton } from 'Components/ui/ToggleButton';
-import './SearchPage.scss';
+import './search-page.scss';
 
 export const SearchPage = () => {
     const movies = [
@@ -39,24 +39,24 @@ export const SearchPage = () => {
     return (
         <Fragment>
             <SearchBlock />
-            <div className="searchPage-info">
-                <div className="searchPage-info__left">
-                    <span className="searchPage-info__text">
+            <div className="search-page--info">
+                <div className="search-page--info__left">
+                    <span className="search-page--info__text">
                         7 movies found
                     </span>
                 </div>
-                <div className="searchPage-info__right">
-                    <span className="searchPage-info__text">Sort by</span>
-                    <ToggleContainer className="searchPage-info__toggleContainer">
+                <div className="search-page--info__right">
+                    <span className="search-page--info__text">Sort by</span>
+                    <ToggleContainer className="search-page--info__toggleContainer">
                         <ToggleButton
                             label="release date"
-                            className="toggle-button_noBg searchPage-info__toggleButton"
+                            className="toggle-button_noBg search-page--info__toggleButton"
                             checked="checked"
                             name="sortBy"
                         />
                         <ToggleButton
                             label="rating"
-                            className="toggle-button_noBg searchPage-info__toggleButton"
+                            className="toggle-button_noBg search-page--info__toggleButton"
                             name="sortBy"
                         />
                     </ToggleContainer>

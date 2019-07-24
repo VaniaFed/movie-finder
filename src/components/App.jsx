@@ -1,5 +1,5 @@
 import React from 'react';
-import { SearchPage } from 'Components/ui/SearchPage/';
+import { SearchPage } from 'Components/ui/search-page/';
 import { MoviePage } from 'Components/ui/movie-page';
 import { Logo } from 'Components/ui/logo';
 import { v4 } from 'uuid';
