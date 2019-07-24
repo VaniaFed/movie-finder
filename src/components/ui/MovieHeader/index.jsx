@@ -1,7 +1,7 @@
 import React from 'react';
 import classNames from 'classnames';
 import { Logo } from 'Components/ui/Logo';
-import { Button } from 'Components/ui/Button';
+import { Button } from 'Components/ui/button';
 import './MovieHeader.scss';
 
 export const MovieHeader = ({ className }) => {
