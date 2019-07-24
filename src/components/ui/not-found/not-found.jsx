@@ -1,9 +1,9 @@
 import React, { memo } from 'react';
 import PropTypes from 'prop-types';
-import './notFound.scss';
+import './not-found.scss';
 
 export const NotFound = memo(({ caption }) => (
-    <h2 className="notFound">{caption}</h2>
+    <h2 className="not-found">{caption}</h2>
 ));
 
 NotFound.propTypes = {

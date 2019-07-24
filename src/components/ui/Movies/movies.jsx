@@ -1,6 +1,6 @@
 import React, { memo } from 'react';
 import PropTypes from 'prop-types';
-import { NotFound } from 'Components/ui/NotFound';
+import { NotFound } from 'Components/ui/not-found';
 import { Movie } from 'Components/ui/movie';
 import './movies.scss';
 
