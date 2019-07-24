@@ -24,6 +24,7 @@
     }
     &-movie {
         display: flex;
+        align-items: flex-start;
         &__image {
             max-width: 300px;
             height: auto;
