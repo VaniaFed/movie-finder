@@ -1,13 +1,16 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { ToggleContainer } from 'Components/ui/ToggleContainer';
 import { ToggleButton } from 'Components/ui/ToggleButton';
 import './search-page--info.scss';
 
-export const SearchPageInfo = () => {
+export const SearchPageInfo = ({ quantityMovies }) => {
     return (
         <div className="search-page--info">
             <div className="search-page--info__left">
-                <span className="search-page--info__text">7 movies found</span>
+                <span className="search-page--info__text">
+                    {quantityMovies} movies found
+                </span>
             </div>
             <div className="search-page--info__right">
                 <span className="search-page--info__text">Sort by</span>
@@ -27,4 +30,8 @@ export const SearchPageInfo = () => {
             </div>
         </div>
     );
+};
+
+SearchPageInfo.propTypes = {
+    quantityMovies: PropTypes.number.isRequired
 };

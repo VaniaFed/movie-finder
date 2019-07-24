@@ -37,7 +37,7 @@ export const SearchPage = () => {
     return (
         <Fragment>
             <SearchBlock />
-            <SearchPageInfo />
+            <SearchPageInfo quantityMovies={movies.length} />
             <Movies movies={movies} />
         </Fragment>
     );
