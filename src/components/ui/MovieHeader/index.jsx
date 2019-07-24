@@ -1,6 +1,6 @@
 import React from 'react';
 import classNames from 'classnames';
-import { Logo } from 'Components/ui/Logo';
+import { Logo } from 'Components/ui/logo';
 import { Button } from 'Components/ui/button';
 import './MovieHeader.scss';
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import { SearchPage } from 'Components/ui/SearchPage/';
 import { MoviePage } from 'Components/ui/MoviePage/index.jsx';
-import { Logo } from 'Components/ui/Logo';
+import { Logo } from 'Components/ui/logo';
 import { v4 } from 'uuid';
 
 const movies = [
@@ -36,7 +36,7 @@ const movies = [
 export const App = () => {
     return (
         <div className="container">
-            {/* <SearchPage /> */}
+            <SearchPage />
             <MoviePage movies={movies} />
             <footer>
                 <Logo>netfixroulette</Logo>

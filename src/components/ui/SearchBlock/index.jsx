@@ -3,7 +3,7 @@ import classNames from 'classnames';
 import { SearchInput } from 'Components/ui/SearchInput';
 import { SearchBy } from 'Components/ui/SearchBy';
 import { Button } from 'Components/ui/button';
-import { Logo } from 'Components/ui/Logo';
+import { Logo } from 'Components/ui/logo';
 
 import './searchBlock.scss';
 
