@@ -3,16 +3,20 @@ import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import { ToggleContainer } from 'Components/ui/ToggleContainer';
 import { ToggleButton } from 'Components/ui/ToggleButton';
-import './searchBy.scss';
+import './search-by.scss';
 
 export const SearchBy = memo(({ className }) => {
-    const resultClass = classNames('searchBy', className);
+    const resultClass = classNames('search-by', className);
     return (
         <div className={resultClass}>
-            <span className="searchBy__title">Search by</span>
+            <span className="search-by__title">Search by</span>
             <ToggleContainer>
-                <ToggleButton name="searchBy" label="Title" checked="checked" />
-                <ToggleButton name="searchBy" label="Genre" />
+                <ToggleButton
+                    name="search-by"
+                    label="Title"
+                    checked="checked"
+                />
+                <ToggleButton name="search-by" label="Genre" />
             </ToggleContainer>
         </div>
     );

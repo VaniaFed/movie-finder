@@ -1,7 +1,7 @@
 import React, { memo } from 'react';
 import classNames from 'classnames';
 import { SearchInput } from 'Components/ui/SearchInput';
-import { SearchBy } from 'Components/ui/SearchBy';
+import { SearchBy } from 'Components/ui/search-by';
 import { Button } from 'Components/ui/button';
 import { Logo } from 'Components/ui/logo';
 
