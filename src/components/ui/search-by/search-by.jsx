@@ -2,7 +2,7 @@ import React, { memo } from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import { ToggleContainer } from 'Components/ui/ToggleContainer';
-import { ToggleButton } from 'Components/ui/ToggleButton';
+import { ToggleButton } from 'Components/ui/toggle-button';
 import './search-by.scss';
 
 export const SearchBy = memo(({ className }) => {

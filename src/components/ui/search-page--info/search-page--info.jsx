@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { ToggleContainer } from 'Components/ui/ToggleContainer';
-import { ToggleButton } from 'Components/ui/ToggleButton';
+import { ToggleButton } from 'Components/ui/toggle-button';
 import './search-page--info.scss';
 
 export const SearchPageInfo = ({ quantityMovies }) => {

@@ -2,7 +2,7 @@ import React, { memo } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
-import './toggleButton.scss';
+import './toggle-button.scss';
 
 export const ToggleButton = memo(({ label, className, checked, name }) => {
     const resultClass = classNames(className, 'toggle-button');
@@ -20,5 +20,7 @@ export const ToggleButton = memo(({ label, className, checked, name }) => {
 });
 ToggleButton.propTypes = {
     label: PropTypes.string.isRequired,
-    checked: PropTypes.string
+    className: PropTypes.string,
+    checked: PropTypes.string,
+    name: PropTypes.string.isRequired
 };
