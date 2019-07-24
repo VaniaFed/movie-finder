@@ -1,4 +1,4 @@
-@import 'Src/vars.scss';
+@import '~Variables';
 .toggle-button {
     margin-left: 10px;
     border-radius: 4px;
@@ -32,8 +32,3 @@
         color: $accent-color;
     }
 }
-
-// &__input:checked + span {
-//     background: none;
-//     color: $accent-color;
-// }
