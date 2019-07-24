@@ -2,7 +2,7 @@ import React from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 
-import './searchInput.scss';
+import './search-input.scss';
 
 export const SearchInput = ({ className }) => (
     <div className={classNames('search-input__wrapper', className)}>
