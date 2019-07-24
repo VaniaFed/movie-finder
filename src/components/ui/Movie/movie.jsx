@@ -2,7 +2,7 @@ import React, { memo } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
-import { MovieInfo } from '../MovieInfo';
+import { MovieInfo } from 'Components/ui/movie-info';
 
 import './movie.scss';
 

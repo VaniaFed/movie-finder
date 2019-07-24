@@ -2,7 +2,7 @@ import React, { memo } from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 
-import './movieInfo.scss';
+import './movie-info.scss';
 
 export const MovieInfo = memo(({ movie, className }) => {
     const resultClass = classNames('movie-info', className);
