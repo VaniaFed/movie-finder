@@ -2,7 +2,7 @@ import { configure } from '@storybook/react';
 import '../src/global.scss';
 
 function loadStories() {
-    require('../src/components/ui/Movie/Movie.stories');
+    require('../src/components/ui/movie/Movie.stories');
     require('../src/components/ui/MovieInfo/MovieInfo.stories');
     require('../src/components/ui/NotFound/NotFound.stories');
     require('../src/components/ui/ToggleContainer/ToggleContainer.stories');
