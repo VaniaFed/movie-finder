@@ -2,7 +2,7 @@ import React, { Fragment } from 'react';
 import { v4 } from 'uuid';
 import { SearchBlock } from 'Components/ui/search-block';
 import { SearchPageInfo } from 'Components/ui/search-page--info';
-import { Movies } from 'Components/ui/movies';
+import { MovieLoyout } from 'Components/ui/movie-loyout';
 
 export const SearchPage = () => {
     const movies = [
@@ -38,7 +38,7 @@ export const SearchPage = () => {
         <Fragment>
             <SearchBlock />
             <SearchPageInfo quantityMovies={movies.length} />
-            <Movies movies={movies} />
+            <MovieLoyout movies={movies} />
         </Fragment>
     );
 };

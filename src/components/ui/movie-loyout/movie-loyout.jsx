@@ -2,9 +2,9 @@ import React, { memo } from 'react';
 import PropTypes from 'prop-types';
 import { NotFound } from 'Components/ui/not-found';
 import { Movie } from 'Components/ui/movie';
-import './movies.scss';
+import './movie-loyout.scss';
 
-export const Movies = memo(({ movies }) => {
+export const MovieLoyout = memo(({ movies }) => {
     if (movies.length > 0) {
         return (
             <div className="movies">
@@ -21,6 +21,6 @@ export const Movies = memo(({ movies }) => {
     return <NotFound caption="Not films found" className="movies__notFound" />;
 });
 
-Movies.propTypes = {
+MovieLoyout.propTypes = {
     movies: PropTypes.arrayOf(PropTypes.object).isRequired
 };

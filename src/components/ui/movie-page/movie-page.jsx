@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 import { MovieBlock } from 'Components/ui/movie-block/';
-import { Movies } from 'Components/ui/movies/';
+import { MovieLoyout } from 'Components/ui/movie-loyout/';
 import { MoviePageInfo } from 'Components/ui/movie-page--info';
 
 export const MoviePage = ({ movies }) => {
@@ -8,7 +8,7 @@ export const MoviePage = ({ movies }) => {
         <Fragment>
             <MovieBlock />
             <MoviePageInfo genre="Drama" />
-            <Movies movies={movies} />
+            <MovieLoyout movies={movies} />
         </Fragment>
     );
 };
