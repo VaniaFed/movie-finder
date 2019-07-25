@@ -12,5 +12,5 @@ export const MoviePageInfo = ({ genre }) => {
 };
 
 MoviePageInfo.propTypes = {
-    genre: PropTypes.arrayOf(PropTypes.object)
+    genre: PropTypes.objectOf(PropTypes.object)
 };

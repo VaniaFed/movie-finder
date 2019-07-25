@@ -16,5 +16,5 @@ export const MoviePage = ({ movie, moviesWithTheSameGenre }) => {
 
 MoviePage.propTypes = {
     movie: PropTypes.object,
-    moviesWithTheSameGenre: PropTypes.arrayOf(PropTypes.object)
+    moviesWithTheSameGenre: PropTypes.objectOf(PropTypes.object)
 };

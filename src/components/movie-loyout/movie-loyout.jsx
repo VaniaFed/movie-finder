@@ -22,5 +22,5 @@ export const MovieLoyout = memo(({ movies }) => {
 });
 
 MovieLoyout.propTypes = {
-    movies: PropTypes.arrayOf(PropTypes.object).isRequired
+    movies: PropTypes.objectOf(PropTypes.object).isRequired
 };

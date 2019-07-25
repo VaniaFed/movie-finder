@@ -13,5 +13,5 @@ export const MovieBlock = ({ movie }) => {
     );
 };
 MovieBlock.propTypes = {
-    movie: PropTypes.object
+    movie: PropTypes.objectOf(PropTypes.object)
 };

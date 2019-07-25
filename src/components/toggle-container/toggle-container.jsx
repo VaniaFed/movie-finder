@@ -8,6 +8,6 @@ export const ToggleContainer = memo(({ children, className }) => {
 });
 
 ToggleContainer.propTypes = {
-    children: PropTypes.arrayOf(PropTypes.object).isRequired,
+    children: PropTypes.objectOf(PropTypes.object).isRequired,
     className: PropTypes.string
 };

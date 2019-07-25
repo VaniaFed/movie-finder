@@ -17,6 +17,6 @@ export const MovieInfo = memo(({ movie, className }) => {
 });
 
 MovieInfo.propTypes = {
-    movie: PropTypes.arrayOf(PropTypes.object),
+    movie: PropTypes.objectOf(PropTypes.object),
     className: PropTypes.string
 };

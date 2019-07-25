@@ -19,6 +19,6 @@ export const Movie = memo(({ movie, className }) => {
 });
 
 Movie.propTypes = {
-    movie: PropTypes.object.isRequired,
+    movie: PropTypes.objectOf(PropTypes.object).isRequired,
     className: PropTypes.string
 };
