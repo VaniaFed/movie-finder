@@ -1,5 +1,5 @@
 import React from 'react';
-
+import PropTypes from 'prop-types';
 import './movie-page--info.scss';
 
 export const MoviePageInfo = ({ genre }) => {
@@ -9,4 +9,8 @@ export const MoviePageInfo = ({ genre }) => {
             <span className="movie-page--info__genre">{genre}</span>
         </div>
     );
+};
+
+MoviePageInfo.propTypes = {
+    genre: PropTypes.arrayOf(PropTypes.object)
 };

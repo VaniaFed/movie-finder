@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './movie-block--movie.scss';
 
 export const MovieBlockMovie = ({ movie }) => {
@@ -20,4 +21,7 @@ export const MovieBlockMovie = ({ movie }) => {
             </div>
         </div>
     );
+};
+MovieBlockMovie.propTypes = {
+    movie: PropTypes.object
 };

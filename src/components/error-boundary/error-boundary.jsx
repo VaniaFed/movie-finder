@@ -18,7 +18,6 @@ export class ErrorBoundary extends React.Component {
     render() {
         const { hasError } = this.state;
         if (hasError) {
-            // You can render any custom fallback UI
             return <h1>Something went wrong.</h1>;
         }
 

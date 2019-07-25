@@ -1,4 +1,5 @@
 import React, { memo } from 'react';
+import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { SearchInput } from 'Components/search-input';
 import { SearchBy } from 'Components/search-by';
@@ -21,3 +22,6 @@ export const SearchBlock = memo(({ className }) => {
         </div>
     );
 });
+SearchBlock.propTypes = {
+    className: PropTypes.string
+};

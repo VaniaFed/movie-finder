@@ -21,6 +21,7 @@ export const SearchBy = memo(({ className }) => {
         </div>
     );
 });
+
 SearchBy.propTypes = {
     className: PropTypes.string
 };

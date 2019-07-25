@@ -1,7 +1,6 @@
 import React, { memo } from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
-
 import './movie-info.scss';
 
 export const MovieInfo = memo(({ movie, className }) => {
@@ -18,6 +17,6 @@ export const MovieInfo = memo(({ movie, className }) => {
 });
 
 MovieInfo.propTypes = {
-    movie: PropTypes.object.isRequired,
+    movie: PropTypes.arrayOf(PropTypes.object),
     className: PropTypes.string
 };

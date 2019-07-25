@@ -1,7 +1,6 @@
 import React, { memo } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-
 import './button.scss';
 
 export const Button = memo(({ children, className, onClick }) => {

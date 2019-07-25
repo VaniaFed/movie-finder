@@ -1,5 +1,6 @@
 import React from 'react';
 import classNames from 'classnames';
+import PropTypes from 'prop-types';
 import { Logo } from 'Components/logo';
 import { Button } from 'Components/button';
 import './movie-header.scss';
@@ -14,4 +15,7 @@ export const MovieHeader = ({ className }) => {
             </Button>
         </div>
     );
+};
+MovieHeader.propTypes = {
+    className: PropTypes.string
 };
