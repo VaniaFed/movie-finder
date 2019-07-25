@@ -1,8 +1,9 @@
 import React from 'react';
+import { v4 } from 'uuid';
 import { SearchPage } from 'Components/ui/search-page/';
 import { MoviePage } from 'Components/ui/movie-page';
 import { Logo } from 'Components/ui/logo';
-import { v4 } from 'uuid';
+import { ErrorBoundary } from 'Components/ui/error-boundary';
 
 const movies = [
     {
@@ -35,12 +36,14 @@ const movies = [
 ];
 export const App = () => {
     return (
-        <div className="container">
-            <SearchPage />
-            <MoviePage movies={movies} />
-            <footer>
-                <Logo>netfixroulette</Logo>
-            </footer>
-        </div>
+        <ErrorBoundary>
+            <div className="container">
+                <SearchPage />
+                <MoviePage movies={movies} />
+                <footer>
+                    <Logo>netfixroulette</Logo>
+                </footer>
+            </div>
+        </ErrorBoundary>
     );
 };
