@@ -1,8 +1,8 @@
 import React, { Fragment } from 'react';
 import { v4 } from 'uuid';
-import { SearchBlock } from 'Components/ui/search-block';
-import { SearchPageInfo } from 'Components/ui/search-page--info';
-import { MovieLoyout } from 'Components/ui/movie-loyout';
+import { SearchBlock } from 'Components/search-block';
+import { SearchPageInfo } from 'Components/search-page--info';
+import { MovieLoyout } from 'Components/movie-loyout';
 
 export const SearchPage = () => {
     const movies = [

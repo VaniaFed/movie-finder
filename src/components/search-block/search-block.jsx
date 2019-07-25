@@ -1,9 +1,9 @@
 import React, { memo } from 'react';
 import classNames from 'classnames';
-import { SearchInput } from 'Components/ui/search-input';
-import { SearchBy } from 'Components/ui/search-by';
-import { Button } from 'Components/ui/button';
-import { Logo } from 'Components/ui/logo';
+import { SearchInput } from 'Components/search-input';
+import { SearchBy } from 'Components/search-by';
+import { Button } from 'Components/button';
+import { Logo } from 'Components/logo';
 
 import './search-block.scss';
 

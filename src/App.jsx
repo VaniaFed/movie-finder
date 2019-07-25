@@ -1,9 +1,9 @@
 import React from 'react';
 import { v4 } from 'uuid';
-import { SearchPage } from 'Components/ui/search-page/';
-import { MoviePage } from 'Components/ui/movie-page';
-import { Logo } from 'Components/ui/logo';
-import { ErrorBoundary } from 'Components/ui/error-boundary';
+import { SearchPage } from 'Components/search-page/';
+import { MoviePage } from 'Components/movie-page';
+import { Logo } from 'Components/logo';
+import { ErrorBoundary } from 'Components/error-boundary';
 
 const movies = [
     {

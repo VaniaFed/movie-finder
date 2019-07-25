@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
-import { MovieBlock } from 'Components/ui/movie-block/';
-import { MovieLoyout } from 'Components/ui/movie-loyout/';
-import { MoviePageInfo } from 'Components/ui/movie-page--info';
+import { MovieBlock } from 'Components/movie-block/';
+import { MovieLoyout } from 'Components/movie-loyout/';
+import { MoviePageInfo } from 'Components/movie-page--info';
 
 export const MoviePage = ({ movies }) => {
     return (
