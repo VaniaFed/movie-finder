@@ -3,12 +3,12 @@ import { MovieBlock } from 'Components/movie-block/';
 import { MovieLoyout } from 'Components/movie-loyout/';
 import { MoviePageInfo } from 'Components/movie-page--info';
 
-export const MoviePage = ({ movies }) => {
+export const MoviePage = ({ movie, moviesWithTheSameGenre }) => {
     return (
         <Fragment>
-            <MovieBlock />
+            <MovieBlock movie={movie} />
             <MoviePageInfo genre="Drama" />
-            <MovieLoyout movies={movies} />
+            <MovieLoyout movies={moviesWithTheSameGenre} />
         </Fragment>
     );
 };

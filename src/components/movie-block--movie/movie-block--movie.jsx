@@ -1,7 +1,7 @@
 import React from 'react';
 import './movie-block--movie.scss';
 
-export const MovieBlockMovie = () => {
+export const MovieBlockMovie = ({ movie }) => {
     return (
         <div className="movie-block--movie movie-block__movie">
             <img
@@ -10,15 +10,12 @@ export const MovieBlockMovie = () => {
                 className="movie-block--movie__image"
             />
             <div className="movie-block--movie__info">
-                <h2 className="movie-block--movie__title">Pulp Fiction</h2>
-                <p className="movie-block--movie__genres">genres blah blah</p>
-                <p className="movie-block--movie__date">2019</p>
-                <p className="movie-block--movie__duration">154 min</p>
+                <h2 className="movie-block--movie__title">{movie.title}</h2>
+                <p className="movie-block--movie__genres">{movie.genres}</p>
+                <p className="movie-block--movie__date">{movie.releaseDate}</p>
+                <p className="movie-block--movie__duration">{movie.runtime}m</p>
                 <p className="movie-block--movie__description">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Incidunt voluptatum ex, expedita necessitatibus adipisci
-                    tempora rerum consequatur eum culpa ab eos eligendi dolorum
-                    illum omnis alias esse deleniti, maiores sit.
+                    {movie.overview}
                 </p>
             </div>
         </div>
