@@ -10,9 +10,10 @@ export const MovieHeader = ({ className }) => {
     return (
         <div className={resultClass}>
             <Logo>netfixroulette</Logo>
-            <Button className="movie-header__search-button button_reverse">
-                Search
-            </Button>
+            <Button
+                text="search"
+                className="movie-header__search-button button_reverse"
+            />
         </div>
     );
 };

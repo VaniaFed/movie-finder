@@ -17,7 +17,7 @@ export const SearchBlock = memo(({ className }) => {
             <SearchInput />
             <div className="search-block__controll">
                 <SearchBy className="search-block__search-by" />
-                <Button className="search-block__btn-search">Find</Button>
+                <Button text="Find" className="search-block__btn-search" />
             </div>
         </div>
     );
