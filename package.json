@@ -3,7 +3,19 @@
         "start": "webpack-dev-server --watch --config webpack.dev.config.js",
         "build": "webpack --config webpack.prod.config.js",
         "storybook": "start-storybook",
+        "test": "jest",
         "lint": "eslint --fix src/"
+    },
+    "jest": {
+        "setupFiles": [
+            "./__tests__/global.js"
+        ],
+        "modulePathIgnorePatterns": [
+            "global.js"
+        ],
+        "moduleNameMapper": {
+            "\\.(scss)$": "./node_modules/jest-css-modules"
+        }
     },
     "browserslist": "> 0.25%, not dead",
     "devDependencies": {
