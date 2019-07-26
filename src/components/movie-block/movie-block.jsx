@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { MovieHeader } from 'components/movie-header/';
-import { MovieBlockMovie } from 'components/movie-block--movie';
+import { MovieBlockMovie } from 'components/movie-block-movie';
 import './movie-block.scss';
 
 export const MovieBlock = ({ movie }) => {

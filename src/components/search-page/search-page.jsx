@@ -1,7 +1,7 @@
 import React from 'react';
 import { v4 } from 'uuid';
 import { SearchBlock } from 'components/search-block';
-import { SearchPageInfo } from 'components/search-page--info';
+import { SearchPageInfo } from 'components/search-page-info';
 import { MovieLoyout } from 'components/movie-loyout';
 
 export const SearchPage = () => {
