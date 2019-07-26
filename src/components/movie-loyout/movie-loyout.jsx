@@ -1,7 +1,7 @@
 import React, { memo } from 'react';
 import PropTypes from 'prop-types';
 import { NotFound } from 'components/not-found';
-import { Movie } from 'components/movie';
+import { MovieCard } from 'components/movie-card';
 import './movie-loyout.scss';
 
 export const MovieLoyout = memo(({ movies }) => {
@@ -9,7 +9,7 @@ export const MovieLoyout = memo(({ movies }) => {
         return (
             <div className="movies">
                 {movies.map(movie => (
-                    <Movie
+                    <MovieCard
                         key={movie.id}
                         movie={movie}
                         className="movies__item"

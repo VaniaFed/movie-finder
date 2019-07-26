@@ -1,24 +1,24 @@
 import React, { memo } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import { MovieInfo } from 'components/movie-info';
-import './movie.scss';
+import { MovieCardInfo } from 'components/movie-card-info';
+import './movie-card.scss';
 
-export const Movie = memo(({ movie, className }) => {
-    const resultClass = classNames('movie', className);
+export const MovieCard = memo(({ movie, className }) => {
+    const resultClass = classNames('movie-card', className);
     return (
         <div className={resultClass}>
             <img
-                className="movie__image"
+                className="movie-card__image"
                 src={movie.posterPath}
                 alt={movie.title}
             />
-            <MovieInfo movie={movie} className="movie__info" />
+            <MovieCardInfo movie={movie} className="movie-card__info" />
         </div>
     );
 });
 
-Movie.propTypes = {
+MovieCard.propTypes = {
     movie: PropTypes.objectOf(PropTypes.object).isRequired,
     className: PropTypes.string
 };

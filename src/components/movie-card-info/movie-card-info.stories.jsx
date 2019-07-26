@@ -2,7 +2,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { v4 } from 'uuid';
 
-import { MovieInfo } from './index';
+import { MovieCardInfo } from './index';
 
 const movie = {
     title: 'movei1',
