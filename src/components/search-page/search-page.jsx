@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import { v4 } from 'uuid';
 import { SearchBlock } from 'components/search-block';
 import { SearchPageInfo } from 'components/search-page--info';
@@ -35,10 +35,10 @@ export const SearchPage = () => {
         }
     ];
     return (
-        <Fragment>
+        <>
             <SearchBlock />
             <SearchPageInfo quantityMovies={movies.length} />
             <MovieLoyout movies={movies} />
-        </Fragment>
+        </>
     );
 };
