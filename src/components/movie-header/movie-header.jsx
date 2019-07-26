@@ -12,7 +12,7 @@ export const MovieHeader = ({ className }) => {
             <Logo>netfixroulette</Logo>
             <Button
                 text="search"
-                className="movie-header__search-button button_reverse"
+                className="movie-header__search-button movie-header__search-button--reversed"
             />
         </div>
     );

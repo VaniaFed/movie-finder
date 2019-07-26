@@ -1,7 +1,12 @@
+@import '~_vars.scss';
 .movie-header {
     display: flex;
     justify-content: space-between;
     &__search-button {
         text-transform: uppercase;
+        &#{&}--reversed {
+            background: #fff;
+            color: $accent-color;
+        }
     }
 }
