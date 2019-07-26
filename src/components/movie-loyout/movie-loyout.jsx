@@ -1,7 +1,7 @@
 import React, { memo } from 'react';
 import PropTypes from 'prop-types';
-import { NotFound } from 'Components/not-found';
-import { Movie } from 'Components/movie';
+import { NotFound } from 'components/not-found';
+import { Movie } from 'components/movie';
 import './movie-loyout.scss';
 
 export const MovieLoyout = memo(({ movies }) => {

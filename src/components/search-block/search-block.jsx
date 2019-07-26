@@ -1,10 +1,10 @@
 import React, { memo } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import { SearchInput } from 'Components/search-input';
-import { SearchBy } from 'Components/search-by';
-import { Button } from 'Components/button';
-import { Logo } from 'Components/logo';
+import { SearchInput } from 'components/search-input';
+import { SearchBy } from 'components/search-by';
+import { Button } from 'components/button';
+import { Logo } from 'components/logo';
 
 import './search-block.scss';
 

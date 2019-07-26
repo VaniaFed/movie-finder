@@ -1,8 +1,8 @@
 import React from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
-import { Logo } from 'Components/logo';
-import { Button } from 'Components/button';
+import { Logo } from 'components/logo';
+import { Button } from 'components/button';
 import './movie-header.scss';
 
 export const MovieHeader = ({ className }) => {

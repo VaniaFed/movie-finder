@@ -1,8 +1,8 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
-import { MovieBlock } from 'Components/movie-block/';
-import { MovieLoyout } from 'Components/movie-loyout/';
-import { MoviePageInfo } from 'Components/movie-page--info';
+import { MovieBlock } from 'components/movie-block/';
+import { MovieLoyout } from 'components/movie-loyout/';
+import { MoviePageInfo } from 'components/movie-page--info';
 
 export const MoviePage = ({ movie, moviesWithTheSameGenre }) => {
     return (

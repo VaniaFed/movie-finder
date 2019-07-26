@@ -1,4 +1,4 @@
-@import '~Variables';
+@import '~_vars.scss';
 .search-input {
     padding: 14px 20px;
     background: #000000a8;
@@ -18,7 +18,7 @@
     }
     &__btnIcon {
         background: transparent no-repeat center center;
-        background-image: url('~Assets/img/enter-arrow.svg');
+        background-image: url('~assets/img/enter-arrow.svg');
         width: 20px;
         height: 20px;
         background-size: contain;
