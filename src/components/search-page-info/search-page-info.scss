@@ -11,13 +11,7 @@
         display: flex;
         align-items: center;
     }
-    &__toggleContainer {
+    &__toggle-container {
         margin-left: 16px;
-    }
-    &__toggleButton {
-        margin-left: 26px;
-        &:first-child {
-            margin-left: 0;
-        }
     }
 }

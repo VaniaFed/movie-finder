@@ -18,7 +18,7 @@ export const SearchPageInfo = ({ quantityMovies }) => {
             <div className="search-page-info__right">
                 <span className="search-page-info__text">Sort by</span>
                 <ToggleContainer
-                    className="search-page-info__toggleContainer"
+                    className="search-page-info__toggle-container"
                     name="sort-by"
                     data={sortByData}
                     checked="first"
