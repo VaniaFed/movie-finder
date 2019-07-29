@@ -25,6 +25,17 @@ module.exports = {
         sourceType: 'module'
     },
     plugins: ['react', 'react-hooks', 'prettier'],
+    settings: {
+        'import/resolver': {
+            alias: {
+                map: [
+                    ['components', './src/components'],
+                    ['containers', './src/containers']
+                ],
+                extensions: ['.ts', '.js', '.jsx', '.json']
+            }
+        }
+    },
     rules: {
         'arrow-parens': 0,
         'no-param-reassign': 1,
