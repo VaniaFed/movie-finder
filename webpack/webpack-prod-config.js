@@ -50,8 +50,8 @@ module.exports = {
                 ]
             },
             {
-                test: /\.sass$/,
-                exclude: /\.module\.sass$/,
+                test: /\.scss$/,
+                exclude: /\.module\.scss$/,
                 use: [
                     {
                         loader: MiniCssExtractPlugin.loader
@@ -73,7 +73,7 @@ module.exports = {
                 ]
             },
             {
-                test: /\.module.sass$/,
+                test: /\.module.scss$/,
                 use: [
                     {
                         loader: MiniCssExtractPlugin.loader
