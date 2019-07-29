@@ -22,6 +22,7 @@ export const SearchPageInfo = ({ quantityMovies }) => {
                     name="sort-by"
                     data={sortByData}
                     checked="first"
+                    background={false}
                 />
             </div>
         </div>

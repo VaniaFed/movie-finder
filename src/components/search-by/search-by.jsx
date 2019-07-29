@@ -17,6 +17,7 @@ export const SearchBy = memo(({ className }) => {
                 name="search-by"
                 checked="first"
                 data={searchByData}
+                background
             />
         </div>
     );
