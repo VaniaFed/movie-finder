@@ -1,4 +1,4 @@
-import React, { memo } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { SearchInput } from 'components/search-input';
@@ -8,7 +8,7 @@ import { Logo } from 'components/logo';
 
 import './search-block.scss';
 
-export const SearchBlock = memo(({ className }) => {
+export const SearchBlock = ({ className }) => {
     const resultClass = classNames('search-block', className);
     return (
         <div className={resultClass}>
@@ -21,7 +21,7 @@ export const SearchBlock = memo(({ className }) => {
             </div>
         </div>
     );
-});
+};
 SearchBlock.propTypes = {
     className: PropTypes.string
 };

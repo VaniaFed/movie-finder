@@ -1,10 +1,10 @@
-import React, { memo } from 'react';
+import React from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import { ToggleContainer } from 'components/toggle-container';
 import './search-by.scss';
 
-export const SearchBy = memo(({ className }) => {
+export const SearchBy = ({ className }) => {
     const resultClass = classNames('search-by', className);
     const searchByData = [
         { key: 'title', text: 'Title', onClick: f => f },
@@ -21,7 +21,7 @@ export const SearchBy = memo(({ className }) => {
             />
         </div>
     );
-});
+};
 
 SearchBy.propTypes = {
     className: PropTypes.string
