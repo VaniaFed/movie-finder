@@ -3,6 +3,8 @@ import { v4 } from 'uuid';
 import { SearchBlock } from 'components/search-block';
 import { SearchPageInfo } from 'components/search-page-info';
 import { MovieLoyout } from 'components/movie-loyout';
+import { NotFound } from 'components/not-found';
+import { YetLoader } from 'containers/yet-loader';
 
 export const SearchPage = () => {
     const movies = [
@@ -34,11 +36,14 @@ export const SearchPage = () => {
             id: v4()
         }
     ];
+    const Cap = () => <NotFound caption="No films found" />;
     return (
         <>
             <SearchBlock />
             <SearchPageInfo quantityMovies={movies.length} />
-            <MovieLoyout movies={movies} />
+            <YetLoader condition={movies.length > 0} Cap={Cap}>
+                <MovieLoyout movies={movies} />
+            </YetLoader>
         </>
     );
 };
