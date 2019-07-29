@@ -13,12 +13,7 @@ export const SearchBy = ({ className }) => {
     return (
         <div className={resultClass}>
             <span className="search-by__title">Search by</span>
-            <ToggleContainer
-                name="search-by"
-                checked="first"
-                data={searchByData}
-                background
-            />
+            <ToggleContainer name="search-by" data={searchByData} background />
         </div>
     );
 };
