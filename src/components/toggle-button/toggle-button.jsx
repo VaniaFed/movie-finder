@@ -9,25 +9,29 @@ export const ToggleButton = ({
     className,
     checked,
     name,
-    background
+    background,
+    onClick
 }) => {
-    console.log(background);
     const resultClass = classNames(className, 'toggle-button', {
         'toggle-button--no--background': !background
     });
     return (
-        <label className={resultClass}>
+        <label className={resultClass} onClick={onClick}>
             <input
                 className={classNames('toggle-button__input', {
-                    'toggle-button__input--no--background': !background
+                    'toggle-button__input--no-background': !background,
+                    'toggle-button__input--checked': checked
                 })}
                 type="radio"
-                defaultChecked={checked || ''}
+                defaultChecked={checked && 'checked'}
                 name={name}
             />
             <span
                 className={classNames('toggle-button__text', {
-                    'toggle-button__text--no--background': !background
+                    'toggle-button__text--no--background': !background,
+                    'toggle-button__text--checked': checked,
+                    'toggle-button__text--no--background--checked':
+                        checked && !background
                 })}
             >
                 {label}

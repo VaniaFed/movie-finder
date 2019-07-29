@@ -21,7 +21,6 @@ export const SearchPageInfo = ({ quantityMovies }) => {
                     className="search-page-info__toggle-container"
                     name="sort-by"
                     data={sortByData}
-                    checked="first"
                     background={false}
                 />
             </div>
