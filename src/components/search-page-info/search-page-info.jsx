@@ -4,7 +4,10 @@ import { ToggleContainer } from 'components/toggle-container';
 import './search-page-info.scss';
 
 export const SearchPageInfo = ({ quantityMovies }) => {
-    const toggleData = ['release date', 'rating'];
+    const sortByData = [
+        { key: 'release date', text: 'Release date', onClick: f => f },
+        { key: 'rating', text: 'Rating', onClick: f => f }
+    ];
     return (
         <div className="search-page-info">
             <div className="search-page-info__left">
@@ -17,7 +20,7 @@ export const SearchPageInfo = ({ quantityMovies }) => {
                 <ToggleContainer
                     className="search-page-info__toggleContainer"
                     name="sort-by"
-                    data={toggleData}
+                    data={sortByData}
                     checked="first"
                 />
             </div>

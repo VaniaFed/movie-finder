@@ -9,9 +9,24 @@ export const ToggleContainer = memo(({ data, className, name, checked }) => {
     const buttons = data.map(item => {
         if (checked === 'first' && !actived) {
             actived = true;
-            return <ToggleButton checked="checked" label={item} name={name} />;
+            return (
+                <ToggleButton
+                    key={item.key}
+                    checked="checked"
+                    label={item.text}
+                    name={name}
+                    onClick={item.onClick}
+                />
+            );
         }
-        return <ToggleButton label={item} name={name} />;
+        return (
+            <ToggleButton
+                key={item.key}
+                label={item.text}
+                name={name}
+                onClick={item.onClick}
+            />
+        );
     });
     return <div className={resultClass}>{buttons}</div>;
 });
