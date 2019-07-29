@@ -3,6 +3,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const StyleLintPlugin = require('stylelint-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const path = require('path');
 
 module.exports = {
     plugins: [
@@ -26,32 +27,10 @@ module.exports = {
         rules: [
             {
                 test: /\.(js|jsx)$/,
-                use: ['babel-loader', 'eslint-loader']
+                use: ['eslint-loader']
             },
             {
-                test: /\.css$/,
-                use: [
-                    {
-                        loader: MiniCssExtractPlugin.loader
-                    },
-                    {
-                        loader: 'css-loader',
-                        options: {
-                            modules: false
-                        }
-                    },
-                    {
-                        loader: 'postcss-loader',
-                        options: {
-                            ident: 'postcss',
-                            plugins: [require('autoprefixer')()]
-                        }
-                    }
-                ]
-            },
-            {
-                test: /\.scss$/,
-                exclude: /\.module\.scss$/,
+                test: /\.css|scss$/,
                 use: [
                     {
                         loader: MiniCssExtractPlugin.loader
@@ -70,30 +49,8 @@ module.exports = {
                         }
                     },
                     'sass-loader'
-                ]
-            },
-            {
-                test: /\.module.scss$/,
-                use: [
-                    {
-                        loader: MiniCssExtractPlugin.loader
-                    },
-                    {
-                        loader: 'css-loader',
-                        options: {
-                            localIdentName: '[hash:8]',
-                            modules: true
-                        }
-                    },
-                    {
-                        loader: 'postcss-loader',
-                        options: {
-                            ident: 'postcss',
-                            plugins: [require('autoprefixer')()]
-                        }
-                    },
-                    'sass-loader'
-                ]
+                ],
+                include: path.resolve(__dirname, '../src')
             }
         ]
     },

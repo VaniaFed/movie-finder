@@ -7,6 +7,11 @@ module.exports = {
                 use: ['html-loader']
             },
             {
+                test: /\.jsx|js$/,
+                exclude: /node_modules/,
+                loader: 'babel-loader'
+            },
+            {
                 test: /\.png|jpg|jpeg|svg|gif$/,
                 use: [
                     {
