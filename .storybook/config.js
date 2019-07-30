@@ -10,6 +10,7 @@ function loadStories() {
     require('components/toggle-button/toggle-button.stories');
     require('components/toggle-loyout/toggle-loyout.stories');
     require('containers/toggle-container/toggle-container.stories');
+    require('components/button/button.stories');
 }
 
 configure(loadStories, module);

@@ -3,6 +3,6 @@ import { storiesOf } from '@storybook/react';
 
 import { NotFound } from './index';
 
-storiesOf('not-found', module).add('regular', () => (
+storiesOf('NotFound', module).add('regular', () => (
     <NotFound caption="Not found!" />
 ));
