@@ -25,10 +25,10 @@ module.exports = {
     mode: 'production',
     module: {
         rules: [
-            {
-                test: /\.(js|jsx)$/,
-                use: ['eslint-loader']
-            },
+            // {
+            //     test: /\.(js|jsx)$/,
+            //     use: ['eslint-loader']
+            // },
             {
                 test: /\.css|scss$/,
                 use: [
@@ -51,6 +51,17 @@ module.exports = {
                     'sass-loader'
                 ],
                 include: path.resolve(__dirname, '../src')
+            },
+            {
+                test: /\.png|jpg|jpeg|svg|gif$/,
+                use: [
+                    {
+                        loader: 'file-loader',
+                        options: {
+                            name: '[name].[ext]'
+                        }
+                    }
+                ]
             }
         ]
     },

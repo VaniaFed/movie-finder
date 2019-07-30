@@ -14,6 +14,17 @@ module.exports = {
                 test: /\.css|scss$/,
                 use: ['style-loader', 'css-loader', 'sass-loader'],
                 include: path.resolve(__dirname, '../src')
+            },
+            {
+                test: /\.png|jpg|jpeg|svg|gif$/,
+                use: [
+                    {
+                        loader: 'url-loader',
+                        options: {
+                            limit: 500
+                        }
+                    }
+                ]
             }
         ]
     },

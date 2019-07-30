@@ -10,17 +10,6 @@ module.exports = {
                 test: /\.jsx|js$/,
                 exclude: /node_modules/,
                 loader: 'babel-loader'
-            },
-            {
-                test: /\.png|jpg|jpeg|svg|gif$/,
-                use: [
-                    {
-                        loader: 'url-loader',
-                        options: {
-                            limit: 10000
-                        }
-                    }
-                ]
             }
         ]
     },
