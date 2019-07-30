@@ -13,4 +13,6 @@ const movie = {
         'https://pp.userapi.com/c844521/v844521991/f808b/TCjtAXN8SdA.jpg',
     id: v4()
 };
-storiesOf('Movie', module).add('regular', () => <MovieCard movie={movie} />);
+storiesOf('MovieCard', module).add('regular', () => (
+    <MovieCard movie={movie} />
+));
