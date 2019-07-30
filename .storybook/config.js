@@ -7,6 +7,7 @@ function loadStories() {
     require('components/movie-loyout/movie-loyout.stories');
     require('components/movie-card/movie-card.stories');
     require('components/movie/movie.stories');
+    require('components/search-page/search-page.stories');
     require('components/search-input/search-input.stories');
     require('components/search-block/search-block.stories');
     require('components/not-found/not-found.stories');
