@@ -11,6 +11,7 @@ function loadStories() {
     require('components/toggle-loyout/toggle-loyout.stories');
     require('containers/toggle-container/toggle-container.stories');
     require('components/button/button.stories');
+    require('components/logo/logo.stories');
 }
 
 configure(loadStories, module);
