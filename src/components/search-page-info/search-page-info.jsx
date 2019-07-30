@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { ToggleContainer } from 'components/toggle-container';
+import { ToggleContainer } from 'containers/toggle-container';
 import './search-page-info.scss';
 
 export const SearchPageInfo = ({ quantityMovies }) => {

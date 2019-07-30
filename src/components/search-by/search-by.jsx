@@ -1,7 +1,7 @@
 import React from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
-import { ToggleContainer } from 'components/toggle-container';
+import { ToggleContainer } from 'containers/toggle-container';
 import './search-by.scss';
 
 export const SearchBy = ({ className }) => {
