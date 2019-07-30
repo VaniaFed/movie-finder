@@ -4,6 +4,7 @@ import '../src/global.scss';
 function loadStories() {
     require('components/movie-page/movie-page.stories');
     require('components/movie-block/movie-block.stories');
+    require('components/movie-page-info/movie-page-info.stories');
     require('components/movie/movie.stories');
     require('components/movie-loyout/movie-loyout.stories');
     require('components/movie-card/movie-card.stories');
