@@ -9,7 +9,7 @@ export const MovieHeader = ({ className }) => {
     const resultClass = classNames(className, 'movie-header');
     return (
         <div className={resultClass}>
-            <Logo>netfixroulette</Logo>
+            <Logo text="netfixroulette" />
             <Button
                 text="search"
                 className="movie-header__search-button movie-header__search-button--reversed"

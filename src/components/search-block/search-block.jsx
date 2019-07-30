@@ -12,7 +12,7 @@ export const SearchBlock = ({ className }) => {
     const resultClass = classNames('search-block', className);
     return (
         <div className={resultClass}>
-            <Logo className="search-block__logo">netfixroulette</Logo>
+            <Logo text="netfixroulette" className="search-block__logo" />
             <h3 className="search-block__title">Find your movie</h3>
             <SearchInput />
             <div className="search-block__controll">

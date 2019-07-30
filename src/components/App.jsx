@@ -11,7 +11,7 @@ export const App = () => {
                 <SearchPageSmart />
                 <MoviePageSmart />
                 <footer>
-                    <Logo>netfixroulette</Logo>
+                    <Logo text="netfixroulette" />
                 </footer>
             </div>
         </ErrorBoundary>
