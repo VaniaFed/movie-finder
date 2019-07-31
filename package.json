@@ -7,18 +7,6 @@
         "coverage": "jest --watch --coverage",
         "lint": "eslint --fix src/"
     },
-    "jest": {
-        "setupFiles": [
-            "./__tests__/global.js"
-        ],
-        "modulePathIgnorePatterns": [
-            "global.js"
-        ],
-        "moduleNameMapper": {
-            "\\.(css|less|scss|sass)$": "identity-obj-proxy"
-        }
-    },
-    "browserslist": "> 0.25%, not dead",
     "devDependencies": {
         "@babel/core": "^7.5.4",
         "@babel/plugin-proposal-class-properties": "^7.5.0",
