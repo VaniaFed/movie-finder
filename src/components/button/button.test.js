@@ -1,9 +1,9 @@
-import { shallow } from 'enzyme';
+import renderer from 'react-test-renderer';
 import { Button } from './index';
 
 describe('<Button />', () => {
-    const component = shallow(<Button>Hello, React!</Button>);
-    expect(
-        component.find('button.search-block__btn-search button').length
-    ).toBe(5);
+    const tree = renderer.create(<Button text="Hello, React!" />).toJSON();
+    it('should be rendered with text "Hello, React!"', () => {
+        expect(tree).toMatchSnapshot();
+    });
 });
