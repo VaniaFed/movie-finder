@@ -5,6 +5,6 @@ module.exports = {
         '^components(.*)$': '<rootDir>/src/components$1',
         '^containers(.*)$': '<rootDir>/src/containers$1',
         '^.+\\.js(jsx)$': 'babel-jest',
-        '\\.(css|less|scss|sass)$': 'identity-obj-proxy'
+        '\\.(css|less|scss|sass)$': 'jest-transform-stub'
     }
 };
