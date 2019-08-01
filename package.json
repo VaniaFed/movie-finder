@@ -3,7 +3,9 @@
         "start": "webpack-dev-server --watch --config webpack.dev.config.js",
         "build": "webpack --config webpack.prod.config.js",
         "storybook": "start-storybook",
-        "test": "jest --watch",
+        "test": "jest",
+        "test:watch": "jest --watch",
+        "test:cov": "jest --coverage",
         "coverage": "jest --watch --coverage",
         "lint": "eslint --fix src/"
     },
