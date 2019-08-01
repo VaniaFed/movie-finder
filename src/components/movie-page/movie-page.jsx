@@ -12,7 +12,10 @@ export const MoviePage = ({ movie, moviesWithTheSameGenre }) => {
         <>
             <MovieBlock movie={movie} />
             <MoviePageInfo genre={movie.genres} />
-            <YetLoader condition={moviesWithTheSameGenre.length > 0} Cap={Cap}>
+            <YetLoader
+                condition={moviesWithTheSameGenre.length > 0}
+                cap={<Cap />}
+            >
                 <MovieLoyout movies={moviesWithTheSameGenre} />
             </YetLoader>
         </>
