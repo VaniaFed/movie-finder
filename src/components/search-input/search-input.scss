@@ -1,20 +1,20 @@
 @import '~_vars.scss';
 .search-input {
-    padding: 14px 20px;
-    background: #000000a8;
-    color: #fff;
-    border: none;
-    border-bottom: 2px solid #000000a8;
-    width: 100%;
-    &::placeholder {
-        color: #eee;
-    }
-    &:focus {
-        border-bottom: 2px solid $accent-color;
-        outline: none;
-    }
-    &__wrapper {
-        position: relative;
+    position: relative;
+    &__input {
+        padding: 14px 20px;
+        background: #000000a8;
+        color: #fff;
+        border: none;
+        border-bottom: 2px solid #000000a8;
+        width: 100%;
+        &::placeholder {
+            color: #eee;
+        }
+        &:focus {
+            border-bottom: 2px solid $accent-color;
+            outline: none;
+        }
     }
     &__btnIcon {
         background: transparent no-repeat center center;

@@ -5,9 +5,9 @@ import PropTypes from 'prop-types';
 import './search-input.scss';
 
 export const SearchInput = ({ className }) => (
-    <div className={classNames('search-input__wrapper', className)}>
+    <div className={classNames('search-input', className)}>
         <input
-            className={classNames('search-input', className)}
+            className="search-input__input"
             type="text"
             placeholder="Game of Thrones"
         />
