@@ -6,8 +6,11 @@
             "src/*": ["./src/"],
             "components/*": ["./src/components/*"],
             "containers/*": ["./src/containers/*"],
-            "_vars.scss/*": ["./src/_vars.scss"],
-            "assets/*": ["./src/assets/*"]
+            "_vars.scss": ["./src/_vars.scss"],
+            "assets/*": ["./src/assets/*"],
+            "actions/*": ["./src/actions/*"],
+            "reducers/*": ["./src/reducers/*"],
+            "constants.js": ["./src/constants.js"]
         }
     }
 }

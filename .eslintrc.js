@@ -30,7 +30,10 @@ module.exports = {
             alias: {
                 map: [
                     ['components', './src/components'],
-                    ['containers', './src/containers']
+                    ['containers', './src/containers'],
+                    ['actions', './src/actions'],
+                    ['reducers', './src/reducers'],
+                    ['constants.js', './src/constants.js']
                 ],
                 extensions: ['.ts', '.js', '.jsx', '.json']
             }
