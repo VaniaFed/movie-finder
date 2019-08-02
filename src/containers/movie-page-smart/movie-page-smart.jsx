@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react';
+import { connect } from 'react-redux';
+import { fetchMovieRequest } from 'actions/movie';
 import { v4 } from 'uuid';
 import { MoviePage } from 'components/movie-page';
 import { YetLoader } from 'containers/yet-loader';
 import { MovieLoyout } from 'components/movie-loyout/';
 import { NotFound } from 'components/not-found';
 
-export const MoviePageSmart = () => {
+export const MoviePageSmart = ({ movie }) => {
     const [moviesWithTheSameGenre, setMoviesWithTheSameGenre] = useState([]);
     const movie = {
         title: 'movei1',
@@ -21,7 +23,8 @@ export const MoviePageSmart = () => {
     };
     useEffect(() => {
         setMoviesWithTheSameGenre([movie]);
-    });
+    }, []);
+
     const Cap = () => <NotFound caption="No films found" />;
     return (
         <>
@@ -35,3 +38,20 @@ export const MoviePageSmart = () => {
         </>
     );
 };
+
+function mapStateToProps(state) {
+    return {
+        movie: state.movie
+    };
+}
+
+function mapDispatchToProps(dispatch) {
+    return {
+        fetchMovie: () => dispatch(fetchMovieRequest())
+    };
+}
+
+export default connect(
+    mapStateToProps
+    mapDispatchToProps
+)(MoviePageSmart);

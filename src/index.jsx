@@ -1,7 +1,19 @@
 import React from 'react';
 import { render } from 'react-dom';
+import { Provider } from 'react-redux';
 import { App } from 'containers/App';
+import { configureStore } from 'src/configureStore';
 
 import './global.scss';
 
-render(<App />, document.querySelector('#app'));
+const initialState = {};
+const store = configureStore(initialState);
+render(
+    <Provider store={store}>
+        <App />
+    </Provider>,
+    document.querySelector('#app')
+);
+
+store.subscribe(() => console.log(store.getState()));
+store.dispatch({ type: 'ADD_MOVIE', movie: { id: 1, title: 'helehele' } });
