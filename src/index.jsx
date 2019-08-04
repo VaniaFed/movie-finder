@@ -14,6 +14,3 @@ render(
     </Provider>,
     document.querySelector('#app')
 );
-
-store.subscribe(() => console.log(store.getState()));
-store.dispatch({ type: 'ADD_MOVIE', movie: { id: 1, title: 'helehele' } });
