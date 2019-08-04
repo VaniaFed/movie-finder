@@ -6,7 +6,7 @@ export function* fetchMovies() {
     const url = 'http://react-cdp-api.herokuapp.com/movies';
     try {
         const response = yield call(request, url);
-        const movies = response;
+        const movies = response.data;
         yield put(fetchMoviesSuccess(movies));
     } catch (error) {
         const message = 'Failed to fetch movies, please try again';
