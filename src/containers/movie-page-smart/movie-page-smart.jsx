@@ -1,57 +1,48 @@
 import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
-import { fetchMovieRequest } from 'actions/movie';
+import { bindActionCreators } from 'redux';
+import { fetchMoviesRequest } from 'actions/movie';
 import { v4 } from 'uuid';
 import { MoviePage } from 'components/movie-page';
 import { YetLoader } from 'containers/yet-loader';
 import { MovieLoyout } from 'components/movie-loyout/';
 import { NotFound } from 'components/not-found';
 
-export const MoviePageSmart = ({ movie }) => {
-    const [moviesWithTheSameGenre, setMoviesWithTheSameGenre] = useState([]);
-    const movie = {
-        title: 'movei1',
-        genres: 'action',
-        tagline: 'some tagline',
-        releaseDate: '2014',
-        runtime: 160,
-        overview:
-            'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor quidem non id numquam nulla, porro itaque laborum ut, minima illum quaerat, iusto dignissimos harum quae? Corrupti sit laboriosam optio magnam!',
-        posterPath:
-            'https://pp.userapi.com/c844521/v844521991/f808b/TCjtAXN8SdA.jpg',
-        id: v4()
-    };
-    useEffect(() => {
-        setMoviesWithTheSameGenre([movie]);
-    }, []);
+const mapStateToProps = state => ({
+    movies: state.movies
+});
 
+const mapDispatchToProps = dispatch =>
+    bindActionCreators(
+        {
+            fetchMoviesRequest
+        },
+        dispatch
+    );
+
+export const MoviePageSmart = connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(({ movies, fetchMoviesRequest }) => {
+    // const [moviesWithTheSameGenre, setMoviesWithTheSameGenre] = useState([]);
+    useEffect(() => {
+        // setMoviesWithTheSameGenre([movies[0]]);
+        fetchMoviesRequest();
+        console.log(movies);
+    }, movies);
+    console.log(movies);
+
+    // I can't get access to the movies after fetching
     const Cap = () => <NotFound caption="No films found" />;
     return (
         <>
-            <MoviePage movie={movie} />
-            <YetLoader
+            {/* <MoviePage movie={movies[0]} /> */}
+            {/* <YetLoader
                 condition={moviesWithTheSameGenre.length > 0}
                 cap={<Cap />}
             >
                 <MovieLoyout movies={moviesWithTheSameGenre} />
-            </YetLoader>
+            </YetLoader> */}
         </>
     );
-};
-
-function mapStateToProps(state) {
-    return {
-        movie: state.movie
-    };
-}
-
-function mapDispatchToProps(dispatch) {
-    return {
-        fetchMovie: () => dispatch(fetchMovieRequest())
-    };
-}
-
-export default connect(
-    mapStateToProps
-    mapDispatchToProps
-)(MoviePageSmart);
+});
