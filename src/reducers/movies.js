@@ -3,7 +3,7 @@ import {
     FETCH_MOVIES_BY_GENRE_ERROR
 } from 'constants.js';
 
-export const movies = (state = [], action) => {
+export const moviesByGenre = (state = {}, action) => {
     const { type } = action;
     switch (type) {
         case FETCH_MOVIES_BY_GENRE_SUCCESS: {
