@@ -6,7 +6,7 @@ export const SearchPageSmart = () => {
     const movies = [
         {
             title: 'movei1',
-            genres: 'action',
+            genres: ['action', 'drama'],
             tagline: 'some tagline',
             releaseDate: '2014',
             posterPath:
@@ -15,7 +15,7 @@ export const SearchPageSmart = () => {
         },
         {
             title: 'movei1',
-            genres: 'action',
+            genres: ['action', 'drama'],
             tagline: 'some tagline',
             releaseDate: '2014',
             posterPath:
@@ -24,7 +24,7 @@ export const SearchPageSmart = () => {
         },
         {
             title: 'movei1',
-            genres: 'action',
+            genres: ['action', 'drama'],
             tagline: 'some tagline',
             releaseDate: '2014',
             posterPath:

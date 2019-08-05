@@ -7,7 +7,7 @@ export const MoviePage = ({ movie }) => {
     return (
         <>
             <MovieBlock movie={movie} />
-            <MoviePageInfo genre={movie.genres} />
+            <MoviePageInfo genres={movie.genres} />
         </>
     );
 };

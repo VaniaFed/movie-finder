@@ -1,8 +1,8 @@
-import { FETCH_MOVIES_REQUEST } from 'constants.js';
+import { FETCH_MOVIES_BY_GENRE_REQUEST } from 'constants.js';
 
 import { takeLatest } from 'redux-saga/effects';
-import { fetchMovies } from './fetchMovies';
+import { fetchMoviesByGenre } from './fetchMovies';
 
 export function* rootSaga() {
-    yield takeLatest(FETCH_MOVIES_REQUEST, fetchMovies);
+    yield takeLatest(FETCH_MOVIES_BY_GENRE_REQUEST, fetchMoviesByGenre);
 }
