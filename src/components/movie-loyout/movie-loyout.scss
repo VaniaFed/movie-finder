@@ -1,9 +1,12 @@
 .movies {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 50px;
+    display: flex;
+    flex-wrap: wrap;
     list-style: none;
-    padding: 50px;
+    &__item {
+        width: 33.3333%;
+        padding-right: 40px;
+        padding-bottom: 40px;
+    }
     &__notFound {
         margin: 200px 0;
     }
