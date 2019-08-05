@@ -11,7 +11,7 @@ export const MovieCardInfo = memo(({ movie, className }) => {
                 <h2 className="movie-card-info__title">{movie.title}</h2>
                 <p className="movie-card-info__genres">{movie.genres}</p>
             </div>
-            <p className="movie-card-info__date">{movie.releaseDate}</p>
+            <p className="movie-card-info__date">{movie.release_date}</p>
         </div>
     );
 });

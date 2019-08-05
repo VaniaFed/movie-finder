@@ -10,7 +10,7 @@ export const MovieCard = memo(({ movie, className }) => {
         <div className={resultClass}>
             <img
                 className="movie-card__image"
-                src={movie.posterPath}
+                src={movie.poster_path}
                 alt={movie.title}
             />
             <MovieCardInfo movie={movie} className="movie-card__info" />
