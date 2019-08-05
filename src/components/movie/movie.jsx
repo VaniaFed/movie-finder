@@ -14,7 +14,7 @@ export const Movie = ({ movie }) => {
             <div className="movie__info">
                 <h2 className="movie__title">{movie.title}</h2>
                 <p className="movie__genres">{formattedGenres}</p>
-                <p className="movie__date">{movie.releaseDate}</p>
+                <p className="movie__date">{movie.release_date}</p>
                 <p className="movie__duration">{movie.runtime}m</p>
                 <p className="movie__description">{movie.overview}</p>
             </div>
