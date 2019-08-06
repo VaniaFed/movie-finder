@@ -1,43 +1,33 @@
-import React, { useEffect } from 'react';
+import React, { memo, useEffect } from 'react';
 import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
-import { fetchMoviesByGenreRequest } from 'actions/movies-by-genre';
-import { fetchMovieByIdRequest } from 'actions/movie-by-id';
 import { MoviePage } from 'components/movie-page';
 import { YetLoader } from 'containers/yet-loader';
 import { MovieLoyout } from 'components/movie-loyout/';
 import { NotFound } from 'components/not-found';
+import { fetchMovieByIdRequest } from 'actions/movie-by-id';
 
 const mapStateToProps = state => ({
-    movie: state.movie,
-    moviesWithTheSameGenre: state.movies,
+    movie: state.movie.movie,
+    moviesWithTheSameGenre: state.moviesByGenre.moviesByGenre,
     state
 });
 
-const mapDispatchToProps = dispatch => bindActionCreators(
-        {
-            fetchMovieByIdRequest,
-            fetchMoviesByGenreRequest
-        },
-        dispatch
-    );
+const mapDispatchToProps = dispatch => {
+    return {
+        dispatch,
+        fetchMovieById: id => {
+            dispatch(fetchMovieByIdRequest(id));
+        }
+    };
+};
 
 export const MoviePageSmart = connect(
     mapStateToProps,
     mapDispatchToProps
 )(
-    ({
-        movie,
-        moviesWithTheSameGenre,
-        state,
-        fetchMovieByIdRequest,
-        fetchMoviesByGenreRequest
-    }) => {
+    memo(({ movie, moviesWithTheSameGenre, fetchMovieById }) => {
         useEffect(() => {
-            fetchMovieByIdRequest(5);
-            console.log(state);
-            // const genre = movie[0].genres[0];
-            // fetchMoviesByGenreRequest(genre);
+            fetchMovieById(5);
         }, []);
 
         const Cap = () => <NotFound caption="No films found" />;
@@ -45,17 +35,17 @@ export const MoviePageSmart = connect(
             <>
                 <YetLoader
                     condition={typeof movie !== 'undefined'}
-                    cap={<Cap />}
+                    cap={<div />}
                 >
                     <MoviePage movie={movie} />
                 </YetLoader>
-                {/* <YetLoader
-                    condition={moviesWithTheSameGenre.length > 0}
+                <YetLoader
+                    condition={typeof moviesWithTheSameGenre !== 'undefined'}
                     cap={<Cap />}
                 >
                     <MovieLoyout movies={moviesWithTheSameGenre} />
-                </YetLoader> */}
+                </YetLoader>
             </>
         );
-    }
+    })
 );
