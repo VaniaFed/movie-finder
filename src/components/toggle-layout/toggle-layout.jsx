@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-export const ToggleLoyout = ({ children, className }) => {
+export const ToggleLayout = ({ children, className }) => {
     return <div className={className}>{children}</div>;
 };
 
-ToggleLoyout.propTypes = {
+ToggleLayout.propTypes = {
     className: PropTypes.string
 };

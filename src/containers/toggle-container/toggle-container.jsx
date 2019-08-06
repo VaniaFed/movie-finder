@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { ToggleButton } from 'components/toggle-button';
-import { ToggleLoyout } from 'components/toggle-loyout';
+import { ToggleLayout } from 'components/toggle-layout';
 
 export const ToggleContainer = ({ data, name, background }) => {
     const [checked, check] = useState(data[0].key);
@@ -16,7 +16,7 @@ export const ToggleContainer = ({ data, name, background }) => {
             background={background}
         />
     ));
-    return <ToggleLoyout>{buttons}</ToggleLoyout>;
+    return <ToggleLayout>{buttons}</ToggleLayout>;
 };
 
 ToggleContainer.propTypes = {

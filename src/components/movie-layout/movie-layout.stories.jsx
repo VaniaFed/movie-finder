@@ -2,7 +2,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { v4 } from 'uuid';
 
-import { MovieLoyout } from './index';
+import { MovieLayout } from './index';
 
 const threeMovies = [
     {
@@ -81,6 +81,6 @@ const fiveMovies = [
         id: v4()
     }
 ];
-storiesOf('MovieLoyout', module)
-    .add('three ones', () => <MovieLoyout movies={threeMovies} />)
-    .add('five ones', () => <MovieLoyout movies={fiveMovies} />);
+storiesOf('MovieLayout', module)
+    .add('three ones', () => <MovieLayout movies={threeMovies} />)
+    .add('five ones', () => <MovieLayout movies={fiveMovies} />);

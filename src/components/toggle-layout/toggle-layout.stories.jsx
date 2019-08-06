@@ -2,7 +2,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 
 import { ToggleButton } from 'components/toggle-button';
-import { ToggleLoyout } from './index';
+import { ToggleLayout } from './index';
 
 const data = [
     { key: 'release date', text: 'Release date' },
@@ -15,8 +15,8 @@ const buttonsWithBackground = data.map(item => (
     <ToggleButton key={item.key} label={item.text} />
 ));
 
-storiesOf('ToggleLoyout', module)
-    .add('Not checked background', () => <ToggleLoyout>{buttons}</ToggleLoyout>)
+storiesOf('ToggleLayout', module)
+    .add('Not checked background', () => <ToggleLayout>{buttons}</ToggleLayout>)
     .add('Not checked non-background', () => (
-        <ToggleLoyout>{buttonsWithBackground}</ToggleLoyout>
+        <ToggleLayout>{buttonsWithBackground}</ToggleLayout>
     ));
