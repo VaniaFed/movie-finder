@@ -8,8 +8,7 @@ import { fetchMovieByIdRequest } from 'actions/movie-by-id';
 
 const mapStateToProps = state => ({
     movie: state.movie.movie,
-    moviesWithTheSameGenre: state.moviesByGenre.moviesByGenre,
-    state
+    moviesWithTheSameGenre: state.moviesByData.movies
 });
 
 const mapDispatchToProps = dispatch => {

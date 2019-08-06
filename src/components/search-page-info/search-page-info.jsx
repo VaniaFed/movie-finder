@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { ToggleContainer } from 'containers/toggle-container';
 import './search-page-info.scss';
 
-export const SearchPageInfo = ({ quantityMovies }) => {
+export const SearchPageInfo = ({ movies = [] }) => {
     const sortByData = [
         { key: 'release date', text: 'Release date', onClick: f => f },
         { key: 'rating', text: 'Rating', onClick: f => f }
@@ -12,7 +12,7 @@ export const SearchPageInfo = ({ quantityMovies }) => {
         <div className="search-page-info">
             <div className="search-page-info__left">
                 <span className="search-page-info__text">
-                    {quantityMovies} movies found
+                    {movies.length} movies found
                 </span>
             </div>
             <div className="search-page-info__right">

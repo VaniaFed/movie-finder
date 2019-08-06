@@ -4,14 +4,21 @@ import PropTypes from 'prop-types';
 
 import './search-input.scss';
 
-export const SearchInput = ({ className }) => (
+export const SearchInput = ({ className, onSearch, onInput }) => (
     <div className={classNames('search-input', className)}>
         <input
             className="search-input__input"
             type="text"
             placeholder="Game of Thrones"
+            onInput={e => {
+                onInput(e.currentTarget.value);
+            }}
         />
-        <button className="search-input__btnIcon" type="button" />
+        <button
+            className="search-input__btnIcon"
+            onClick={onSearch}
+            type="button"
+        />
     </div>
 );
 

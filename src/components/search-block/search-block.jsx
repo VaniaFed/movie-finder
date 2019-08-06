@@ -8,16 +8,27 @@ import { Logo } from 'components/logo';
 
 import './search-block.scss';
 
-export const SearchBlock = ({ className }) => {
+export const SearchBlock = ({ className, searchValue, onSearch, onInput }) => {
     const resultClass = classNames('search-block', className);
     return (
         <div className={resultClass}>
             <Logo text="netfixroulette" className="search-block__logo" />
             <h3 className="search-block__title">Find your movie</h3>
-            <SearchInput />
+            <SearchInput
+                onSearch={() => {
+                    onSearch(searchValue);
+                }}
+                onInput={onInput}
+            />
             <div className="search-block__controll">
                 <SearchBy className="search-block__search-by" />
-                <Button text="Find" className="search-block__btn-search" />
+                <Button
+                    text="Find"
+                    onClick={() => {
+                        onSearch(searchValue);
+                    }}
+                    className="search-block__btn-search"
+                />
             </div>
         </div>
     );

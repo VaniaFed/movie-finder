@@ -1,36 +1,25 @@
 import React from 'react';
-import { SearchPage } from 'components/search-page';
+import { connect } from 'react-redux';
 import { v4 } from 'uuid';
+import { SearchPage } from 'components/search-page';
+import { fetchMoviesByDataRequest } from 'actions/movies-by-data';
 
-export const SearchPageSmart = () => {
-    const movies = [
-        {
-            title: 'movei1',
-            genres: ['action', 'drama'],
-            tagline: 'some tagline',
-            release_date: '2014',
-            poster_path:
-                'https://pp.userapi.com/c844521/v844521991/f808b/TCjtAXN8SdA.jpg',
-            id: v4()
-        },
-        {
-            title: 'movei1',
-            genres: ['action', 'drama'],
-            tagline: 'some tagline',
-            release_date: '2014',
-            poster_path:
-                'https://pp.userapi.com/c844521/v844521991/f808b/TCjtAXN8SdA.jpg',
-            id: v4()
-        },
-        {
-            title: 'movei1',
-            genres: ['action', 'drama'],
-            tagline: 'some tagline',
-            release_date: '2014',
-            poster_path:
-                'https://pp.userapi.com/c844521/v844521991/f808b/TCjtAXN8SdA.jpg',
-            id: v4()
+const mapStateToProps = state => ({
+    movies: state.moviesByData.movies
+});
+
+const mapDispatchToProps = dispatch => {
+    return {
+        dispatch,
+        fetchMoviesByData: (searchValue, searchBy, sortBy) => {
+            dispatch(fetchMoviesByDataRequest(searchValue, searchBy, sortBy));
         }
-    ];
-    return <SearchPage movies={movies} />;
+    };
 };
+
+export const SearchPageSmart = connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(({ movies, fetchMoviesByData }) => {
+    return <SearchPage movies={movies} onSearch={fetchMoviesByData} />;
+});
