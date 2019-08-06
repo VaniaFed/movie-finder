@@ -2,7 +2,7 @@ import React, { memo, useEffect } from 'react';
 import { connect } from 'react-redux';
 import { MoviePage } from 'components/movie-page';
 import { YetLoader } from 'containers/yet-loader';
-import { MovieLoyout } from 'components/movie-loyout/';
+import { MovieLayout } from 'components/movie-layout/';
 import { NotFound } from 'components/not-found';
 import { fetchMovieByIdRequest } from 'actions/movie-by-id';
 
@@ -43,7 +43,7 @@ export const MoviePageSmart = connect(
                     condition={typeof moviesWithTheSameGenre !== 'undefined'}
                     cap={<Cap />}
                 >
-                    <MovieLoyout movies={moviesWithTheSameGenre} />
+                    <MovieLayout movies={moviesWithTheSameGenre} />
                 </YetLoader>
             </>
         );

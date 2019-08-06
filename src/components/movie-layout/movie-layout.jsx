@@ -2,9 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { NotFound } from 'components/not-found';
 import { MovieCard } from 'components/movie-card';
-import './movie-loyout.scss';
+import './movie-layout.scss';
 
-export const MovieLoyout = ({ movies }) => (
+export const MovieLayout = ({ movies }) => (
     <div className="movies">
         {movies.map(movie => (
             <MovieCard key={movie.id} movie={movie} className="movies__item" />
@@ -12,6 +12,6 @@ export const MovieLoyout = ({ movies }) => (
     </div>
 );
 
-MovieLoyout.propTypes = {
+MovieLayout.propTypes = {
     movies: PropTypes.objectOf(PropTypes.object).isRequired
 };

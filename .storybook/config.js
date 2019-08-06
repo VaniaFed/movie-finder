@@ -6,7 +6,7 @@ function loadStories() {
     require('components/movie-block/movie-block.stories');
     require('components/movie-page-info/movie-page-info.stories');
     require('components/movie/movie.stories');
-    require('components/movie-loyout/movie-loyout.stories');
+    require('components/movie-layout/movie-layout.stories');
     require('components/movie-card/movie-card.stories');
     require('components/search-page/search-page.stories');
     require('components/search-block/search-block.stories');
@@ -14,7 +14,7 @@ function loadStories() {
     require('components/search-page-info/search-page-info.stories');
     require('components/not-found/not-found.stories');
     require('containers/toggle-container/toggle-container.stories');
-    require('components/toggle-loyout/toggle-loyout.stories');
+    require('components/toggle-layout/toggle-layout.stories');
     require('components/toggle-button/toggle-button.stories');
     require('components/button/button.stories');
     require('components/logo/logo.stories');
