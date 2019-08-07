@@ -5,7 +5,7 @@ import './search-page-info.scss';
 
 export const SearchPageInfo = ({ movies = [] }) => {
     const sortByData = [
-        { key: 'release date', text: 'Release date', onClick: f => f },
+        { key: 'release_date', text: 'Release date', onClick: f => f },
         { key: 'rating', text: 'Rating', onClick: f => f }
     ];
     return (

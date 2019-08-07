@@ -1,18 +1,21 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { v4 } from 'uuid';
 import { SearchPage } from 'components/search-page';
 import { fetchMoviesByDataRequest } from 'actions/movies-by-data';
 
-const mapStateToProps = state => ({
-    movies: state.movies
+const mapStateToProps = ({ movies, searchFilter, sortFilter }) => ({
+    movies,
+    searchFilter,
+    sortFilter
 });
 
 const mapDispatchToProps = dispatch => {
     return {
         dispatch,
-        fetchMoviesByData: (searchValue, searchBy, sortBy) => {
-            dispatch(fetchMoviesByDataRequest(searchValue, searchBy, sortBy));
+        fetchMoviesByData: (searchValue, searchFilter, sortFilter) => {
+            dispatch(
+                fetchMoviesByDataRequest(searchValue, searchFilter, sortFilter)
+            );
         }
     };
 };
@@ -20,6 +23,13 @@ const mapDispatchToProps = dispatch => {
 export const SearchPageSmart = connect(
     mapStateToProps,
     mapDispatchToProps
-)(({ movies, fetchMoviesByData }) => {
-    return <SearchPage movies={movies} onSearch={fetchMoviesByData} />;
+)(({ movies, searchFilter, sortFilter, fetchMoviesByData }) => {
+    return (
+        <SearchPage
+            movies={movies}
+            onSearch={value => {
+                fetchMoviesByData(value, searchFilter, sortFilter);
+            }}
+        />
+    );
 });

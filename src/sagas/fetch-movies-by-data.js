@@ -8,7 +8,7 @@ import { request } from 'src/utils/request';
 
 export function* fetchMoviesByData({ payload }) {
     const { searchValue, searchBy, sortBy } = payload;
-    const url = `http://react-cdp-api.herokuapp.com/movies?search=${searchValue}&searchBy=${searchBy}&sortBy=${sortBy}`;
+    const url = `http://react-cdp-api.herokuapp.com/movies?search=${searchValue}&searchBy=${searchBy}&sortBy=${sortBy}&sortOrder=desc`;
     try {
         const response = yield call(request, url);
         const movies = response.data;
