@@ -10,7 +10,10 @@
             "assets/*": ["./src/assets/*"],
             "actions/*": ["./src/actions/*"],
             "reducers/*": ["./src/reducers/*"],
-            "constants.js": ["./src/constants.js"]
+            "constants.js": ["./src/constants.js"],
+            "selectors": ["./src/selectors/"],
+            "utils": ["../src/utils/"],
+            "sagas": ["../src/sagas/"]
         }
     }
 }

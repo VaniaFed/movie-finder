@@ -33,7 +33,10 @@ module.exports = {
                     ['containers', './src/containers'],
                     ['actions', './src/actions'],
                     ['reducers', './src/reducers'],
-                    ['constants.js', './src/constants.js']
+                    ['constants.js', './src/constants.js'],
+                    ['selectors', './src/selectors/'],
+                    ['utils', '../src/utils/'],
+                    ['sagas', '../src/sagas/']
                 ],
                 extensions: ['.ts', '.js', '.jsx', '.json']
             }
