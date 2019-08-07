@@ -5,7 +5,7 @@ import { SearchPage } from 'components/search-page';
 import { fetchMoviesByDataRequest } from 'actions/movies-by-data';
 
 const mapStateToProps = state => ({
-    movies: state.moviesByData.movies
+    movies: state.movies
 });
 
 const mapDispatchToProps = dispatch => {

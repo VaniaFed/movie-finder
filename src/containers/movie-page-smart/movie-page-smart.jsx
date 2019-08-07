@@ -6,10 +6,12 @@ import { MovieLayout } from 'components/movie-layout/';
 import { NotFound } from 'components/not-found';
 import { fetchMovieByIdRequest } from 'actions/movie-by-id';
 
-const mapStateToProps = state => ({
-    movie: state.movie.movie,
-    moviesWithTheSameGenre: state.moviesByData.movies
-});
+const mapStateToProps = state => {
+    return {
+        movie: state.movie.movie,
+        moviesWithTheSameGenre: state.movies
+    };
+};
 
 const mapDispatchToProps = dispatch => {
     return {
@@ -30,11 +32,12 @@ export const MoviePageSmart = connect(
         }, []);
 
         const Cap = () => <NotFound caption="No films found" />;
+        const MovieCap = () => <NotFound caption="Film not found" />;
         return (
             <>
                 <YetLoader
                     condition={typeof movie !== 'undefined'}
-                    cap={<div />}
+                    cap={<MovieCap />}
                 >
                     <MoviePage movie={movie} />
                 </YetLoader>

@@ -5,11 +5,11 @@ import {
     FETCH_MOVIES_BY_GENRE_ERROR
 } from 'constants.js';
 
-export const moviesByData = (state = {}, action) => {
+export const movies = (state = [], action) => {
     const { type } = action;
     switch (type) {
         case FETCH_MOVIES_BY_DATA_SUCCESS: {
-            return { ...state, movies: action.payload.movies };
+            return [...action.payload.movies];
         }
         case FETCH_MOVIES_BY_DATA_ERROR: {
             return {
@@ -17,7 +17,7 @@ export const moviesByData = (state = {}, action) => {
             };
         }
         case FETCH_MOVIES_BY_GENRE_SUCCESS: {
-            return { ...state, movies: action.payload.movies };
+            return [...action.payload.movies];
         }
         case FETCH_MOVIES_BY_GENRE_ERROR: {
             return {

@@ -6,7 +6,7 @@ import { configureStore } from 'src/configureStore';
 
 import './global.scss';
 
-const initialState = { movie: {}, moviesByGenre: [] };
+const initialState = { movies: [], movie: {} };
 const store = configureStore(initialState);
 render(
     <Provider store={store}>

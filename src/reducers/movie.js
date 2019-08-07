@@ -7,7 +7,7 @@ export const movie = (state = {}, action) => {
     const { type } = action;
     switch (type) {
         case FETCH_MOVIE_BY_ID_SUCCESS: {
-            return { ...state, movie: action.payload.movie };
+            return { movie: action.payload.movie };
         }
         case FETCH_MOVIE_BY_ID_ERROR: {
             return {

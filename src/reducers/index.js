@@ -1,9 +1,12 @@
 import { combineReducers } from 'redux';
-import { moviesByData } from 'reducers/movies-by-data';
-import { movie } from 'reducers/movie-by-id';
+import { movies } from 'reducers/movies';
+import { movie } from 'reducers/movie';
+import { searchFilter } from 'reducers/search-filter';
+import { sortFilter } from 'reducers/sort-filter';
 
-// export const rootReducer = movie;
 export const rootReducer = combineReducers({
     movie,
-    moviesByData
+    movies,
+    searchFilter,
+    sortFilter
 });
