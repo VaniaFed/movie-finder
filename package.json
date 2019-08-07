@@ -74,6 +74,7 @@
         "redux": "^4.0.4",
         "redux-saga": "^1.0.5",
         "regenerator-runtime": "^0.13.3",
+        "reselect": "^4.0.0",
         "uuid": "^3.3.2"
     }
 }
