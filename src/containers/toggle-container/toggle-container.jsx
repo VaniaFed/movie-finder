@@ -3,8 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { ToggleButton } from 'components/toggle-button';
 import { ToggleLayout } from 'components/toggle-layout';
-import { searchFilter } from 'actions/search-filter';
-import { sortFilter } from 'actions/sort-filter';
+import { actions } from 'actions';
 
 export const ToggleContainerHOC = ({ name, background }) => {
     const ToggleContainer = ({ data, changeFilter }) => {
@@ -35,10 +34,10 @@ export const ToggleContainerHOC = ({ name, background }) => {
 
 export const SearchToggleContainer = connect(
     null,
-    dispatch => ({ changeFilter: by => dispatch(searchFilter(by)) })
+    dispatch => ({ changeFilter: by => dispatch(actions.searchFilter(by)) })
 )(ToggleContainerHOC({ name: 'search', background: true }));
 
 export const SortToggleContainer = connect(
     null,
-    dispatch => ({ changeFilter: by => dispatch(sortFilter(by)) })
+    dispatch => ({ changeFilter: by => dispatch(actions.sortFilter(by)) })
 )(ToggleContainerHOC({ name: 'sort', background: false }));

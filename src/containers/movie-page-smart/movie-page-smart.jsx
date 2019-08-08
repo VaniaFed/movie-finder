@@ -6,7 +6,7 @@ import { MoviePage } from 'components/movie-page';
 import { YetLoader } from 'containers/yet-loader';
 import { MovieLayout } from 'components/movie-layout/';
 import { NotFound } from 'components/not-found';
-import { fetchMovieByIdRequest } from 'actions/movie-by-id';
+import { actions } from 'actions';
 
 const selectCurrent = state => {
     return state.movie.current;
@@ -29,7 +29,7 @@ const mapDispatchToProps = dispatch => {
     return {
         dispatch,
         fetchMovieById: id => {
-            dispatch(fetchMovieByIdRequest(id));
+            dispatch(actions.fetchMovieByIdRequest(id));
         }
     };
 };

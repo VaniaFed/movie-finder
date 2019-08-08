@@ -1,9 +1,5 @@
 import { put, call, takeEvery } from 'redux-saga/effects';
-import {
-    fetchMovieByIdSuccess,
-    fetchMovieByIdError
-} from 'actions/movie-by-id';
-import { fetchMoviesByGenreRequest } from 'actions/movies-by-genre';
+import { actions } from 'actions';
 
 import { FETCH_MOVIE_BY_ID_REQUEST } from 'constants.js';
 import { request } from 'src/utils/request';
@@ -14,11 +10,11 @@ export function* fetchMovieById({ payload }) {
         const response = yield call(request, url);
         const movie = response;
         const genre = movie.genres[0];
-        yield put(fetchMovieByIdSuccess(movie));
-        yield put(fetchMoviesByGenreRequest(genre));
+        yield put(actions.fetchMovieByIdSuccess(movie));
+        yield put(actions.fetchMoviesByGenreRequest(genre));
     } catch (error) {
         const message = 'Failed to fetch movies, please try again';
-        yield put(fetchMovieByIdError(message));
+        yield put(actions.fetchMovieByIdError(message));
     }
 }
 

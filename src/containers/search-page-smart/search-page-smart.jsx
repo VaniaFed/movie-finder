@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import { SearchPage } from 'components/search-page';
-import { fetchMoviesByDataRequest } from 'actions/movies-by-data';
+import { actions } from 'actions';
 
 const selectList = state => state.movie.list;
 
@@ -32,7 +32,11 @@ const mapDispatchToProps = dispatch => {
         dispatch,
         fetchMoviesByData: (searchValue, searchFilter, sortFilter) => {
             dispatch(
-                fetchMoviesByDataRequest(searchValue, searchFilter, sortFilter)
+                actions.fetchMoviesByDataRequest(
+                    searchValue,
+                    searchFilter,
+                    sortFilter
+                )
             );
         }
     };

@@ -1,8 +1,5 @@
 import { put, call, takeEvery } from 'redux-saga/effects';
-import {
-    fetchMoviesByDataSuccess,
-    fetchMoviesByDataError
-} from 'actions/movies-by-data';
+import { actions } from 'actions';
 import { FETCH_MOVIES_BY_DATA_REQUEST } from 'constants.js';
 import { request } from 'src/utils/request';
 
@@ -12,10 +9,10 @@ export function* fetchMoviesByData({ payload }) {
     try {
         const response = yield call(request, url);
         const movies = response.data;
-        yield put(fetchMoviesByDataSuccess(movies));
+        yield put(actions.fetchMoviesByDataSuccess(movies));
     } catch (error) {
         const message = 'Failed to fetch movies, please try again';
-        yield put(fetchMoviesByDataError(message));
+        yield put(actions.fetchMoviesByDataError(message));
     }
 }
 
