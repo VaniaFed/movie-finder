@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { ToggleContainer } from 'containers/toggle-container';
+import { SortToggleContainer } from 'containers/toggle-container';
 import './search-page-info.scss';
 
 export const SearchPageInfo = ({ movies = [] }) => {
@@ -17,11 +17,10 @@ export const SearchPageInfo = ({ movies = [] }) => {
             </div>
             <div className="search-page-info__right">
                 <span className="search-page-info__text">Sort by</span>
-                <ToggleContainer
+                <SortToggleContainer
                     className="search-page-info__toggle-container"
                     name="sort-by"
                     data={sortByData}
-                    background={false}
                 />
             </div>
         </div>

@@ -6,54 +6,39 @@ import { ToggleLayout } from 'components/toggle-layout';
 import { searchFilter } from 'actions/search-filter';
 import { sortFilter } from 'actions/sort-filter';
 
-const changeState = (name, value, searchFilter, sortFilter) => {
-    if (name === 'search-by') {
-        searchFilter(value);
-    } else {
-        sortFilter(value);
-    }
-};
+export const ToggleContainerHOC = ({ name, background }) => {
+    const ToggleContainer = ({ data, changeFilter }) => {
+        const [checked, check] = useState(data[0].key);
 
-const mapDispatchToProps = dispatch => {
-    return {
-        changeSearchFilter: searchBy => {
-            dispatch(searchFilter(searchBy));
-        },
-        changeSortFilter: sortBy => {
-            dispatch(sortFilter(sortBy));
-        }
+        const onClick = key => () => {
+            check(key);
+            changeFilter(key);
+        };
+        const buttons = data.map(item => (
+            <ToggleButton
+                key={item.key}
+                checked={item.key === checked}
+                label={item.text}
+                name={name}
+                onClick={onClick(item.key)}
+                background={background}
+            />
+        ));
+        return <ToggleLayout>{buttons}</ToggleLayout>;
     };
+    ToggleContainer.propTypes = {
+        data: PropTypes.arrayOf(PropTypes.string).isRequired,
+        changeFilter: PropTypes.func.isRequired
+    };
+    return ToggleContainer;
 };
 
-export const ToggleContainer = connect(
+export const SearchToggleContainer = connect(
     null,
-    mapDispatchToProps
-)(({ data, name, background, changeSearchFilter, changeSortFilter }) => {
-    const [checked, check] = useState(data[0].key);
+    dispatch => ({ changeFilter: by => dispatch(searchFilter(by)) })
+)(ToggleContainerHOC({ name: 'search', background: true }));
 
-    const buttons = data.map(item => (
-        <ToggleButton
-            key={item.key}
-            checked={item.key === checked}
-            label={item.text}
-            name={name}
-            onClick={() => {
-                check(item.key);
-                changeState(
-                    name,
-                    item.key,
-                    changeSearchFilter,
-                    changeSortFilter
-                );
-            }}
-            background={background}
-        />
-    ));
-    return <ToggleLayout>{buttons}</ToggleLayout>;
-});
-
-ToggleContainer.propTypes = {
-    data: PropTypes.arrayOf(PropTypes.string).isRequired,
-    name: PropTypes.string.isRequired,
-    background: PropTypes.string
-};
+export const SortToggleContainer = connect(
+    null,
+    dispatch => ({ changeFilter: by => dispatch(sortFilter(by)) })
+)(ToggleContainerHOC({ name: 'sort', background: false }));

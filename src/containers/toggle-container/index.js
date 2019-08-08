@@ -1,1 +1,1 @@
-export { ToggleContainer } from './toggle-container';
+export { SearchToggleContainer, SortToggleContainer } from './toggle-container';

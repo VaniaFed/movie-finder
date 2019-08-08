@@ -1,7 +1,7 @@
 import React from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
-import { ToggleContainer } from 'containers/toggle-container';
+import { SearchToggleContainer } from 'containers/toggle-container';
 import './search-by.scss';
 
 export const SearchBy = ({ className }) => {
@@ -13,7 +13,7 @@ export const SearchBy = ({ className }) => {
     return (
         <div className={resultClass}>
             <span className="search-by__title">Search by</span>
-            <ToggleContainer name="search-by" data={searchByData} background />
+            <SearchToggleContainer name="search-by" data={searchByData} />
         </div>
     );
 };
