@@ -8,7 +8,7 @@ export const App = () => {
     return (
         <ErrorBoundary>
             <SearchPageSmart />
-            <MoviePageSmart />
+            {/* <MoviePageSmart /> */}
             <Footer />
         </ErrorBoundary>
     );

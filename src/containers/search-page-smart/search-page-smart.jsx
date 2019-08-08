@@ -1,13 +1,31 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { createSelector } from 'reselect';
 import { SearchPage } from 'components/search-page';
 import { fetchMoviesByDataRequest } from 'actions/movies-by-data';
 
-const mapStateToProps = ({ movies, searchFilter, sortFilter }) => ({
-    movies,
-    searchFilter,
-    sortFilter
-});
+const selectList = state => state.movie.list;
+
+const selectSearchFilter = state => {
+    return state.movie.searchFilter;
+};
+
+const selectSortFilter = state => {
+    return state.movie.sortFilter;
+};
+
+const mapStateToProps = createSelector(
+    selectList,
+    selectSearchFilter,
+    selectSortFilter,
+    (list, searchFilter, sortFilter) => {
+        return {
+            list,
+            searchFilter,
+            sortFilter
+        };
+    }
+);
 
 const mapDispatchToProps = dispatch => {
     return {
@@ -23,10 +41,10 @@ const mapDispatchToProps = dispatch => {
 export const SearchPageSmart = connect(
     mapStateToProps,
     mapDispatchToProps
-)(({ movies, searchFilter, sortFilter, fetchMoviesByData }) => {
+)(({ list, searchFilter, sortFilter, fetchMoviesByData }) => {
     return (
         <SearchPage
-            movies={movies}
+            movies={list}
             onSearch={value => {
                 fetchMoviesByData(value, searchFilter, sortFilter);
             }}

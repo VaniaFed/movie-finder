@@ -8,15 +8,21 @@ import { MovieLayout } from 'components/movie-layout/';
 import { NotFound } from 'components/not-found';
 import { fetchMovieByIdRequest } from 'actions/movie-by-id';
 
-const selectMovies = state => state.movies;
+const selectCurrent = state => {
+    return state.movie.current;
+};
 
-const selectMovie = state => state.movie;
+const selectList = state => state.movie.list;
+
 const mapStateToProps = createSelector(
-    [selectMovie, selectMovies],
-    (movie, movies) => ({
-        movie: movie.movie,
-        moviesWithTheSameGenre: movies
-    })
+    selectCurrent,
+    selectList,
+    (current, list) => {
+        return {
+            movie: current,
+            moviesWithTheSameGenre: list
+        };
+    }
 );
 
 const mapDispatchToProps = dispatch => {
@@ -35,8 +41,7 @@ export const MoviePageSmart = connect(
     memo(({ movie, moviesWithTheSameGenre, fetchMovieById }) => {
         useEffect(() => {
             fetchMovieById(5);
-            console.log(movie);
-        }, movie);
+        }, []);
 
         const Cap = () => <NotFound caption="No films found" />;
         const MovieCap = () => <NotFound caption="Film not found" />;

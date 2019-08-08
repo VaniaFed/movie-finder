@@ -1,18 +1,57 @@
 import {
     FETCH_MOVIE_BY_ID_SUCCESS,
-    FETCH_MOVIE_BY_ID_ERROR
+    FETCH_MOVIE_BY_ID_ERROR,
+    FETCH_MOVIES_BY_DATA_SUCCESS,
+    FETCH_MOVIES_BY_DATA_ERROR,
+    FETCH_MOVIES_BY_GENRE_SUCCESS,
+    FETCH_MOVIES_BY_GENRE_ERROR,
+    SEARCH_FILTER,
+    SORT_FILTER
 } from 'constants.js';
+
+const initialState = {
+    list: [],
+    current: {},
+    error: '',
+    searchFilter: 'title',
+    sortFilter: 'release_date'
+};
 
 export const movie = (state = {}, action) => {
     const { type } = action;
     switch (type) {
         case FETCH_MOVIE_BY_ID_SUCCESS: {
-            return { movie: action.payload.movie };
+            return { ...state, current: action.payload.movie };
         }
         case FETCH_MOVIE_BY_ID_ERROR: {
             return {
+                ...state,
                 error: action.payload.message
             };
+        }
+        case FETCH_MOVIES_BY_DATA_SUCCESS: {
+            return { ...state, list: action.payload.movies };
+        }
+        case FETCH_MOVIES_BY_DATA_ERROR: {
+            return {
+                ...state,
+                error: action.payload.message
+            };
+        }
+        case FETCH_MOVIES_BY_GENRE_SUCCESS: {
+            return { ...state, list: action.payload.movies };
+        }
+        case FETCH_MOVIES_BY_GENRE_ERROR: {
+            return {
+                ...state,
+                error: action.payload.message
+            };
+        }
+        case SEARCH_FILTER: {
+            return { ...state, searchFilter: action.payload.searchBy };
+        }
+        case SORT_FILTER: {
+            return { ...state, sortFilter: action.payload.sortBy };
         }
         default:
             return state;
