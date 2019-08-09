@@ -1,3 +1,4 @@
+import { Map, fromJS } from 'immutable';
 import {
     FETCH_MOVIE_BY_ID_SUCCESS,
     FETCH_MOVIE_BY_ID_ERROR,
@@ -9,49 +10,40 @@ import {
     SORT_FILTER
 } from 'constants.js';
 
-const initialState = {
-    list: [],
+const initialState = Map({
     current: {},
+    list: [],
     error: '',
     searchFilter: 'title',
     sortFilter: 'release_date'
-};
+});
 
-export const movie = (state = {}, action) => {
+export const movie = (state = initialState, action) => {
     const { type } = action;
     switch (type) {
         case FETCH_MOVIE_BY_ID_SUCCESS: {
-            return { ...state, current: action.payload.movie };
+            return state.setIn(['current'], action.payload.movie);
         }
         case FETCH_MOVIE_BY_ID_ERROR: {
-            return {
-                ...state,
-                error: action.payload.message
-            };
+            return state.setIn(['error'], action.payload.message);
         }
         case FETCH_MOVIES_BY_DATA_SUCCESS: {
-            return { ...state, list: action.payload.movies };
+            return state.setIn(['list'], action.payload.movies);
         }
         case FETCH_MOVIES_BY_DATA_ERROR: {
-            return {
-                ...state,
-                error: action.payload.message
-            };
+            return state.setIn(['error'], action.payload.message);
         }
         case FETCH_MOVIES_BY_GENRE_SUCCESS: {
-            return { ...state, list: action.payload.movies };
+            return state.setIn(['list'], action.payload.movies);
         }
         case FETCH_MOVIES_BY_GENRE_ERROR: {
-            return {
-                ...state,
-                error: action.payload.message
-            };
+            return state.setIn(['error'], action.payload.message);
         }
         case SEARCH_FILTER: {
-            return { ...state, searchFilter: action.payload.searchBy };
+            return state.setIn(['searchFilter'], action.payload.searchBy);
         }
         case SORT_FILTER: {
-            return { ...state, sortFilter: action.payload.sortBy };
+            return state.setIn(['sortFilter'], action.payload.sortBy);
         }
         default:
             return state;

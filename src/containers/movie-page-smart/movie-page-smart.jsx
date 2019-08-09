@@ -7,22 +7,23 @@ import { YetLoader } from 'containers/yet-loader';
 import { MovieLayout } from 'components/movie-layout/';
 import { NotFound } from 'components/not-found';
 import { actions } from 'actions';
+import { listSelector } from 'selectors/listSelector';
+import { movieSelector } from 'selectors/movieSelector';
 
-const selectCurrent = state => {
-    return state.movie.current;
-};
-
-const selectList = state => state.movie.list;
+const currentSelector = createSelector(
+    movieSelector,
+    movie => {
+        return movie.get('current');
+    }
+);
 
 const mapStateToProps = createSelector(
-    selectCurrent,
-    selectList,
-    (current, list) => {
-        return {
-            movie: current,
-            moviesWithTheSameGenre: list
-        };
-    }
+    currentSelector,
+    listSelector,
+    (current, list) => ({
+        movie: current,
+        moviesWithTheSameGenre: list
+    })
 );
 
 const mapDispatchToProps = dispatch => {
@@ -48,17 +49,19 @@ export const MoviePageSmart = connect(
         return (
             <>
                 <YetLoader
-                    condition={typeof movie !== 'undefined'}
+                    condition={
+                        typeof movie !== 'undefined' && 'genres' in movie
+                    }
                     cap={<MovieCap />}
-                >
-                    <MoviePage movie={movie} />
-                </YetLoader>
+                    content={() => <MoviePage movie={movie} />}
+                />
                 <YetLoader
                     condition={typeof moviesWithTheSameGenre !== 'undefined'}
                     cap={<Cap />}
-                >
-                    <MovieLayout movies={moviesWithTheSameGenre} />
-                </YetLoader>
+                    content={() => (
+                        <MovieLayout movies={moviesWithTheSameGenre} />
+                    )}
+                />
             </>
         );
     })

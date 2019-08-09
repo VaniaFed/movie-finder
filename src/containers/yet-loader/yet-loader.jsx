@@ -1,8 +1,8 @@
 import React from 'react';
 
-export const YetLoader = ({ condition, children, cap }) => {
+export const YetLoader = ({ condition, content, cap }) => {
     if (condition) {
-        return children;
+        return content();
     }
     return cap;
 };

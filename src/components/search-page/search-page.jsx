@@ -11,9 +11,11 @@ export const SearchPage = ({ movies, onSearch }) => {
         <>
             <SearchBlockSmart onSearch={onSearch} />
             <SearchPageInfo movies={movies} />
-            <YetLoader condition={typeof movies !== 'undefined'} cap={<Cap />}>
-                <MovieLayout movies={movies} />
-            </YetLoader>
+            <YetLoader
+                condition={typeof movies !== 'undefined'}
+                cap={<Cap />}
+                content={() => <MovieLayout movies={movies} />}
+             />
         </>
     );
 };

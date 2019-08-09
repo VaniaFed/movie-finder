@@ -3,19 +3,18 @@ import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import { SearchPage } from 'components/search-page';
 import { actions } from 'actions';
-
-const selectList = state => state.movie.list;
+import { listSelector } from 'selectors/listSelector';
 
 const selectSearchFilter = state => {
-    return state.movie.searchFilter;
+    return state.movie.get('searchFilter');
 };
 
 const selectSortFilter = state => {
-    return state.movie.sortFilter;
+    return state.movie.get('sortFilter');
 };
 
 const mapStateToProps = createSelector(
-    selectList,
+    listSelector,
     selectSearchFilter,
     selectSortFilter,
     (list, searchFilter, sortFilter) => {
