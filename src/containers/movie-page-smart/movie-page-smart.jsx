@@ -39,10 +39,12 @@ export const MoviePageSmart = connect(
     mapStateToProps,
     mapDispatchToProps
 )(
-    memo(({ movie, moviesWithTheSameGenre, fetchMovieById }) => {
+    memo(({ match, movie, moviesWithTheSameGenre, fetchMovieById }) => {
+        const { id } = match.params;
         useEffect(() => {
-            fetchMovieById(5);
-        }, []);
+            fetchMovieById(id);
+        }, [movie]);
+        console.log(movie);
 
         const Cap = () => <NotFound caption="No films found" />;
         const MovieCap = () => <NotFound caption="Film not found" />;

@@ -1,6 +1,7 @@
 import React from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 import { Logo } from 'components/logo';
 import { Button } from 'components/button';
 import './movie-header.scss';
@@ -10,10 +11,12 @@ export const MovieHeader = ({ className }) => {
     return (
         <div className={resultClass}>
             <Logo text="netfixroulette" />
-            <Button
-                text="search"
-                className="movie-header__search-button movie-header__search-button--reversed"
-            />
+            <Link to="/search">
+                <Button
+                    text="search"
+                    className="movie-header__search-button movie-header__search-button--reversed"
+                />
+            </Link>
         </div>
     );
 };
