@@ -13,6 +13,7 @@
             "constants.js": ["./src/constants.js"],
             "selectors": ["./src/selectors/"],
             "utils": ["../src/utils/"],
+            "services": ["../src/services/"],
             "sagas": ["../src/sagas/"]
         }
     }

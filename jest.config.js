@@ -8,6 +8,8 @@ module.exports = {
         '\\.(css|less|scss|sass)$': 'jest-transform-stub',
         '^selectors(.*)$': ['<rootDir>/src/selectors$1'],
         '^utils(.*)$': ['<rootDir>/src/utils$1'],
+        '^services(.*)$': ['<rootDir>/src/services$1'],
+
         '^sagas(.*)$': ['<rootDir>/src/sagas$1']
     }
 };
