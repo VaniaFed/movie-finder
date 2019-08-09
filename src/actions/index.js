@@ -8,11 +8,6 @@ import {
     fetchMoviesByDataSuccess,
     fetchMoviesByDataError
 } from 'actions/movies-by-data';
-import {
-    fetchMoviesByGenreRequest,
-    fetchMoviesByGenreSuccess,
-    fetchMoviesByGenreError
-} from 'actions/movies-by-genre';
 
 import { searchFilter } from 'actions/search-filter';
 import { sortFilter } from 'actions/sort-filter';
@@ -25,10 +20,6 @@ export const actions = {
     fetchMoviesByDataRequest,
     fetchMoviesByDataSuccess,
     fetchMoviesByDataError,
-
-    fetchMoviesByGenreRequest,
-    fetchMoviesByGenreSuccess,
-    fetchMoviesByGenreError,
 
     searchFilter,
 

@@ -7,8 +7,8 @@ import { Footer } from 'components/footer';
 export const App = () => {
     return (
         <ErrorBoundary>
-            {/* <SearchPageSmart /> */}
-            <MoviePageSmart />
+            <SearchPageSmart />
+            {/* <MoviePageSmart /> */}
             <Footer />
         </ErrorBoundary>
     );

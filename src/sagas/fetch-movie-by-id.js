@@ -2,19 +2,17 @@ import { put, call, takeEvery } from 'redux-saga/effects';
 import { actions } from 'actions';
 
 import { FETCH_MOVIE_BY_ID_REQUEST } from 'constants.js';
-import { request } from 'src/utils/request';
+import { getFilms } from 'services/getFilms';
 
-export function* fetchMovieById({ payload }) {
-    const url = `http://react-cdp-api.herokuapp.com/movies/${payload.id}`;
+export function* fetchMovieById(action) {
     try {
-        const response = yield call(request, url);
+        const response = yield call(getFilms, action);
         const movie = response;
-        const genre = movie.genres[0];
         yield put(actions.fetchMovieByIdSuccess(movie));
-        yield put(actions.fetchMoviesByGenreRequest(genre));
+        const genre = movie.genres[0];
+        yield put(actions.fetchMoviesByDataRequest(genre, 'genres'));
     } catch (error) {
-        const message = 'Failed to fetch movies, please try again';
-        yield put(actions.fetchMovieByIdError(message));
+        yield put(actions.fetchMovieByIdError(error.message));
     }
 }
 

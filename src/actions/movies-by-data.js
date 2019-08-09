@@ -5,16 +5,17 @@ import {
 } from 'constants.js';
 
 export const fetchMoviesByDataRequest = (
-    searchValue,
+    search,
     searchBy = 'title',
     sortBy = 'rating'
 ) => {
     return {
         type: FETCH_MOVIES_BY_DATA_REQUEST,
         payload: {
-            searchValue,
+            search,
             searchBy,
-            sortBy
+            sortBy,
+            sortOrder: 'desc'
         }
     };
 };
