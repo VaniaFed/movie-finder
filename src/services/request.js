@@ -1,3 +1,4 @@
+import axios from 'axios';
 import { stringify } from 'query-string';
 import { FETCH_MOVIE_BY_ID_REQUEST } from 'constants.js';
 
@@ -12,9 +13,7 @@ export const request = ({ type, payload }) => {
             url += stringify(payload);
             break;
     }
-    return fetch(url)
-        .then(response => response.json())
-        .then(json => {
-            return json;
-        });
+    return axios(url).then(res => {
+        return res.data;
+    });
 };
