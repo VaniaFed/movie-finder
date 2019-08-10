@@ -7,7 +7,6 @@ import { YetLoader } from 'containers/yet-loader';
 import { MovieLayout } from 'components/movie-layout/';
 import { NotFound } from 'components/not-found';
 import { actions } from 'actions';
-import { listSelector } from 'selectors/listSelector';
 import { movieSelector } from 'selectors/movieSelector';
 
 const currentSelector = createSelector(
@@ -17,9 +16,16 @@ const currentSelector = createSelector(
     }
 );
 
+const sameGenreListSelector = createSelector(
+    movieSelector,
+    movie => {
+        return movie.get('sameGenreList');
+    }
+);
+
 const mapStateToProps = createSelector(
     currentSelector,
-    listSelector,
+    sameGenreListSelector,
     (current, list) => ({
         movie: current,
         moviesWithTheSameGenre: list

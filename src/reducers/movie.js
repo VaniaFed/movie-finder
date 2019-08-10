@@ -1,4 +1,4 @@
-import { Map, fromJS } from 'immutable';
+import { Map } from 'immutable';
 import {
     FETCH_MOVIE_BY_ID_SUCCESS,
     FETCH_MOVIE_BY_ID_ERROR,
@@ -13,6 +13,7 @@ import {
 const initialState = Map({
     current: {},
     list: [],
+    sameGenreList: [],
     error: '',
     searchFilter: 'title',
     sortFilter: 'release_date'
@@ -34,7 +35,7 @@ export const movie = (state = initialState, action) => {
             return state.setIn(['error'], action.payload.message);
         }
         case FETCH_MOVIES_BY_GENRE_SUCCESS: {
-            return state.setIn(['list'], action.payload.movies);
+            return state.setIn(['sameGenreList'], action.payload.movies);
         }
         case FETCH_MOVIES_BY_GENRE_ERROR: {
             return state.setIn(['error'], action.payload.message);

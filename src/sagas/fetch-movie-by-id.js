@@ -10,7 +10,7 @@ export function* fetchMovieById({ payload }) {
         const movie = response;
         yield put(actions.fetchMovieByIdSuccess(movie));
         const genre = movie.genres[0];
-        yield put(actions.fetchMoviesByDataRequest(genre, 'genres'));
+        yield put(actions.fetchMoviesByGenreRequest(genre, 'genres'));
     } catch (error) {
         yield put(actions.fetchMovieByIdError(error.message));
     }
