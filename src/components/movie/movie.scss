@@ -7,7 +7,12 @@
         height: auto;
     }
     &__info {
-        margin-left: 60px;
+        @media (min-width: 850px) {
+            margin-left: 60px;
+        }
+        @media (max-width: 850px) {
+            margin-top: 30px;
+        }
     }
     &__title {
         color: $accent-color;

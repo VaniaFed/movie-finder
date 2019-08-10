@@ -8,7 +8,7 @@ export const MovieBlock = ({ movie }) => {
     return (
         <div className="movie-block">
             <MovieHeader />
-            <Movie movie={movie} />
+            <Movie movie={movie} className="movie-block__movie" />
         </div>
     );
 };

@@ -1,11 +1,13 @@
 import React from 'react';
+import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import './movie.scss';
 
-export const Movie = ({ movie }) => {
+export const Movie = ({ movie, className }) => {
     const formattedGenres = movie.genres.join(', ');
+    const resultClass = classNames('movie', className);
     return (
-        <div className="movie movie__movie">
+        <div className={resultClass}>
             <img
                 src={movie.poster_path}
                 alt="movieimage"
