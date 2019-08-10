@@ -3,9 +3,9 @@ import { actions } from 'actions';
 import { FETCH_MOVIES_BY_DATA_REQUEST } from 'constants.js';
 import { getFilms } from 'services/getFilms';
 
-export function* fetchMoviesByData(action) {
+export function* fetchMoviesByData({ payload }) {
     try {
-        const response = yield call(getFilms, action);
+        const response = yield call(getFilms, payload);
         const movies = response.data;
         yield put(actions.fetchMoviesByDataSuccess(movies));
     } catch (error) {
