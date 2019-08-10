@@ -10,12 +10,12 @@ export const SearchPage = ({ movies, onSearch }) => {
     return (
         <>
             <SearchBlockSmart onSearch={onSearch} />
-            <SearchPageInfo movies={movies} />
+            <SearchPageInfo quantityMovies={movies.length} />
             <YetLoader
                 condition={typeof movies !== 'undefined'}
                 cap={<Cap />}
                 content={() => <MovieLayout movies={movies} />}
-             />
+            />
         </>
     );
 };
