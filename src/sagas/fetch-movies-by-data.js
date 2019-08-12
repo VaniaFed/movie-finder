@@ -1,11 +1,11 @@
 import { put, call, takeEvery } from 'redux-saga/effects';
 import { actions } from 'actions';
 import { FETCH_MOVIES_BY_DATA_REQUEST } from 'constants.js';
-import { getMovies } from 'services/get-movies';
+import { services } from 'services';
 
 export function* fetchMoviesByData({ payload }) {
     try {
-        const response = yield call(getMovies, payload);
+        const response = yield call(services.getMovies, payload);
         const movies = response.data;
         yield put(actions.fetchMoviesByDataSuccess(movies));
     } catch (error) {
