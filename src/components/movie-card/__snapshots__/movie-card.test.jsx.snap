@@ -1,36 +1,3 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<SearchPage /> should be rendered with no movies 1`] = `
-<div
-  className="movie-card"
->
-  <img
-    alt="movei1"
-    className="movie-card__image"
-    src="https://pp.userapi.com/c844521/v844521991/f808b/TCjtAXN8SdA.jpg"
-  />
-  <div
-    className="movie-card-info movie-card__info"
-  >
-    <div
-      className="movie-card-info__left"
-    >
-      <h2
-        className="movie-card-info__title"
-      >
-        movei1
-      </h2>
-      <p
-        className="movie-card-info__genres"
-      >
-        action
-      </p>
-    </div>
-    <p
-      className="movie-card-info__date"
-    >
-      2014
-    </p>
-  </div>
-</div>
-`;
+exports[`<MovieCard /> should be rendered with movie 1`] = `ShallowWrapper {}`;

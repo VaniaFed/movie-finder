@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Footer /> should be rendered with text "netfixroulette" 1`] = `
+<footer>
+  <h1
+    className="logo"
+  >
+    netfixroulette
+  </h1>
+</footer>
+`;

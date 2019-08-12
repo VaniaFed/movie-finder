@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<MovieHeader /> should be rendered 1`] = `
+<div
+  className="movie-header"
+>
+  <h1
+    className="logo"
+  >
+    netfixroulette
+  </h1>
+  <a
+    href="/search"
+    onClick={[Function]}
+  >
+    <button
+      className="movie-header__search-button movie-header__search-button--reversed button"
+      type="button"
+    >
+      search
+    </button>
+  </a>
+</div>
+`;

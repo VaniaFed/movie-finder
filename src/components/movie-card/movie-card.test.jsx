@@ -1,4 +1,4 @@
-import renderer from 'react-test-renderer';
+import { shallow } from 'enzyme';
 import { v4 } from 'uuid';
 import { MovieCard } from './index';
 
@@ -12,9 +12,9 @@ const movie = {
     id: v4()
 };
 
-describe('<SearchPage />', () => {
-    const tree = renderer.create(<MovieCard movie={movie} />).toJSON();
-    it('should be rendered with no movies', () => {
+describe('<MovieCard />', () => {
+    const tree = shallow(<MovieCard movie={movie} />);
+    it('should be rendered with movie', () => {
         expect(tree).toMatchSnapshot();
     });
 });

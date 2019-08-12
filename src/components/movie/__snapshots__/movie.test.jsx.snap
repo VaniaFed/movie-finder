@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Movie /> should be rendered 1`] = `
+<div
+  className="movie"
+>
+  <img
+    alt="movieimage"
+    className="movie__image"
+    src="https://image.tmdb.org/t/p/w500/fqe8JxDNO8B8QfOGTdjh6sPCdSC.jpg"
+  />
+  <div
+    className="movie__info"
+  >
+    <h2
+      className="movie__title"
+    >
+      The Hateful Eight
+    </h2>
+    <p
+      className="movie__genres"
+    >
+      Crime, Drama, Mystery, Western
+    </p>
+    <p
+      className="movie__date"
+    >
+      2015-12-25
+    </p>
+    <p
+      className="movie__duration"
+    >
+      167
+      m
+    </p>
+    <p
+      className="movie__description"
+    >
+      Bounty hunters seek shelter from a raging blizzard and get caught up in a plot of betrayal and deception.
+    </p>
+  </div>
+</div>
+`;

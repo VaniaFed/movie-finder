@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { NotFound } from 'components/not-found';
 import { MovieCard } from 'components/movie-card';
 import './movie-layout.scss';
 
