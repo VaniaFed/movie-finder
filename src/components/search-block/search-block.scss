@@ -48,6 +48,8 @@
         }
     }
     &__search-by {
-        flex-direction: column;
+        @media (max-width: 850px) {
+            flex-direction: column;
+        }
     }
 }
