@@ -11,5 +11,6 @@ module.exports = {
         '^sagas(.*)$': '<rootDir>/src/sagas$1',
         '^.+\\.js(jsx)$': 'babel-jest',
         '\\.(css|less|scss|sass)$': 'jest-transform-stub'
-    }
+    },
+    reporters: ['default', 'jest-progress-tracker']
 };
