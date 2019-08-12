@@ -1,3 +1,4 @@
+import regeneratorRuntime from 'regenerator-runtime';
 import { put, call, takeEvery } from 'redux-saga/effects';
 import { actions } from 'actions';
 
