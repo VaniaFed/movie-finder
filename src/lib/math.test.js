@@ -1,7 +1,7 @@
 import { sum } from './math';
-import { fetchVeryBigDataFromServer } from './fetchVeryBigDataFromServer';
+import { fetchVeryBigDataFromServer } from './fetch-very-big-data-from-server';
 
-jest.mock('./fetchVeryBigDataFromServer');
+jest.mock('./fetch-very-big-data-from-server');
 fetchVeryBigDataFromServer.mockImplementation(() => 'Fetching prevented');
 
 test('5 sum 3 is equal 8', () => {

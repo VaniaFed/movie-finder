@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import { SearchPage } from 'components/search-page';
 import { actions } from 'actions';
-import { listSelector } from 'selectors/listSelector';
+import { listSelector } from 'selectors/list-selector';
 
 const selectSearchFilter = state => {
     return state.movie.get('searchFilter');

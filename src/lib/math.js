@@ -1,4 +1,4 @@
-import { fetchVeryBigDataFromServer } from './fetchVeryBigDataFromServer';
+import { fetchVeryBigDataFromServer } from './fetch-very-big-data-from-server';
 
 export const sum = (...args) => {
     fetchVeryBigDataFromServer();
