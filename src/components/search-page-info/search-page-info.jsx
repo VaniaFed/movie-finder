@@ -1,15 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
 import { SortToggleContainer } from 'containers/toggle-container';
 import './search-page-info.scss';
 
-export const SearchPageInfo = ({ quantityMovies }) => {
+export const SearchPageInfo = ({ quantityMovies, className }) => {
     const sortByData = [
         { key: 'release_date', text: 'Release date', onClick: f => f },
         { key: 'rating', text: 'Rating', onClick: f => f }
     ];
+    const resultClass = classNames('search-page-info', className);
     return (
-        <div className="search-page-info">
+        <div className={resultClass}>
             <div className="search-page-info__left">
                 <span className="search-page-info__text">
                     {quantityMovies} movies found
@@ -28,5 +30,6 @@ export const SearchPageInfo = ({ quantityMovies }) => {
 };
 
 SearchPageInfo.propTypes = {
-    quantityMovies: PropTypes.number.isRequired
+    quantityMovies: PropTypes.number.isRequired,
+    className: PropTypes.string
 };
