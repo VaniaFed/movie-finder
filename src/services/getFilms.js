@@ -1,8 +1,9 @@
 import axios from 'axios';
 
-export const getFilms = params => {
+export const getFilms = async params => {
     const url = 'http://react-cdp-api.herokuapp.com/movies';
-    return axios.get(url, { params }).then(res => {
+    const movies = await axios.get(url, { params }).then(res => {
         return res.data;
     });
+    return movies;
 };
