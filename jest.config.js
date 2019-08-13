@@ -8,6 +8,7 @@ module.exports = {
         '^constants.js(.*)$': '<rootDir>/src/constants.js$1',
         '^src(.*)$': '<rootDir>/src$1',
         '^selectors(.*)$': '<rootDir>/src/selectors$1',
+        '^reducers(.*)$': '<rootDir>/src/reducers$1',
         '^services(.*)$': '<rootDir>/src/services$1',
         '^sagas(.*)$': '<rootDir>/src/sagas$1',
         '^.+\\.js(jsx)$': 'babel-jest',
