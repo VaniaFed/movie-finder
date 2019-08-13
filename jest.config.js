@@ -12,6 +12,5 @@ module.exports = {
         '^.+\\.js(jsx)$': 'babel-jest',
         '\\.(css|less|scss|sass)$': 'jest-transform-stub'
     },
-    reporters: ['default', 'jest-progress-tracker'],
     verbose: false
 };
