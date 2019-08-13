@@ -14,7 +14,12 @@ export const Movie = ({ movie, className }) => {
                 className="movie__image"
             />
             <div className="movie__info">
-                <h2 className="movie__title">{movie.title}</h2>
+                <h2
+                    className="movie__title"
+                    data-text="movie-page__movie-title"
+                >
+                    {movie.title}
+                </h2>
                 <p className="movie__genres">{formattedGenres}</p>
                 <p className="movie__date">{movie.release_date}</p>
                 <p className="movie__duration">{movie.runtime}m</p>

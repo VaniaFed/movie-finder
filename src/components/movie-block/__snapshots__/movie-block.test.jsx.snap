@@ -38,6 +38,7 @@ exports[`<MovieBlock /> should be rendered 1`] = `
     >
       <h2
         className="movie__title"
+        data-text="movie-page__movie-title"
       >
         The Hateful Eight
       </h2>
