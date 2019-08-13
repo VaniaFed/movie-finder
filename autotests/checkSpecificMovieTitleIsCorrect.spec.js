@@ -1,6 +1,6 @@
 import 'regenerator-runtime/runtime';
 
-const puppeteer = require('puppeteer');
+import puppeteer from 'puppeteer';
 
 test('Quantity of movies should be is more than zero', async () => {
     const browser = await puppeteer.launch();

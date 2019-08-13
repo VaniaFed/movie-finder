@@ -1,6 +1,6 @@
 import 'regenerator-runtime/runtime';
 
-const puppeteer = require('puppeteer');
+import puppeteer from 'puppeteer';
 
 describe('movies', () => {
     it('Quantity of movies should be is more than zero', async () => {
@@ -17,15 +17,10 @@ describe('movies', () => {
         const moviesSelector = '.movie-card';
         await page.waitForSelector(moviesSelector);
 
-        const resultMovies = await page.evaluate(moviesSelector => {
-            const movies = Array.from(
-                document.querySelectorAll(moviesSelector)
-            );
-            return movies.map(movie => {
-                return Promise.resolve(movie);
-            });
+        const moviesLength = await page.evaluate(moviesSelector => {
+            return document.querySelectorAll(moviesSelector).length;
         }, moviesSelector);
         browser.close();
-        expect(resultMovies.length).toBeGreaterThan(0);
+        expect(moviesLength).toBeGreaterThan(0);
     });
 });
