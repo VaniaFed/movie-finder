@@ -6,6 +6,7 @@
         "test": "jest",
         "test:watch": "jest --watch",
         "test:cov": "jest --coverage",
+        "test-spec": "jest --testPathPattern=spec.js --runInBand",
         "lint": "eslint --fix src/"
     },
     "devDependencies": {
