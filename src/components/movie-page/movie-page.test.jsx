@@ -26,7 +26,7 @@ describe('<MoviePage />', () => {
             </MemoryRouter>
         )
         .toJSON();
-    it('should be rendered with movies', () => {
+    it('should be rendered with movie', () => {
         expect(tree).toMatchSnapshot();
     });
 });

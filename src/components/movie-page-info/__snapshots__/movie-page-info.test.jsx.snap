@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<MoviePageInfo /> should be rendered with genres 1`] = `
+<div
+  className="movie-page-info"
+>
+  <span
+    className="movie-page-info__text"
+  >
+    Films by
+  </span>
+  <span
+    className="movie-page-info__genre"
+  >
+    action, drama
+  </span>
+</div>
+`;

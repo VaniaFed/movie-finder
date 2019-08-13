@@ -1,14 +1,19 @@
 import renderer from 'react-test-renderer';
 import { Provider } from 'react-redux';
 import { configureStore } from 'src/configure-store';
-import { SearchPageInfo } from './index';
+import { SearchBlock } from './index';
 
 const store = configureStore();
-describe('<SearchPageInfo />', () => {
+
+describe('<SearchBlock />', () => {
     const tree = renderer
         .create(
             <Provider store={store}>
-                <SearchPageInfo quantityMovies={3} />
+                <SearchBlock
+                    searchValue="harry potter"
+                    onSearch={f => f}
+                    onInput={f => f}
+                />
             </Provider>
         )
         .toJSON();

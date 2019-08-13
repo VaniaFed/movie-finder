@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<MoviePage /> should be rendered with movies 1`] = `
+exports[`<MoviePage /> should be rendered with movie 1`] = `
 Array [
   <div
     className="movie-block"
