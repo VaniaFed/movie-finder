@@ -36,6 +36,7 @@ module.exports = {
                     ['constants.js', './src/constants.js'],
                     ['selectors', './src/selectors/'],
                     ['utils', '../src/utils/'],
+                    ['src', '../src/'],
                     ['sagas', '../src/sagas/'],
                     ['services', '../src/services/']
                 ],
