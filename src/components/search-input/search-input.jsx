@@ -13,6 +13,7 @@ export const SearchInput = ({ className, onSearch, onInput }) => (
             onInput={e => {
                 onInput(e.currentTarget.value);
             }}
+            data-input="search-input__input"
         />
         <button
             className="search-input__btnIcon"
