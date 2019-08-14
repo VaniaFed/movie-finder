@@ -5,18 +5,18 @@ import { SearchPage } from 'components/search-page';
 import { actions } from 'actions';
 import { listSelector } from 'selectors/list-selector';
 
-const selectSearchFilter = state => {
+export const searchFilterSelector = state => {
     return state.movie.get('searchFilter');
 };
 
-const selectSortFilter = state => {
+export const sortFilterSelector = state => {
     return state.movie.get('sortFilter');
 };
 
 const mapStateToProps = createSelector(
     listSelector,
-    selectSearchFilter,
-    selectSortFilter,
+    searchFilterSelector,
+    sortFilterSelector,
     (list, searchFilter, sortFilter) => {
         return {
             list,

@@ -9,14 +9,14 @@ import { NotFound } from 'components/not-found';
 import { actions } from 'actions';
 import { movieSelector } from 'selectors/movie-selector';
 
-const currentSelector = createSelector(
+export const currentSelector = createSelector(
     movieSelector,
     movie => {
         return movie.get('current');
     }
 );
 
-const sameGenreListSelector = createSelector(
+export const sameGenreListSelector = createSelector(
     movieSelector,
     movie => {
         return movie.get('sameGenreList');
