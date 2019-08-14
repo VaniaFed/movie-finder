@@ -19,6 +19,6 @@ module.exports = {
         'src/**/*.{js,jsx}',
         '!<rootDir>/node_modules/',
         '!<rootDir>/src/sagas/*',
-        '!<rootDir>/src/**/story.jsx'
+        '!<rootDir>/src/**/*stories.jsx'
     ]
 };
