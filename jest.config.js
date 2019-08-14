@@ -14,5 +14,11 @@ module.exports = {
         '^.+\\.js(jsx)$': 'babel-jest',
         '\\.(css|less|scss|sass)$': 'jest-transform-stub'
     },
-    verbose: false
+    verbose: false,
+    collectCoverageFrom: [
+        'src/**/*.{js,jsx}',
+        '!<rootDir>/node_modules/',
+        '!<rootDir>/src/sagas/*',
+        '!<rootDir>/src/**/story.jsx'
+    ]
 };
