@@ -5,7 +5,7 @@
         "storybook": "start-storybook",
         "test": "jest",
         "test:watch": "jest --watch",
-        "test:cov": "jest --coverage",
+        "test:cov": "jest --coverage --testPathPattern=test.js",
         "test-spec": "jest --testPathPattern=spec.js --runInBand",
         "lint": "eslint --fix src/"
     },
