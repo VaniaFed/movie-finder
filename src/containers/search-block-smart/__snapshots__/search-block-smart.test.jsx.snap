@@ -1,0 +1,89 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<SearchBlockSmart /> should be rendered 1`] = `
+<div
+  className="search-block"
+>
+  <h1
+    className="search-block__logo logo"
+  >
+    netfixroulette
+  </h1>
+  <h3
+    className="search-block__title"
+  >
+    Find your movie
+  </h3>
+  <div
+    className="search-input"
+  >
+    <input
+      className="search-input__input"
+      data-input="search-input__input"
+      onInput={[Function]}
+      placeholder="Game of Thrones"
+      type="text"
+    />
+    <button
+      className="search-input__btnIcon"
+      onClick={[Function]}
+      type="button"
+    />
+  </div>
+  <div
+    className="search-block__controll"
+  >
+    <div
+      className="search-by search-block__search-by"
+    >
+      <span
+        className="search-by__title"
+      >
+        Search by
+      </span>
+      <div>
+        <label
+          className="toggle-button"
+          onClick={[Function]}
+        >
+          <input
+            className="toggle-button__input toggle-button__input--checked"
+            defaultChecked="checked"
+            name="search"
+            type="radio"
+          />
+          <span
+            className="toggle-button__text toggle-button__text--checked"
+          >
+            Title
+          </span>
+        </label>
+        <label
+          className="toggle-button"
+          onClick={[Function]}
+        >
+          <input
+            className="toggle-button__input"
+            defaultChecked={false}
+            name="search"
+            type="radio"
+          />
+          <span
+            className="toggle-button__text"
+          >
+            Genre
+          </span>
+        </label>
+      </div>
+    </div>
+    <button
+      className="search-block__btn-search button"
+      data-button="search-page__button-search"
+      onClick={[Function]}
+      type="button"
+    >
+      Find
+    </button>
+  </div>
+</div>
+`;

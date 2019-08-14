@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<MoviePageSmart /> should be rendered 1`] = `
+Array [
+  <h2
+    className="not-found"
+  >
+    Film not found
+  </h2>,
+  <div
+    className="movies"
+  />,
+]
+`;
