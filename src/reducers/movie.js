@@ -7,7 +7,8 @@ import {
     FETCH_MOVIES_BY_GENRE_SUCCESS,
     FETCH_MOVIES_BY_GENRE_ERROR,
     SEARCH_FILTER,
-    SORT_FILTER
+    SORT_FILTER,
+    SET_SEARCH_VALUE
 } from 'constants.js';
 
 const initialState = Map({
@@ -15,6 +16,7 @@ const initialState = Map({
     list: [],
     sameGenreList: [],
     error: '',
+    searchValue: '',
     searchFilter: 'title',
     sortFilter: 'release_date'
 });
@@ -45,6 +47,9 @@ export const movie = (state = initialState, action) => {
         }
         case SORT_FILTER: {
             return state.setIn(['sortFilter'], action.payload.sortBy);
+        }
+        case SET_SEARCH_VALUE: {
+            return state.setIn(['searchValue'], action.payload.searchValue);
         }
         default:
             return state;

@@ -15,6 +15,7 @@ export const SearchBlock = ({ className, searchValue, onSearch, onInput }) => {
             <Logo text="netfixroulette" className="search-block__logo" />
             <h3 className="search-block__title">Find your movie</h3>
             <SearchInput
+                searchValue={searchValue}
                 onSearch={() => {
                     onSearch(searchValue);
                 }}

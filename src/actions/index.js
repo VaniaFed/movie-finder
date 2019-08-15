@@ -15,6 +15,7 @@ import {
 } from 'actions/movies-by-genre';
 import { searchFilter } from 'actions/search-filter';
 import { sortFilter } from 'actions/sort-filter';
+import { setSearchValue } from 'actions/set-search-value';
 
 export const actions = {
     fetchMovieByIdRequest,
@@ -31,5 +32,7 @@ export const actions = {
 
     searchFilter,
 
-    sortFilter
+    sortFilter,
+
+    setSearchValue
 };
