@@ -1,4 +1,5 @@
 import React, { memo, useEffect } from 'react';
+import PropTypes from 'prop-types';
 import { createSelector } from 'reselect';
 import { connect } from 'react-redux';
 
@@ -60,3 +61,9 @@ export const MoviePageSmart = connect(
         );
     })
 );
+MoviePageSmart.propTypes = {
+    match: PropTypes.objectOf(PropTypes.object),
+    movie: PropTypes.objectOf(PropTypes.object),
+    moviesWithTheSameGenre: PropTypes.objectOf(PropTypes.object),
+    fetchMovieById: PropTypes.func
+};

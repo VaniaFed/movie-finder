@@ -38,7 +38,9 @@ export const ToggleContainerHOC = ({ name, background }) => {
     };
     ToggleContainer.propTypes = {
         data: PropTypes.arrayOf(PropTypes.string).isRequired,
-        changeFilter: PropTypes.func.isRequired
+        changeFilter: PropTypes.func.isRequired,
+        currentFilter: PropTypes.string,
+        changeFilterHistory: PropTypes.func
     };
     return ToggleContainer;
 };

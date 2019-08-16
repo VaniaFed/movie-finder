@@ -3,7 +3,7 @@ import { put, call, takeEvery, select } from 'redux-saga/effects';
 import { actions } from 'actions';
 
 import { FETCH_MOVIE_BY_ID_REQUEST } from 'constants.js';
-import { services } from 'services/';
+import { services } from 'services';
 import { currentSelector } from 'selectors/current-selector';
 
 export function* fetchMovieById({ payload }) {
