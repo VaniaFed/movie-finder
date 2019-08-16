@@ -13,5 +13,5 @@ export const MoviePage = ({ movie }) => {
 };
 
 MoviePage.propTypes = {
-    movie: PropTypes.object
+    movie: PropTypes.objectOf(PropTypes.object)
 };
