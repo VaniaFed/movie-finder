@@ -6,5 +6,6 @@ export const ToggleLayout = ({ children, className }) => {
 };
 
 ToggleLayout.propTypes = {
-    className: PropTypes.string
+    className: PropTypes.string,
+    children: PropTypes.node.isRequired
 };
