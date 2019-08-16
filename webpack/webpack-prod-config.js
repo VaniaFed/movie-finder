@@ -25,10 +25,10 @@ module.exports = {
     mode: 'production',
     module: {
         rules: [
-            // {
-            //     test: /\.(js|jsx)$/,
-            //     use: ['eslint-loader']
-            // },
+            {
+                test: /\.(js|jsx)$/,
+                use: ['eslint-loader']
+            },
             {
                 test: /\.css|scss$/,
                 use: [
