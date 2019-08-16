@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { SearchToggleContainer } from 'containers/toggle-container';
 import './search-by.scss';
 
-export const SearchBy = ({ className }) => {
+export const SearchBy = ({ className, changeSearchFilter, searchFilter }) => {
     const resultClass = classNames('search-by', className);
     const searchByData = [
         { key: 'title', text: 'Title', onClick: f => f },
@@ -13,7 +13,12 @@ export const SearchBy = ({ className }) => {
     return (
         <div className={resultClass}>
             <span className="search-by__title">Search by</span>
-            <SearchToggleContainer name="search-by" data={searchByData} />
+            <SearchToggleContainer
+                changeFilterHistory={changeSearchFilter}
+                name="search-by"
+                data={searchByData}
+                currentFilter={searchFilter}
+            />
         </div>
     );
 };

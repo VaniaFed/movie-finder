@@ -8,7 +8,14 @@ import { Logo } from 'components/logo';
 
 import './search-block.scss';
 
-export const SearchBlock = ({ className, searchValue, onSearch, onInput }) => {
+export const SearchBlock = ({
+    className,
+    searchValue,
+    onSearch,
+    onInput,
+    changeSearchFilter,
+    searchFilter
+}) => {
     const resultClass = classNames('search-block', className);
     return (
         <div className={resultClass}>
@@ -22,7 +29,11 @@ export const SearchBlock = ({ className, searchValue, onSearch, onInput }) => {
                 onInput={onInput}
             />
             <div className="search-block__controll">
-                <SearchBy className="search-block__search-by" />
+                <SearchBy
+                    changeSearchFilter={changeSearchFilter}
+                    className="search-block__search-by"
+                    searchFilter={searchFilter}
+                />
                 <Button
                     text="Find"
                     onClick={() => {

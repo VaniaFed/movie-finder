@@ -7,14 +7,8 @@ import { YetLoader } from 'containers/yet-loader';
 import { MovieLayout } from 'components/movie-layout/';
 import { NotFound } from 'components/not-found';
 import { actions } from 'actions';
+import { currentSelector } from 'selectors/current-selector';
 import { movieSelector } from 'selectors/movie-selector';
-
-export const currentSelector = createSelector(
-    movieSelector,
-    movie => {
-        return movie.get('current');
-    }
-);
 
 export const sameGenreListSelector = createSelector(
     movieSelector,
@@ -49,7 +43,7 @@ export const MoviePageSmart = connect(
         const { id } = match.params;
         useEffect(() => {
             fetchMovieById(id);
-        }, [movie]);
+        });
 
         const Cap = () => <NotFound caption="No films found" />;
         const MovieCap = () => <NotFound caption="Film not found" />;

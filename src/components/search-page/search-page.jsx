@@ -10,8 +10,12 @@ import './search-page.scss';
 export const SearchPage = ({
     movies,
     searchValue,
+    searchFilter,
+    sortFilter,
     changeSearchValue,
-    onSearch
+    onSearch,
+    changeSearchFilter,
+    changeSortFilter
 }) => {
     const Cap = () => <NotFound caption="No films found" />;
     return (
@@ -20,10 +24,14 @@ export const SearchPage = ({
                 searchValue={searchValue}
                 onSearch={onSearch}
                 onInput={changeSearchValue}
+                changeSearchFilter={changeSearchFilter}
+                searchFilter={searchFilter}
             />
             <SearchPageInfo
                 quantityMovies={movies.length}
                 className="search-page__info"
+                changeSortFilter={changeSortFilter}
+                sortFilter={sortFilter}
             />
             <YetLoader
                 condition={typeof movies !== 'undefined'}

@@ -107,6 +107,8 @@ export const SearchPageSmart = withRouter(
                 <SearchPage
                     movies={list}
                     searchValue={searchValue}
+                    searchFilter={searchFilter}
+                    sortFilter={sortFilter}
                     onSearch={searchValue => {
                         fetchMoviesByData(
                             searchValue,
@@ -124,6 +126,18 @@ export const SearchPageSmart = withRouter(
                         changeSearchValue(e);
                         const historyData = {
                             search: e
+                        };
+                        pushToHistory(historyData);
+                    }}
+                    changeSearchFilter={searchFilter => {
+                        const historyData = {
+                            searchFilter
+                        };
+                        pushToHistory(historyData);
+                    }}
+                    changeSortFilter={sortFilter => {
+                        const historyData = {
+                            sortFilter
                         };
                         pushToHistory(historyData);
                     }}
