@@ -2,7 +2,8 @@ module.exports = {
     env: {
         browser: true,
         es6: true,
-        node: true
+        node: true,
+        'jest/globals': true
     },
     extends: [
         'airbnb',
@@ -24,7 +25,7 @@ module.exports = {
         ecmaVersion: 2018,
         sourceType: 'module'
     },
-    plugins: ['react', 'react-hooks', 'prettier'],
+    plugins: ['react', 'react-hooks', 'prettier', 'jest'],
     settings: {
         'import/resolver': {
             alias: {
@@ -35,10 +36,10 @@ module.exports = {
                     ['reducers', './src/reducers'],
                     ['constants.js', './src/constants.js'],
                     ['selectors', './src/selectors/'],
-                    ['utils', '../src/utils/'],
-                    ['src', '../src/'],
-                    ['sagas', '../src/sagas/'],
-                    ['services', '../src/services/']
+                    ['utils', './src/utils/'],
+                    ['src', './src/'],
+                    ['sagas', './src/sagas/'],
+                    ['services', './src/services/']
                 ],
                 extensions: ['.ts', '.js', '.jsx', '.json']
             }
@@ -54,6 +55,7 @@ module.exports = {
         quotes: [2, 'single'],
         'prettier/prettier': [2, { singleQuote: true }],
         indent: ['error', 4, { SwitchCase: 1 }],
-        'import/prefer-default-export': 0
+        'import/prefer-default-export': 0,
+        'react/require-default-props': 0
     }
 };
