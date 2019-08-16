@@ -1,5 +1,5 @@
 import { Map } from 'immutable';
-import { movieSelector } from './movie-selector';
+import { movieSelector } from 'selectors/movie-selector';
 
 const state = {
     movie: Map({

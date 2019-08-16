@@ -1,5 +1,5 @@
 import { Map } from 'immutable';
-import { currentSelector } from './movie-page-smart';
+import { currentSelector } from 'selectors/current-selector';
 
 const state = {
     movie: Map({

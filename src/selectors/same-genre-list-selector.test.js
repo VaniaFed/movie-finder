@@ -1,5 +1,5 @@
 import { Map } from 'immutable';
-import { sameGenreListSelector } from './movie-page-smart';
+import { sameGenreListSelector } from 'selectors/same-genre-list-selector';
 
 const state = {
     movie: Map({
