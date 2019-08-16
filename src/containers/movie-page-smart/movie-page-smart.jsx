@@ -8,14 +8,7 @@ import { MovieLayout } from 'components/movie-layout/';
 import { NotFound } from 'components/not-found';
 import { actions } from 'actions';
 import { currentSelector } from 'selectors/current-selector';
-import { movieSelector } from 'selectors/movie-selector';
-
-export const sameGenreListSelector = createSelector(
-    movieSelector,
-    movie => {
-        return movie.get('sameGenreList');
-    }
-);
+import { sameGenreListSelector } from 'selectors/same-genre-list-selector.js';
 
 const mapStateToProps = createSelector(
     currentSelector,
