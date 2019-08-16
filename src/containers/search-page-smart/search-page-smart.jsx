@@ -122,10 +122,10 @@ export const SearchPageSmart = withRouter(
                         };
                         pushToHistory(historyData);
                     }}
-                    changeSearchValue={e => {
-                        changeSearchValue(e);
+                    changeSearchValue={searchValue => {
+                        changeSearchValue(searchValue);
                         const historyData = {
-                            search: e
+                            search: searchValue
                         };
                         pushToHistory(historyData);
                     }}
