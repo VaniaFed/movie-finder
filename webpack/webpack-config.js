@@ -20,8 +20,8 @@ module.exports = {
             '.jsx',
             '.json',
             '.sass',
-            'scss',
-            'css'
+            '.scss',
+            '.css'
         ]
     }
 };
