@@ -11,7 +11,7 @@ const cache = new InMemoryCache({
             case 'Movie':
                 return object.id;
             case 'Movies':
-                return `bar:${object.id}`;
+                return `Movies:${object.id}`;
         }
     }
 });
