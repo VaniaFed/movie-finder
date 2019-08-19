@@ -3,7 +3,7 @@ import { client } from 'src/client';
 
 const getMovie = gql`
     query($id: String!) {
-        Movie(id: $id) @rest(type: "Movie", path: "{args.id}") {
+        movie(id: $id) @rest(type: "Movie", path: "/{args.id}") {
             id
             title
             release_date
@@ -20,5 +20,5 @@ export const getMovieById = async payload => {
         query: getMovie,
         variables: { id: String(payload.id) }
     });
-    return movie.data.Movie;
+    return movie.data.movie;
 };
