@@ -6,14 +6,7 @@ const restLink = new RestLink({
     uri: 'http://react-cdp-api.herokuapp.com/movies'
 });
 const cache = new InMemoryCache({
-    dataIdFromObject: object => {
-        switch (object.__typename) {
-            case 'Movie':
-                return object.id;
-            case 'Movies':
-                return `Movies:${object.id}`;
-        }
-    }
+    dataIdFromObject: movie => movie.id || null
 });
 
 export const client = new ApolloClient({
