@@ -1,9 +1,24 @@
-import axios from 'axios';
+import gql from 'graphql-tag';
+import { client } from 'src/client';
+
+const getMovie = gql`
+    query($id: String!) {
+        Movie(id: $id) @rest(type: "Movie", path: "{args.id}") {
+            id
+            title
+            release_date
+            poster_path
+            overview
+            genres
+            runtime
+        }
+    }
+`;
 
 export const getMovieById = async payload => {
-    const url = `http://react-cdp-api.herokuapp.com/movies/${payload.id}`;
-    const movie = await axios(url).then(res => {
-        return res.data;
+    const movie = await client.query({
+        query: getMovie,
+        variables: { id: String(payload.id) }
     });
-    return movie;
+    return movie.data.Movie;
 };
