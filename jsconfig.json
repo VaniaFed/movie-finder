@@ -6,15 +6,15 @@
             "src/*": ["./src/*"],
             "components/*": ["./src/components/*"],
             "containers/*": ["./src/containers/*"],
-            "_vars.scss": ["./src/_vars.scss"],
             "assets/*": ["./src/assets/*"],
-            "actions/*": ["./src/actions/*"],
+            "actions*": ["./src/actions*"],
             "reducers/*": ["./src/reducers/*"],
-            "constants.js": ["./src/constants.js"],
-            "selectors": ["./src/selectors/"],
-            "utils": ["../src/utils/"],
-            "services": ["../src/services/"],
-            "sagas": ["../src/sagas/"]
+            "selectors/*": ["./src/selectors/*"],
+            "utils/*": ["./src/utils/*"],
+            "services/*": ["./src/services/*"],
+            "sagas/*": ["./src/sagas/*"],
+            "_vars.scss": ["./src/_vars.scss"],
+            "constants.js": ["./src/constants.js"]
         }
     }
 }

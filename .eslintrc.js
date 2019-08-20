@@ -35,11 +35,11 @@ module.exports = {
                     ['actions', './src/actions'],
                     ['reducers', './src/reducers'],
                     ['constants.js', './src/constants.js'],
-                    ['selectors', './src/selectors/'],
-                    ['utils', './src/utils/'],
-                    ['src', './src/'],
-                    ['sagas', './src/sagas/'],
-                    ['services', './src/services/']
+                    ['selectors', './src/selectors'],
+                    ['utils', './src/utils'],
+                    ['src', './src'],
+                    ['sagas', './src/sagas'],
+                    ['services', './src/services']
                 ],
                 extensions: ['.ts', '.js', '.jsx', '.json']
             }
