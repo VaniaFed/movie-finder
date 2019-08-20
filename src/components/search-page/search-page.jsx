@@ -1,5 +1,5 @@
 import React from 'react';
-import { SearchBlock } from 'components/search-block';
+import { SmartSearchBlock } from 'containers/smart-search-block';
 import { SearchPageInfo } from 'components/search-page-info';
 import { MovieLayout } from 'components/movie-layout';
 import { NotFound } from 'components/not-found';
@@ -7,26 +7,12 @@ import { YetLoader } from 'containers/yet-loader';
 
 import './search-page.scss';
 
-export const SearchPage = ({
-    movies,
-    searchValue,
-    searchFilter,
-    sortFilter,
-    changeSearchValue,
-    onSearch,
-    changeSearchFilter,
-    changeSortFilter
-}) => {
+export const SearchPage = ({ movies, sortFilter, changeSortFilter }) => {
     const Cap = () => <NotFound caption="No films found" />;
+
     return (
         <>
-            <SearchBlock
-                searchValue={searchValue}
-                onSearch={onSearch}
-                onInput={changeSearchValue}
-                changeSearchFilter={changeSearchFilter}
-                searchFilter={searchFilter}
-            />
+            <SmartSearchBlock sortFilter={sortFilter} />
             <SearchPageInfo
                 quantityMovies={movies.length}
                 className="search-page__info"
