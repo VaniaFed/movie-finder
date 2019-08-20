@@ -1,5 +1,4 @@
 import renderer from 'react-test-renderer';
-import { shallow } from 'enzyme';
 import { MemoryRouter } from 'react-router';
 
 import { MovieBlock } from './index';

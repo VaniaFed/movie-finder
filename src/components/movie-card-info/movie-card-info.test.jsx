@@ -1,5 +1,4 @@
 import { shallow } from 'enzyme';
-import { v4 } from 'uuid';
 import { MovieCardInfo } from './index';
 
 const movie = {
