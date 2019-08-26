@@ -1,9 +1,13 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import './button.scss';
 
-export const Button = ({ text, className, onClick }) => {
+type ButtonProps = {
+    text: string;
+    className: string;
+    onClick: () => {};
+};
+export const Button = ({ text, className, onClick }: ButtonProps) => {
     const resultClass = classNames(className, 'button');
     return (
         <button
@@ -15,10 +19,4 @@ export const Button = ({ text, className, onClick }) => {
             {text}
         </button>
     );
-};
-
-Button.propTypes = {
-    text: PropTypes.string.isRequired,
-    className: PropTypes.string,
-    onClick: PropTypes.func
 };
