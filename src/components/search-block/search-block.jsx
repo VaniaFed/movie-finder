@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { SearchInput } from 'components/search-input';
 import { SearchBy } from 'components/search-by';
-import { Button } from 'components/button';
 import { Logo } from 'components/logo';
+import { Button } from 'components/button';
 
 import './search-block.scss';
 
