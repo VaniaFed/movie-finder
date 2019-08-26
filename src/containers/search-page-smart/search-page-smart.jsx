@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
-import { withRouter } from 'react-router-dom';
+import { withRouter } from 'next/router';
 import { parse } from 'query-string';
 import { SearchPage } from 'components/search-page';
 import { actions } from 'actions';

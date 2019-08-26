@@ -6,7 +6,7 @@
             "src/*": ["./src/*"],
             "components/*": ["./src/components/*"],
             "containers/*": ["./src/containers/*"],
-            "assets/*": ["./src/assets/*"],
+            "static/*": ["./static/*"],
             "actions*": ["./src/actions*"],
             "reducers/*": ["./src/reducers/*"],
             "selectors/*": ["./src/selectors/*"],

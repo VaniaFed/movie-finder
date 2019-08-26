@@ -2,6 +2,7 @@ import React, { memo, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { createSelector } from 'reselect';
 import { connect } from 'react-redux';
+import { useRouter } from 'next/router';
 
 import { MoviePage } from 'components/movie-page';
 import { YetLoader } from 'containers/yet-loader';
@@ -33,12 +34,14 @@ export const MoviePageSmart = connect(
     mapStateToProps,
     mapDispatchToProps
 )(
-    memo(({ match, movie, moviesWithTheSameGenre, fetchMovieById }) => {
-        const { id } = match.params;
+    memo(({ movie, moviesWithTheSameGenre, fetchMovieById }) => {
+        const router = useRouter();
+        const { id } = router.query;
         useEffect(() => {
             fetchMovieById(id);
         });
 
+        console.log('movie will be render');
         const Cap = () => <NotFound caption="No films found" />;
         const MovieCap = () => <NotFound caption="Film not found" />;
         return (
@@ -51,7 +54,10 @@ export const MoviePageSmart = connect(
                     content={() => <MoviePage movie={movie} />}
                 />
                 <YetLoader
-                    condition={typeof moviesWithTheSameGenre !== 'undefined'}
+                    condition={
+                        typeof moviesWithTheSameGenre !== 'undefined' &&
+                        moviesWithTheSameGenre.length !== 0
+                    }
                     cap={<Cap />}
                     content={() => (
                         <MovieLayout movies={moviesWithTheSameGenre} />
@@ -61,6 +67,7 @@ export const MoviePageSmart = connect(
         );
     })
 );
+
 MoviePageSmart.propTypes = {
     match: PropTypes.objectOf(PropTypes.object),
     movie: PropTypes.objectOf(PropTypes.object),

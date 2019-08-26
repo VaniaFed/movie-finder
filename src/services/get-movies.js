@@ -1,6 +1,6 @@
 import gql from 'graphql-tag';
-import { client } from 'src/client';
 import { stringify } from 'query-string';
+import { client } from 'src/client';
 
 const getMoviesQuery = gql`
     query($searchParam: String!) {
@@ -13,7 +13,7 @@ const getMoviesQuery = gql`
 
 export const getMovies = async params => {
     const searchParam = stringify(params);
-    const movies = await client.query({
+    const movies = await client().query({
         query: getMoviesQuery,
         variables: { searchParam }
     });

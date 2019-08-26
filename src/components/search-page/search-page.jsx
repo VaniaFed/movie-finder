@@ -20,7 +20,7 @@ export const SearchPage = ({ movies, sortFilter, changeSortFilter }) => {
                 sortFilter={sortFilter}
             />
             <YetLoader
-                condition={typeof movies !== 'undefined'}
+                condition={typeof movies !== 'undefined' && movies.length !== 0}
                 cap={<Cap />}
                 content={() => <MovieLayout movies={movies} />}
             />

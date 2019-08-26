@@ -16,7 +16,7 @@ const getMovie = gql`
 `;
 
 export const getMovieById = async payload => {
-    const movie = await client.query({
+    const movie = await client().query({
         query: getMovie,
         variables: { id: String(payload.id) }
     });

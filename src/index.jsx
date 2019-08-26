@@ -1,19 +1,19 @@
 import 'src/client';
 import React from 'react';
-import { render } from 'react-dom';
+import { hydrate } from 'react-dom';
 import { Provider } from 'react-redux';
-import { BrowserRouter } from 'react-router-dom';
+import { Router } from 'react-router-dom';
 import { App } from 'containers/App';
-import { configureStore } from 'src/configure-store';
+import { configureStore } from 'src/store/';
 
 import './global.scss';
 
 const store = configureStore();
-render(
-    <BrowserRouter>
+hydrate(
+    <Router>
         <Provider store={store}>
             <App />
         </Provider>
-    </BrowserRouter>,
+    </Router>,
     document.getElementById('app')
 );

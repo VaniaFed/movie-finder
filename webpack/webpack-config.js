@@ -1,3 +1,5 @@
+const webpack = require('webpack');
+
 module.exports = {
     entry: './src/index.jsx',
     module: {
@@ -23,5 +25,10 @@ module.exports = {
             '.scss',
             '.css'
         ]
-    }
+    },
+    plugins: [
+        new webpack.DefinePlugin({
+            CLIENT_SIDE_RENDERING: true
+        })
+    ]
 };
