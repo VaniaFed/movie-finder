@@ -5,7 +5,7 @@ import puppeteer from 'puppeteer';
 test('Quantity of movies should be is more than zero', async () => {
     const browser = await puppeteer.launch();
     const page = await browser.newPage();
-    await page.goto('http://localhost:9000/movies/353616');
+    await page.goto('http://localhost:3000/movies?id=353616');
     const movieTitleSelector = '[data-text="movie-page__movie-title"]';
     await page.waitForSelector(movieTitleSelector);
 

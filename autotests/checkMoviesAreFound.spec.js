@@ -6,7 +6,7 @@ describe('movies', () => {
     it('Quantity of movies should be is more than zero', async () => {
         const browser = await puppeteer.launch({ headless: false });
         const page = await browser.newPage();
-        await page.goto('http://localhost:9000/search');
+        await page.goto('http://localhost:3000/search');
         const searchInputSelector = '[data-input="search-input__input"]';
         await page.waitForSelector(searchInputSelector);
         await page.click(searchInputSelector);

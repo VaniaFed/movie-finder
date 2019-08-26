@@ -13,18 +13,14 @@ Array [
       >
         netfixroulette
       </h1>
-      <a
-        href="/search"
+      <button
+        className="movie-header__search-button movie-header__search-button--reversed button"
+        data-button="search-page__button-search"
         onClick={[Function]}
+        type="button"
       >
-        <button
-          className="movie-header__search-button movie-header__search-button--reversed button"
-          data-button="search-page__button-search"
-          type="button"
-        >
-          search
-        </button>
-      </a>
+        search
+      </button>
     </div>
     <div
       className="movie movie-block__movie"

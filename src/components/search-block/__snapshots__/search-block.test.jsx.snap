@@ -23,6 +23,7 @@ exports[`<SearchBlock /> should be rendered 1`] = `
       onInput={[Function]}
       placeholder="Game of Thrones"
       type="text"
+      value="harry potter"
     />
     <button
       className="search-input__btnIcon"

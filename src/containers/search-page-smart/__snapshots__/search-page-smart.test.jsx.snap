@@ -145,8 +145,10 @@ Array [
       </div>
     </div>
   </div>,
-  <div
-    className="movies"
-  />,
+  <h2
+    className="not-found"
+  >
+    No films found
+  </h2>,
 ]
 `;

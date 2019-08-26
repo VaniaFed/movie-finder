@@ -1,5 +1,5 @@
 import { Map } from 'immutable';
-import { searchFilterSelector } from './search-page-smart';
+import { searchFilterSelector } from 'selectors/search-filter-selector';
 
 const state = {
     movie: Map({

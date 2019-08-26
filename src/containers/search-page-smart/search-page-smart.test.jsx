@@ -1,6 +1,6 @@
 import renderer from 'react-test-renderer';
 import { Provider } from 'react-redux';
-import { configureStore } from 'src/configure-store';
+import { configureStore } from 'src/store';
 import { BrowserRouter } from 'react-router-dom';
 import { SearchPageSmart } from './index';
 
