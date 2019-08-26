@@ -1,7 +1,7 @@
 const webpack = require('webpack');
 
 module.exports = {
-    entry: './src/index.jsx',
+    entry: './src/index.tsx',
     module: {
         rules: [
             {
@@ -9,9 +9,14 @@ module.exports = {
                 use: ['html-loader']
             },
             {
-                test: /\.jsx|js$/,
+                test: /\.(jsx|js)$/,
                 exclude: /node_modules/,
-                loader: 'babel-loader'
+                use: ['babel-loader']
+            },
+            {
+                test: /\.(ts|tsx)$/,
+                exclude: /node_modules/,
+                use: ['ts-loader']
             }
         ]
     },
@@ -20,6 +25,8 @@ module.exports = {
             '.webpack.js',
             '.js',
             '.jsx',
+            '.ts',
+            '.tsx',
             '.json',
             '.sass',
             '.scss',
