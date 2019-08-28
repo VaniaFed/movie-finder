@@ -10,6 +10,7 @@ module.exports = {
         '^selectors(.*)$': '<rootDir>/src/selectors$1',
         '^reducers(.*)$': '<rootDir>/src/reducers$1',
         '^utils(.*)$': '<rootDir>/src/utils$1',
+        '^lib(.*)$': '<rootDir>/src/lib$1',
         '^services(.*)$': '<rootDir>/src/services$1',
         '^sagas(.*)$': '<rootDir>/src/sagas$1',
         '^.+\\.js(jsx)$': 'babel-jest',

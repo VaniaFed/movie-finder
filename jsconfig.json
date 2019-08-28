@@ -11,6 +11,7 @@
             "reducers/*": ["./src/reducers/*"],
             "selectors/*": ["./src/selectors/*"],
             "utils/*": ["./src/utils/*"],
+            "lib/*": ["./src/lib/*"],
             "services/*": ["./src/services/*"],
             "sagas/*": ["./src/sagas/*"],
             "_vars.scss": ["./src/_vars.scss"],

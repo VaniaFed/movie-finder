@@ -12,6 +12,7 @@ module.exports = {
             selectors: path.resolve(__dirname, '../src/selectors/'),
             utils: path.resolve(__dirname, '../src/utils/'),
             sagas: path.resolve(__dirname, '../src/sagas/'),
+            lib: path.resolve(__dirname, '../src/lib/'),
             services: path.resolve(__dirname, '../src/services/'),
             'constants.js': path.resolve(__dirname, '../src/constants.js'),
             '_vars.scss': path.resolve(__dirname, '../src/_vars.scss')
