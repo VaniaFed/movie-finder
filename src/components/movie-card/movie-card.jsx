@@ -9,7 +9,10 @@ export const MovieCard = memo(({ movie, className }) => {
     const resultClass = classNames('movie-card', className);
     return (
         <div className={resultClass}>
-            <Link href={`/movies?id=${movie.id}`}>
+            <Link
+                href={{ pathname: '/movies', query: { id: movie.id } }}
+                as={`/movies/${movie.id}`}
+            >
                 <a>
                     <img
                         className="movie-card__image"

@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { pushToHistory } from 'utils/push-to-history';
+import { pushToHistory } from 'lib/push-to-history';
 import { createSelector } from 'reselect';
 import { actions } from 'actions';
 import { SearchBlock } from 'components/search-block';

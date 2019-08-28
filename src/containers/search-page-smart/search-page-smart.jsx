@@ -6,8 +6,8 @@ import { parse } from 'query-string';
 import { SearchPage } from 'components/search-page';
 import { actions } from 'actions';
 import { listSelector } from 'selectors/list-selector';
-import { applyEverythingIsEverythingIsOkay } from 'utils/apply-everything-if-everything-is-okay';
-import { pushToHistory } from 'utils/push-to-history';
+import { isMap } from 'lib/is-map';
+import { pushToHistory } from 'lib/push-to-history';
 import { searchValueSelector } from 'selectors/search-value-selector';
 import { searchFilterSelector } from 'selectors/search-filter-selector';
 import { sortFilterSelector } from 'selectors/sort-filter-selector';
@@ -17,11 +17,11 @@ const mapStateToProps = createSelector(
     searchValueSelector,
     searchFilterSelector,
     sortFilterSelector,
-    (list, searchValue, searchFilter, sortFilter) => {
+    (list, search, searchFilter, sortFilter) => {
         return {
             list,
-            inputData: {
-                searchValue,
+            controlsData: {
+                search,
                 searchFilter,
                 sortFilter
             }
@@ -59,29 +59,49 @@ export const SearchPageSmart = withRouter(
     connect(
         mapStateToProps,
         mapDispatchToProps
-    )(({ list, inputData, dispatches, location }) => {
+    )(({ list, controlsData, dispatches }) => {
         useEffect(() => {
             const urlData = parse(window.location.search);
-            const inputsData = {
-                searchValue: inputData.searchValue,
-                searchFilter: inputData.searchFilter,
-                sortFilter: inputData.sortFilter
+            const inputData = {
+                search: controlsData.search,
+                searchFilter: controlsData.searchFilter,
+                sortFilter: controlsData.sortFilter
             };
-            const actions = {
-                fetchMoviesByData: dispatches.fetchMoviesByData,
-                changeSearchValue: dispatches.changeSearchValue,
-                changeSearchFilter: dispatches.changeSearchFilter,
-                changeSortFilter: dispatches.changeSortFilter
-            };
-            applyEverythingIsEverythingIsOkay(urlData, inputsData, actions);
-        }, location);
+
+            const shouldFetchMovies = !isMap(urlData, inputData);
+            if (shouldFetchMovies) {
+                dispatches.fetchMoviesByData(
+                    urlData.search,
+                    urlData.searchFilter,
+                    urlData.sortFilter
+                );
+            }
+            const shouldChangeSearch = !isMap(urlData, inputData, ['search']);
+            if (shouldChangeSearch) {
+                dispatches.changeSearchValue(urlData.search);
+            }
+
+            const shouldChangeSearchFilter = !isMap(urlData, inputData, [
+                'searchFilter'
+            ]);
+            if (shouldChangeSearchFilter) {
+                dispatches.changeSearchFilter(urlData.searchFilter);
+            }
+
+            const shouldChangeSortFilter = !isMap(urlData, inputData, [
+                'sortFilter'
+            ]);
+            if (shouldChangeSortFilter) {
+                dispatches.changeSortFilter(urlData.sortFilter);
+            }
+        });
         return (
             <>
                 <SearchPage
                     movies={list}
-                    searchValue={inputData.searchValue}
-                    searchFilter={inputData.searchFilter}
-                    sortFilter={inputData.sortFilter}
+                    searchValue={controlsData.searchValue}
+                    searchFilter={controlsData.searchFilter}
+                    sortFilter={controlsData.sortFilter}
                     changeSortFilter={sortFilter => {
                         const historyData = {
                             sortFilter

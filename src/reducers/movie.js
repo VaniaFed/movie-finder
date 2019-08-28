@@ -49,7 +49,7 @@ export const movie = (state = initialState, action) => {
             return state.setIn(['sortFilter'], action.payload.sortBy);
         }
         case SET_SEARCH_VALUE: {
-            return state.setIn(['searchValue'], action.payload.searchValue);
+            return state.setIn(['search'], action.payload.search);
         }
         default:
             return state;

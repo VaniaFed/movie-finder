@@ -1,14 +1,8 @@
 import React from 'react';
 import { MoviePageSmart } from 'containers/movie-page-smart';
-import { configureStore } from 'src/store/';
-import { BoxContainer } from 'components/box-container';
 
-const Root = () => {
-    return (
-        <BoxContainer>
-            <MoviePageSmart />
-        </BoxContainer>
-    );
+const Movies = () => {
+    return <MoviePageSmart />;
 };
 
-export default Root;
+export default Movies;
