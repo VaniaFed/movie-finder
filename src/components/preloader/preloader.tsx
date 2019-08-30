@@ -1,10 +1,10 @@
 import React from 'react';
 
+import './preloader.scss';
 export const Preloader = () => {
     return (
         <div class="preloader">
-            <img src="/static/img/Spinner-1s-200px.gif" class="indeterminate" />
-            <h1>loading</h1>
+            <img src="/static/img/91.gif" class="preloader__image" />
         </div>
     );
 };
