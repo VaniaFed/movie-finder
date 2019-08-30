@@ -1,3 +1,4 @@
+import React from 'react';
 import { connect } from 'react-redux';
 import { pushToHistory } from 'lib/push-to-history';
 import { createSelector } from 'reselect';
@@ -5,8 +6,6 @@ import { actions } from 'actions';
 import { SearchBlock } from 'components/search-block';
 import { searchValueSelector } from 'selectors/search-value-selector';
 import { searchFilterSelector } from 'selectors/search-filter-selector';
-
-import React from 'react';
 
 const mapStateToProps = createSelector(
     searchValueSelector,
@@ -49,12 +48,14 @@ export const SmartSearchBlock = connect(
         searchFilter,
         sortFilter,
         changeSearchValue,
-        fetchMoviesByData
+        fetchMoviesByData,
+        setIsStartedLoading
     }) => {
         return (
             <SearchBlock
                 searchValue={searchValue}
                 onSearch={searchValue => {
+                    setIsStartedLoading(true);
                     fetchMoviesByData(searchValue, searchFilter, sortFilter);
                     pushToHistory({
                         search: searchValue,
