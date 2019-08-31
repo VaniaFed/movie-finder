@@ -3,6 +3,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const StyleLintPlugin = require('stylelint-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const path = require('path');
 
 module.exports = {
     plugins: [
@@ -25,11 +26,11 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.(js|jsx)$/,
-                use: ['babel-loader', 'eslint-loader']
+                test: /\.(js|jsx|ts|tsx)$/,
+                use: ['ts-loader', 'eslint-loader']
             },
             {
-                test: /\.css$/,
+                test: /\.css|scss$/,
                 use: [
                     {
                         loader: MiniCssExtractPlugin.loader
@@ -45,54 +46,21 @@ module.exports = {
                         options: {
                             ident: 'postcss',
                             plugins: [require('autoprefixer')()]
+                        }
+                    },
+                    'sass-loader'
+                ],
+                include: path.resolve(__dirname, '../src')
+            },
+            {
+                test: /\.png|jpg|jpeg|svg|gif$/,
+                use: [
+                    {
+                        loader: 'file-loader',
+                        options: {
+                            name: '[name].[ext]'
                         }
                     }
-                ]
-            },
-            {
-                test: /\.sass$/,
-                exclude: /\.module\.sass$/,
-                use: [
-                    {
-                        loader: MiniCssExtractPlugin.loader
-                    },
-                    {
-                        loader: 'css-loader',
-                        options: {
-                            modules: false
-                        }
-                    },
-                    {
-                        loader: 'postcss-loader',
-                        options: {
-                            ident: 'postcss',
-                            plugins: [require('autoprefixer')()]
-                        }
-                    },
-                    'sass-loader'
-                ]
-            },
-            {
-                test: /\.module.sass$/,
-                use: [
-                    {
-                        loader: MiniCssExtractPlugin.loader
-                    },
-                    {
-                        loader: 'css-loader',
-                        options: {
-                            localIdentName: '[hash:8]',
-                            modules: true
-                        }
-                    },
-                    {
-                        loader: 'postcss-loader',
-                        options: {
-                            ident: 'postcss',
-                            plugins: [require('autoprefixer')()]
-                        }
-                    },
-                    'sass-loader'
                 ]
             }
         ]

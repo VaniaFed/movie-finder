@@ -2,16 +2,22 @@ import { configure } from '@storybook/react';
 import '../src/global.scss';
 
 function loadStories() {
-    require('../src/components/ui/movie/movie.stories');
-    require('../src/components/ui/movie-info/MovieInfo.stories');
-    require('../src/components/ui/not-found/not-found.stories');
-    require('../src/components/ui/toggle-container/toggle-container.stories');
-    require('../src/components/ui/toggle-button/toggle-button.stories');
-
-    // requires alias for the following stories:
-    // require('../src/components/ui/search-input/search-input.stories');
-    // require('../src/components/ui/search-block/search-block.stories');
-    // require('../src/components/ui/movies/movies.stories');
+    require('components/movie-page/movie-page.stories');
+    require('components/movie-block/movie-block.stories');
+    require('components/movie-page-info/movie-page-info.stories');
+    require('components/movie/movie.stories');
+    require('components/movie-layout/movie-layout.stories');
+    require('components/movie-card/movie-card.stories');
+    require('components/search-page/search-page.stories');
+    require('components/search-block/search-block.stories');
+    require('components/search-input/search-input.stories');
+    require('components/search-page-info/search-page-info.stories');
+    require('components/not-found/not-found.stories');
+    require('containers/toggle-container/toggle-container.stories');
+    require('components/toggle-layout/toggle-layout.stories');
+    require('components/toggle-button/toggle-button.stories');
+    require('components/button/button.stories');
+    require('components/logo/logo.stories');
 }
 
 configure(loadStories, module);

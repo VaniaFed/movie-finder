@@ -5,6 +5,7 @@ module.exports = {
         contentBase: path.join(__dirname, 'dist'),
         port: 9000,
         publicPath: '/',
-        stats: 'errors-only'
+        stats: 'errors-only',
+        historyApiFallback: true
     }
 };

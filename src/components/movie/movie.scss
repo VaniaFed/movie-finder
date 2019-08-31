@@ -1,0 +1,37 @@
+@import '~_vars.scss';
+.movie {
+    display: flex;
+    align-items: flex-start;
+    &__image {
+        max-width: 300px;
+        height: auto;
+    }
+    &__info {
+        @media (min-width: 850px) {
+            margin-left: 60px;
+        }
+        @media (max-width: 850px) {
+            margin-top: 30px;
+        }
+    }
+    &__title {
+        color: $accent-color;
+    }
+    &__genres {
+        margin-top: 2px;
+        font-weight: 300;
+    }
+    &__date,
+    &__duration {
+        display: inline-block;
+        margin-top: 10px;
+        font-weight: 700;
+    }
+    &__duration {
+        margin-left: 24px;
+    }
+    &__description {
+        margin-top: 20px;
+        font-weight: 300;
+    }
+}

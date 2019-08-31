@@ -1,0 +1,37 @@
+@import '~_vars.scss';
+.toggle-button {
+    margin-left: 10px;
+    border-radius: 4px;
+    overflow: auto;
+    float: left;
+    cursor: pointer;
+    &__text {
+        text-align: center;
+        display: block;
+        cursor: pointer;
+        text-transform: uppercase;
+        padding: 8px 20px;
+        background: #444;
+        color: #fff;
+        &#{&}--no--background {
+            background: none;
+            text-transform: initial;
+            color: #000;
+            padding: 0;
+        }
+        &#{&}--checked {
+            background: $accent-color;
+        }
+
+        &#{&}--no--background--checked {
+            background: none;
+            text-transform: initial;
+            color: $accent-color;
+            padding: 0;
+        }
+    }
+    &__input {
+        position: absolute;
+        top: -500px;
+    }
+}

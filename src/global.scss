@@ -1,8 +1,13 @@
-@import '~Variables';
+@import '~_vars.scss';
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+}
+
+a {
+    color: #000;
+    text-decoration: none;
 }
 
 body {

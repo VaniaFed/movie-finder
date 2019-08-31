@@ -1,0 +1,31 @@
+@import '~_vars.scss';
+.movie-block {
+    padding: 20px 100px 40px;
+    background: #333 url('/static/img/charisse-kenion-cJkVMAKDYl0-unsplash.jpg')
+        no-repeat center;
+    background-size: cover;
+    color: #fff;
+    position: relative;
+    z-index: 2;
+    @media (max-width: 850px) {
+        padding: 40px 20px;
+    }
+    &::before {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: #000;
+        opacity: 0.8;
+        z-index: -1;
+    }
+    &__movie {
+        @media (max-width: 850px) {
+            flex-direction: column;
+            margin-top: 40px;
+        }
+    }
+}

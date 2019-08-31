@@ -1,0 +1,11 @@
+.search-by {
+    display: flex;
+    align-items: center;
+    &__title {
+        text-transform: uppercase;
+        margin-right: 10px;
+        @media (max-width: 850px) {
+            margin-bottom: 10px;
+        }
+    }
+}

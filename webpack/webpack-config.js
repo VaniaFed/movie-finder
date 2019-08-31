@@ -1,5 +1,7 @@
+const webpack = require('webpack');
+
 module.exports = {
-    entry: './src/index.jsx',
+    entry: './src/index.tsx',
     module: {
         rules: [
             {
@@ -7,15 +9,14 @@ module.exports = {
                 use: ['html-loader']
             },
             {
-                test: /\.png|jpg|jpeg|svg|gif$/,
-                use: [
-                    {
-                        loader: 'url-loader',
-                        options: {
-                            limit: 10000
-                        }
-                    }
-                ]
+                test: /\.(jsx|js)$/,
+                exclude: /node_modules/,
+                use: ['babel-loader']
+            },
+            {
+                test: /\.(ts|tsx)$/,
+                exclude: /node_modules/,
+                use: ['ts-loader']
             }
         ]
     },
@@ -24,10 +25,17 @@ module.exports = {
             '.webpack.js',
             '.js',
             '.jsx',
+            '.ts',
+            '.tsx',
             '.json',
             '.sass',
-            'scss',
-            'css'
+            '.scss',
+            '.css'
         ]
-    }
+    },
+    plugins: [
+        new webpack.DefinePlugin({
+            CLIENT_SIDE_RENDERING: true
+        })
+    ]
 };

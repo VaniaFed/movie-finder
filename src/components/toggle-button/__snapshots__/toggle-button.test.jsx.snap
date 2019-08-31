@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ToggleButton /> should be rendered 1`] = `
+<label
+  className="toggle-button"
+  onClick={[Function]}
+>
+  <input
+    className="toggle-button__input toggle-button__input--checked"
+    defaultChecked="checked"
+    name="some_name"
+    type="radio"
+  />
+  <span
+    className="toggle-button__text toggle-button__text--checked"
+  >
+    Some label
+  </span>
+</label>
+`;

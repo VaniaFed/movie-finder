@@ -1,0 +1,35 @@
+@import '~_vars.scss';
+.search-input {
+    position: relative;
+    &__input {
+        padding: 14px 20px;
+        background: #000000a8;
+        color: #fff;
+        border: none;
+        border-bottom: 2px solid #000000a8;
+        width: 100%;
+        &::placeholder {
+            color: #eee;
+        }
+        &:focus {
+            border-bottom: 2px solid $accent-color;
+            outline: none;
+        }
+    }
+    &__btnIcon {
+        background: transparent no-repeat center center;
+        background-image: url('/static/img/enter-arrow.svg');
+        width: 20px;
+        height: 20px;
+        background-size: contain;
+        border: none;
+        position: absolute;
+        right: 20px;
+        top: 50%;
+        transform: translateY(-11px);
+        cursor: pointer;
+        &:focus {
+            outline: none;
+        }
+    }
+}

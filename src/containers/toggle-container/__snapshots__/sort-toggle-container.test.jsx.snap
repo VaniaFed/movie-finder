@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<SortToggleContainer /> should be rendered 1`] = `
+<div>
+  <label
+    className="toggle-button toggle-button--no--background"
+    onClick={[Function]}
+  >
+    <input
+      className="toggle-button__input toggle-button__input--no-background toggle-button__input--checked"
+      defaultChecked="checked"
+      name="sort"
+      type="radio"
+    />
+    <span
+      className="toggle-button__text toggle-button__text--no--background toggle-button__text--checked toggle-button__text--no--background--checked"
+    >
+      Release date
+    </span>
+  </label>
+  <label
+    className="toggle-button toggle-button--no--background"
+    onClick={[Function]}
+  >
+    <input
+      className="toggle-button__input toggle-button__input--no-background"
+      defaultChecked={false}
+      name="sort"
+      type="radio"
+    />
+    <span
+      className="toggle-button__text toggle-button__text--no--background"
+    >
+      Rating
+    </span>
+  </label>
+</div>
+`;

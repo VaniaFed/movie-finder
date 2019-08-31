@@ -1,0 +1,20 @@
+.search-page-info {
+    padding: 10px 80px;
+    background: #f6f6f6;
+    display: flex;
+    justify-content: space-between;
+    &__text {
+        font-weight: 700;
+        font-size: 18px;
+    }
+    &__right {
+        display: flex;
+        align-items: center;
+        @media (max-width: 850px) {
+            margin-top: 10px;
+        }
+    }
+    &__toggle-container {
+        margin-left: 16px;
+    }
+}

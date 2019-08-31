@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<SearchInput /> should be rendered 1`] = `
+<div
+  className="search-input"
+>
+  <input
+    className="search-input__input"
+    data-input="search-input__input"
+    onInput={[Function]}
+    placeholder="Game of Thrones"
+    type="text"
+  />
+  <button
+    className="search-input__btnIcon"
+    onClick={[Function]}
+    type="button"
+  />
+</div>
+`;
