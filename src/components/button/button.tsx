@@ -1,7 +1,13 @@
 import React from 'react';
 import classNames from 'classnames';
 import './button.scss';
-export const Button = ({ text, className, onClick }) => {
+
+interface ButtonProps {
+    text: string;
+    className: string;
+    onClick: any;
+}
+export const Button = ({ text, className, onClick }: ButtonProps) => {
     const resultClass = classNames(className, 'button');
     return (
         <button

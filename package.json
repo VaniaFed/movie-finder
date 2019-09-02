@@ -8,15 +8,16 @@
         "test:cov": "jest --coverage --testPathPattern=test.js",
         "test:spec": "jest --testPathPattern=spec.js --runInBand",
         "lint": "eslint src/",
-        "next:dev": "next",
+        "next:dev": "node server.js",
         "next:build": "next build",
-        "next:start": "next start"
+        "next:start": "node server.js NODE_ENV=production"
     },
     "devDependencies": {
         "@babel/core": "^7.5.4",
         "@babel/plugin-proposal-class-properties": "^7.5.0",
         "@babel/preset-env": "^7.5.4",
         "@babel/preset-react": "^7.0.0",
+        "@babel/preset-typescript": "^7.3.3",
         "@storybook/react": "^5.1.9",
         "autoprefixer": "^9.6.1",
         "babel-jest": "^24.8.0",
