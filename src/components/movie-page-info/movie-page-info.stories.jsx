@@ -1,7 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { v4 } from 'uuid';
 import { MoviePageInfo } from './index';
 
 const movie = {
@@ -12,7 +11,7 @@ const movie = {
     releaseDate: '2014',
     overview:
         'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deleniti ipsam voluptas magnam totam! Veritatis rerum et dolorum unde porro assumenda dicta hic! Odio eaque dolore quos vitae ea quia consequatur.',
-    id: v4()
+    id: 1
 };
 
 storiesOf('MoviePageInfo', module).add('regular', () => (

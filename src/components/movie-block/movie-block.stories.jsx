@@ -1,7 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { v4 } from 'uuid';
 import { MovieBlock } from './index';
 
 const movie = {
@@ -11,8 +10,7 @@ const movie = {
     runtime: 160,
     releaseDate: '2014',
     overview:
-        'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deleniti ipsam voluptas magnam totam! Veritatis rerum et dolorum unde porro assumenda dicta hic! Odio eaque dolore quos vitae ea quia consequatur.',
-    id: v4()
+        'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deleniti ipsam voluptas magnam totam! Veritatis rerum et dolorum unde porro assumenda dicta hic! Odio eaque dolore quos vitae ea quia consequatur.'
 };
 storiesOf('MovieBlock', module).add('regular', () => (
     <MovieBlock movie={movie} />
