@@ -10,7 +10,7 @@
         "lint": "eslint src/",
         "next:dev": "node server.js",
         "next:build": "next build",
-        "next:start": "node server.js NODE_ENV=production"
+        "next:start": "cross-env NODE_ENV=production node server.js"
     },
     "devDependencies": {
         "@babel/core": "^7.5.4",
@@ -22,6 +22,7 @@
         "autoprefixer": "^9.6.1",
         "babel-jest": "^24.8.0",
         "babel-loader": "^8.0.6",
+        "cross-env": "^5.2.0",
         "css-loader": "1.0.0",
         "cssnano": "^4.1.10",
         "enzyme": "^3.10.0",
@@ -45,7 +46,6 @@
         "jest-css-modules": "^2.1.0",
         "jest-transform-stub": "^2.0.0",
         "mini-css-extract-plugin": "^0.7.0",
-        "next-compose-plugins": "^2.2.0",
         "node-sass": "^4.7.2",
         "nodemon": "^1.19.1",
         "optimize-css-assets-webpack-plugin": "^5.0.3",
@@ -54,6 +54,7 @@
         "postcss-loader": "^3.0.0",
         "postcss-preset-env": "^6.7.0",
         "prettier": "^1.18.2",
+        "puppeteer": "^1.19.0",
         "react-addons-test-utils": "^15.6.2",
         "renderer": "^0.1.5",
         "sass-loader": "7.1.0",
@@ -83,8 +84,6 @@
         "apollo-link": "^1.2.12",
         "apollo-link-http": "^1.5.15",
         "apollo-link-rest": "^0.7.3",
-        "axios": "^0.19.0",
-        "cacheable-response": "^1.6.12",
         "classnames": "^2.2.6",
         "express": "^4.17.1",
         "fetch-headers": "^2.0.0",
@@ -96,22 +95,18 @@
         "lodash": "^4.17.15",
         "next": "8.1.0",
         "next-apollo": "^3.0.3",
-        "next-redux-wrapper": "^3.0.0-alpha.3",
+        "next-compose-plugins": "^2.2.0",
+        "next-images": "^1.1.2",
         "prop-types": "^15.7.2",
-        "puppeteer": "^1.19.0",
-        "qs": "^6.7.0",
         "query-string": "^6.8.2",
         "react": "^16.8.6",
         "react-apollo": "^3.0.1",
-        "react-dom": "^16.8.6",
         "react-redux": "^7.1.0",
-        "react-router-dom": "^5.0.1",
         "redux": "^4.0.4",
         "redux-saga": "^1.0.5",
         "redux-saga-test-plan": "^4.0.0-beta.4",
         "regenerator-runtime": "^0.13.3",
         "reselect": "^4.0.0",
-        "styled-components": "^4.3.2",
-        "uuid": "^3.3.2"
+        "styled-components": "^4.3.2"
     }
 }
