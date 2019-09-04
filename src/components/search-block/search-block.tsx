@@ -1,21 +1,21 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { FC } from 'react';
 import classNames from 'classnames';
 import { SearchInput } from 'components/search-input';
 import { SearchBy } from 'components/search-by';
 import { Logo } from 'components/logo';
 import { Button } from 'components/button';
+import { Props } from './props';
 
 import './search-block.scss';
 
-export const SearchBlock = ({
+export const SearchBlock: FC<Props> = ({
     className,
     searchValue,
+    searchFilter,
     onSearch,
     onInput,
-    changeSearchFilter,
-    searchFilter
-}) => {
+    changeSearchFilter
+}: Props) => {
     const resultClass = classNames('search-block', className);
     return (
         <div className={resultClass}>
@@ -23,7 +23,7 @@ export const SearchBlock = ({
             <h3 className="search-block__title">Find your movie</h3>
             <SearchInput
                 searchValue={searchValue}
-                onSearch={() => {
+                onSearch={(): void => {
                     onSearch(searchValue);
                 }}
                 onInput={onInput}
@@ -36,7 +36,7 @@ export const SearchBlock = ({
                 />
                 <Button
                     text="Find"
-                    onClick={() => {
+                    onClick={(): void => {
                         onSearch(searchValue);
                     }}
                     className="search-block__btn-search"
@@ -44,7 +44,4 @@ export const SearchBlock = ({
             </div>
         </div>
     );
-};
-SearchBlock.propTypes = {
-    className: PropTypes.string
 };

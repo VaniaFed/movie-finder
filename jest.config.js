@@ -13,12 +13,13 @@ module.exports = {
         '^lib(.*)$': '<rootDir>/src/lib$1',
         '^services(.*)$': '<rootDir>/src/services$1',
         '^sagas(.*)$': '<rootDir>/src/sagas$1',
+        '^types(.*)$': '<rootDir>/src/types$1',
         '^.+\\.js(jsx)$': 'babel-jest',
         '\\.(css|less|scss|sass)$': 'jest-transform-stub'
     },
     verbose: false,
     collectCoverageFrom: [
-        'src/**/*.{js,jsx}',
+        'src/**/*.{js,jsx,ts,tsx}',
         '!<rootDir>/node_modules/',
         '!<rootDir>/src/sagas/*',
         '!<rootDir>/src/**/*stories.jsx'

@@ -38,6 +38,7 @@ module.exports = {
                     ['reducers', './src/reducers'],
                     ['constants.js', './src/constants.js'],
                     ['selectors', './src/selectors'],
+                    ['types', './src/types'],
                     ['utils', './src/utils'],
                     ['lib', './src/lib'],
                     ['src', './src'],
@@ -61,10 +62,10 @@ module.exports = {
         'import/prefer-default-export': 0,
         'react/require-default-props': 0,
         '@typescript-eslint/no-explicit-any': 0,
+        '@typescript-eslint/explicit-function-return-type': 0,
         'react/jsx-filename-extension': [
             2,
             { extensions: ['.js', '.jsx', '.ts', '.tsx'] }
         ]
-        // 'react/jsx-filename-extension': 0
     }
 };

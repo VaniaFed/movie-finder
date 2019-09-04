@@ -1,13 +1,14 @@
-import React from 'react';
+import React, { FC, ReactElement } from 'react';
 import classNames from 'classnames';
 import { useRouter } from 'next/router';
 import styled from 'styled-components';
+import { Props } from './props';
 
 const H1 = styled('h1')`
     color: red;
 `;
 
-export const FourOfFourPage = ({ className }) => {
+export const FourOfFourPage: FC<Props> = ({ className }: Props) => {
     const resultClass = classNames(className, 'four-oh-four-page');
     const { asPath } = useRouter();
     return (

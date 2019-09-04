@@ -1,20 +1,21 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { FC } from 'react';
 import classNames from 'classnames';
 import { SortToggleContainer } from 'containers/toggle-container';
+import { ToggleData } from 'types';
+import { Props } from './props';
 import './search-page-info.scss';
 
-export const SearchPageInfo = ({
+export const SearchPageInfo: FC<Props> = ({
     quantityMovies,
     className,
     sortFilter,
     changeSortFilter
-}) => {
-    const sortByData = [
+}: Props) => {
+    const sortByData: ToggleData[] = [
         { key: 'release_date', text: 'Release date', onClick: f => f },
         { key: 'rating', text: 'Rating', onClick: f => f }
     ];
-    const resultClass = classNames('search-page-info', className);
+    const resultClass: string = classNames('search-page-info', className);
     return (
         <div className={resultClass}>
             <div className="search-page-info__left">
@@ -34,9 +35,4 @@ export const SearchPageInfo = ({
             </div>
         </div>
     );
-};
-
-SearchPageInfo.propTypes = {
-    quantityMovies: PropTypes.number.isRequired,
-    className: PropTypes.string
 };

@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { FC } from 'react';
 import { Logo } from 'components/logo';
 
-export const Footer = () => {
+export const Footer: FC = () => {
     return (
         <footer>
             <Logo text="netfixroulette" />

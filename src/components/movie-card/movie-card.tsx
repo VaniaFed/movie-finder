@@ -1,11 +1,11 @@
-import React, { memo } from 'react';
-import PropTypes from 'prop-types';
+import React, { FC, memo } from 'react';
 import Link from 'next/link';
 import classNames from 'classnames';
 import { MovieCardInfo } from 'components/movie-card-info';
+import { Props } from './props';
 import './movie-card.scss';
 
-export const MovieCard = memo(({ movie, className }) => {
+export const MovieCard: FC<Props> = memo(({ movie, className }: Props) => {
     const resultClass = classNames('movie-card', className);
     return (
         <div className={resultClass}>
@@ -25,8 +25,3 @@ export const MovieCard = memo(({ movie, className }) => {
         </div>
     );
 });
-
-MovieCard.propTypes = {
-    movie: PropTypes.objectOf(PropTypes.object).isRequired,
-    className: PropTypes.string
-};

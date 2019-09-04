@@ -1,8 +1,8 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { FC } from 'react';
+import { Props } from './props';
 import './movie-page-info.scss';
 
-export const MoviePageInfo = ({ genres }) => {
+export const MoviePageInfo: FC<Props> = ({ genres }: Props) => {
     const formattedGenres = genres.join(', ');
     return (
         <div className="movie-page-info">
@@ -10,8 +10,4 @@ export const MoviePageInfo = ({ genres }) => {
             <span className="movie-page-info__genre">{formattedGenres}</span>
         </div>
     );
-};
-
-MoviePageInfo.propTypes = {
-    genre: PropTypes.objectOf(PropTypes.object)
 };

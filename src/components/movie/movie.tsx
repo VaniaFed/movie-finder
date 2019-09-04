@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { FC } from 'react';
 import classNames from 'classnames';
-import PropTypes from 'prop-types';
 import './movie.scss';
+import { Props } from './props';
 
-export const Movie = ({ movie, className }) => {
-    const formattedGenres = movie.genres.join(', ');
-    const resultClass = classNames('movie', className);
+export const Movie: FC<Props> = ({ movie, className }: Props) => {
+    const formattedGenres: string = movie.genres.join(', ');
+    const resultClass: string = classNames('movie', className);
     return (
         <div className={resultClass}>
             <img
@@ -27,7 +27,4 @@ export const Movie = ({ movie, className }) => {
             </div>
         </div>
     );
-};
-Movie.propTypes = {
-    movie: PropTypes.objectOf(PropTypes.object)
 };

@@ -1,13 +1,9 @@
-import React from 'react';
+import React, { FC } from 'react';
 import classNames from 'classnames';
 import './button.scss';
+import { Props } from './props';
 
-interface ButtonProps {
-    text: string;
-    className: string;
-    onClick: any;
-}
-export const Button = ({ text, className, onClick }: ButtonProps) => {
+export const Button: FC<Props> = ({ text, className, onClick }: Props) => {
     const resultClass = classNames(className, 'button');
     return (
         <button

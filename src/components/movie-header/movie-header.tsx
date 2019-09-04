@@ -1,12 +1,12 @@
-import React from 'react';
+import React, { FC } from 'react';
 import classNames from 'classnames';
-import PropTypes from 'prop-types';
 import Link from 'next/link';
 import { Logo } from 'components/logo';
 import { Button } from 'components/button';
+import { Props } from './props';
 import './movie-header.scss';
 
-export const MovieHeader = ({ className }) => {
+export const MovieHeader: FC<Props> = ({ className }: Props) => {
     const resultClass = classNames(className, 'movie-header');
     return (
         <div className={resultClass}>
@@ -19,7 +19,4 @@ export const MovieHeader = ({ className }) => {
             </Link>
         </div>
     );
-};
-MovieHeader.propTypes = {
-    className: PropTypes.string
 };

@@ -11,7 +11,7 @@ import { MovieLayout } from 'components/movie-layout/';
 import { NotFound } from 'components/not-found';
 import { actions } from 'actions';
 import { currentSelector } from 'selectors/current-selector';
-import { sameGenreListSelector } from 'selectors/same-genre-list-selector.js';
+import { sameGenreListSelector } from 'selectors/same-genre-list-selector';
 
 const mapStateToProps = createSelector(
     currentSelector,

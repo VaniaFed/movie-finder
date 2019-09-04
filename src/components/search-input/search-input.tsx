@@ -1,17 +1,21 @@
-import React from 'react';
+import React, { FC } from 'react';
 import classNames from 'classnames';
-import PropTypes from 'prop-types';
-
+import { Props } from './props';
 import './search-input.scss';
 
-export const SearchInput = ({ searchValue, className, onSearch, onInput }) => (
+export const SearchInput: FC<Props> = ({
+    searchValue,
+    className,
+    onSearch,
+    onInput
+}: Props) => (
     <div className={classNames('search-input', className)}>
         <input
             className="search-input__input"
             type="text"
             placeholder="Game of Thrones"
             value={searchValue}
-            onInput={e => {
+            onInput={(e): void => {
                 onInput(e.currentTarget.value);
             }}
             data-input="search-input__input"
@@ -23,7 +27,3 @@ export const SearchInput = ({ searchValue, className, onSearch, onInput }) => (
         />
     </div>
 );
-
-SearchInput.propTypes = {
-    className: PropTypes.string
-};

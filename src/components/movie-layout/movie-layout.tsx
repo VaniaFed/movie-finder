@@ -1,9 +1,9 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { FC } from 'react';
 import { MovieCard } from 'components/movie-card';
+import { Props } from './props';
 import './movie-layout.scss';
 
-export const MovieLayout = ({ movies }) => {
+export const MovieLayout: FC<Props> = ({ movies }: Props) => {
     return (
         <div className="movies">
             {movies.map(movie => (
@@ -15,8 +15,4 @@ export const MovieLayout = ({ movies }) => {
             ))}
         </div>
     );
-};
-
-MovieLayout.propTypes = {
-    movies: PropTypes.objectOf(PropTypes.object).isRequired
 };

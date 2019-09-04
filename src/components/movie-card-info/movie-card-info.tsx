@@ -1,9 +1,9 @@
-import React, { memo } from 'react';
+import React, { memo, FC } from 'react';
 import classNames from 'classnames';
-import PropTypes from 'prop-types';
+import { Props } from './props';
 import './movie-card-info.scss';
 
-export const MovieCardInfo = memo(({ movie, className }) => {
+export const MovieCardInfo: FC<Props> = memo(({ movie, className }: Props) => {
     const resultClass = classNames('movie-card-info', className);
     const formattedGenres = movie.genres.join(', ');
     return (
@@ -16,8 +16,3 @@ export const MovieCardInfo = memo(({ movie, className }) => {
         </div>
     );
 });
-
-MovieCardInfo.propTypes = {
-    movie: PropTypes.objectOf(PropTypes.object),
-    className: PropTypes.string
-};

@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, FC } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { ToggleButton } from 'components/toggle-button';
 import { ToggleLayout } from 'components/toggle-layout';
 import { actions } from 'actions';
 
-export const ToggleContainerHOC = ({ name, background }) => {
+export const ToggleContainerHOC: FC = ({ name, background }) => {
     const ToggleContainer = ({
         data,
         changeFilter,
