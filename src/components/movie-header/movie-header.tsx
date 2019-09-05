@@ -1,8 +1,8 @@
 import React, { FC } from 'react';
 import classNames from 'classnames';
-import Link from 'next/link';
 import { Logo } from 'components/logo';
 import { Button } from 'components/button';
+import { Link } from '../../isomorfic-components/link';
 import { Props } from './props';
 import './movie-header.scss';
 

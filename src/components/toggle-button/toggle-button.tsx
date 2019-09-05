@@ -30,7 +30,7 @@ export const ToggleButton: React.FC<Props> = ({
             <input
                 className={inputClass}
                 type="radio"
-                defaultChecked={checked && 'checked'}
+                defaultChecked={checked && true}
                 name={name}
             />
             <span className={spanClass}>{label}</span>

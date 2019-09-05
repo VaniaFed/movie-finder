@@ -16,7 +16,7 @@ export const SearchPage: FC<Props> = ({
     setIsStartedLoading,
     changeSortFilter
 }: Props): ReactElement => {
-    const notFound: FC = (): FC => <NotFound caption="Movies aren't found" />;
+    const notFound: FC = () => <NotFound caption="Movies aren't found" />;
     return (
         <>
             <SmartSearchBlock
@@ -37,9 +37,7 @@ export const SearchPage: FC<Props> = ({
                         typeof movies !== 'undefined' && movies.length !== 0
                     }
                     cap={notFound}
-                    content={(): ReactElement => (
-                        <MovieLayout movies={movies} />
-                    )}
+                    content={() => <MovieLayout movies={movies} />}
                 />
             )}
         </>

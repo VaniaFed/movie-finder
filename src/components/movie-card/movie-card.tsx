@@ -1,7 +1,7 @@
 import React, { FC, memo } from 'react';
-import Link from 'next/link';
 import classNames from 'classnames';
 import { MovieCardInfo } from 'components/movie-card-info';
+import { Link } from '../../isomorfic-components/link';
 import { Props } from './props';
 import './movie-card.scss';
 
@@ -13,14 +13,12 @@ export const MovieCard: FC<Props> = memo(({ movie, className }: Props) => {
                 href={{ pathname: '/movies', query: { id: movie.id } }}
                 as={`/movies/${movie.id}`}
             >
-                <a>
-                    <img
-                        className="movie-card__image"
-                        src={movie.poster_path}
-                        alt={movie.title}
-                    />
-                    <MovieCardInfo movie={movie} className="movie-card__info" />
-                </a>
+                <img
+                    className="movie-card__image"
+                    src={movie.poster_path}
+                    alt={movie.title}
+                />
+                <MovieCardInfo movie={movie} className="movie-card__info" />
             </Link>
         </div>
     );

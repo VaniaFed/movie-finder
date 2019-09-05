@@ -18,6 +18,11 @@ export const SearchInput: FC<Props> = ({
             onInput={(e): void => {
                 onInput(e.currentTarget.value);
             }}
+            onKeyDown={({ key }) => {
+                if (key === 'Enter') {
+                    onSearch();
+                }
+            }}
             data-input="search-input__input"
         />
         <button

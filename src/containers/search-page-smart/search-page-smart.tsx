@@ -69,6 +69,7 @@ export const SearchPageSmart = connect(
 
         const shouldFetchMovies = !isMap(urlData, inputData);
         if (shouldFetchMovies && !isStartedLoading) {
+            console.log('fetching');
             setIsStartedLoading(true);
             dispatches.fetchMoviesByData(
                 urlData.search,

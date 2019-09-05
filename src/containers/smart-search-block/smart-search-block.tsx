@@ -51,6 +51,7 @@ export const SmartSearchBlock = connect(
         fetchMoviesByData,
         setIsStartedLoading
     }) => {
+        // group
         return (
             <SearchBlock
                 searchValue={searchValue}

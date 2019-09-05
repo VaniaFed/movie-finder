@@ -1,9 +1,6 @@
-import React, { memo, useEffect, useState } from 'react';
-import PropTypes from 'prop-types';
+import React, { memo, useEffect, useState, FC } from 'react';
 import { createSelector } from 'reselect';
 import { connect } from 'react-redux';
-import { useRouter } from 'next/router';
-
 import { MoviePage } from 'components/movie-page';
 import { Preloader } from 'components/preloader';
 import { YetLoader } from 'containers/yet-loader';
@@ -12,6 +9,7 @@ import { NotFound } from 'components/not-found';
 import { actions } from 'actions';
 import { currentSelector } from 'selectors/current-selector';
 import { sameGenreListSelector } from 'selectors/same-genre-list-selector';
+import { Props } from './props';
 
 const mapStateToProps = createSelector(
     currentSelector,
@@ -31,13 +29,12 @@ const mapDispatchToProps = dispatch => {
     };
 };
 
-export const MoviePageSmart = connect(
+export const MoviePageSmart: FC<Props> = connect(
     mapStateToProps,
     mapDispatchToProps
 )(
-    memo(({ movie, moviesWithTheSameGenre, fetchMovieById }) => {
-        const router = useRouter();
-        const { id } = router.query;
+    memo(({ movie, moviesWithTheSameGenre, fetchMovieById, match }: Props) => {
+        const { id } = match.params;
         const [isStartedLoading, setIsStartedLoading] = useState(false);
         useEffect(() => {
             if (!isStartedLoading) {
@@ -82,10 +79,3 @@ export const MoviePageSmart = connect(
         );
     })
 );
-
-MoviePageSmart.propTypes = {
-    match: PropTypes.objectOf(PropTypes.object),
-    movie: PropTypes.objectOf(PropTypes.object),
-    moviesWithTheSameGenre: PropTypes.objectOf(PropTypes.object),
-    fetchMovieById: PropTypes.func
-};
