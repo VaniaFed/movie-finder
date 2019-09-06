@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { connect } from 'react-redux';
-import { createSelector } from 'reselect';
+import { useSelector, useDispatch } from 'react-redux';
 import { parse } from 'query-string';
 import { SearchPage } from 'components/search-page';
 import { actions } from 'actions';
@@ -11,54 +10,43 @@ import { searchFilterSelector } from 'selectors/search-filter-selector';
 import { sortFilterSelector } from 'selectors/sort-filter-selector';
 import { listSelector } from 'selectors/list-selector';
 
-const mapStateToProps = createSelector(
-    listSelector,
-    searchValueSelector,
-    searchFilterSelector,
-    sortFilterSelector,
-    (list, search, searchFilter, sortFilter) => {
-        return {
-            list,
-            controlsData: {
-                search,
+export const SearchPageSmart = () => {
+    const [isStartedLoading, setIsStartedLoading] = useState(false);
+    const list = useSelector(listSelector);
+    const search = useSelector(searchValueSelector);
+    const searchFilter = useSelector(searchFilterSelector);
+    const sortFilter = useSelector(sortFilterSelector);
+    const controlsData = {
+        search,
+        searchFilter,
+        sortFilter
+    };
+    const dispatch = useDispatch();
+    const fetchMoviesByData = (searchValue, searchFilter, sortFilter) => {
+        dispatch(
+            actions.fetchMoviesByDataRequest(
+                searchValue,
                 searchFilter,
                 sortFilter
-            }
-        };
-    }
-);
-
-const mapDispatchToProps = dispatch => {
-    return {
-        dispatch,
-        dispatches: {
-            fetchMoviesByData: (searchValue, searchFilter, sortFilter) => {
-                dispatch(
-                    actions.fetchMoviesByDataRequest(
-                        searchValue,
-                        searchFilter,
-                        sortFilter
-                    )
-                );
-            },
-            changeSearchValue: searchValue => {
-                dispatch(actions.setSearchValue(searchValue));
-            },
-            changeSearchFilter: searchFilter => {
-                dispatch(actions.searchFilter(searchFilter));
-            },
-            changeSortFilter: sortFilter => {
-                dispatch(actions.sortFilter(sortFilter));
-            }
-        }
+            )
+        );
     };
-};
+    const changeSearchValue = searchValue => {
+        dispatch(actions.setSearchValue(searchValue));
+    };
+    const changeSearchFilter = searchFilter => {
+        dispatch(actions.searchFilter(searchFilter));
+    };
+    const changeSortFilter = sortFilter => {
+        dispatch(actions.sortFilter(sortFilter));
+    };
+    const dispatches = {
+        fetchMoviesByData,
+        changeSearchValue,
+        changeSearchFilter,
+        changeSortFilter
+    };
 
-export const SearchPageSmart = connect(
-    mapStateToProps,
-    mapDispatchToProps
-)(({ list, controlsData, dispatches }) => {
-    const [isStartedLoading, setIsStartedLoading] = useState(false);
     useEffect(() => {
         const urlData = parse(window.location.search);
         const inputData = {
@@ -69,7 +57,6 @@ export const SearchPageSmart = connect(
 
         const shouldFetchMovies = !isMap(urlData, inputData);
         if (shouldFetchMovies && !isStartedLoading) {
-            console.log('fetching');
             setIsStartedLoading(true);
             dispatches.fetchMoviesByData(
                 urlData.search,
@@ -120,4 +107,4 @@ export const SearchPageSmart = connect(
             />
         </>
     );
-});
+};
