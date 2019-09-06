@@ -32,13 +32,6 @@ export const SearchPageSmart = () => {
     const changeSortFilter = sortFilter => {
         dispatch(actions.sortFilter(sortFilter));
     };
-    const dispatches = {
-        fetchMoviesByData,
-        changeSearchValue,
-        changeSearchFilter,
-        changeSortFilter
-    };
-
     useEffect(() => {
         // FIXME: isomorfic instead of window
         // TODO: разделить в функции мб несколько useEffect
@@ -52,7 +45,7 @@ export const SearchPageSmart = () => {
         const shouldFetchMovies = !isMap(urlData, inputData);
         if (shouldFetchMovies && !isStartedLoading) {
             setIsStartedLoading(true);
-            dispatches.fetchMoviesByData(
+            fetchMoviesByData(
                 urlData.search,
                 urlData.searchFilter,
                 urlData.sortFilter
@@ -60,21 +53,21 @@ export const SearchPageSmart = () => {
         }
         const shouldChangeSearch = !isMap(urlData, inputData, ['search']);
         if (shouldChangeSearch) {
-            dispatches.changeSearchValue(urlData.search);
+            changeSearchValue(urlData.search);
         }
 
         const shouldChangeSearchFilter = !isMap(urlData, inputData, [
             'searchFilter'
         ]);
         if (shouldChangeSearchFilter) {
-            dispatches.changeSearchFilter(urlData.searchFilter);
+            changeSearchFilter(urlData.searchFilter);
         }
 
         const shouldChangeSortFilter = !isMap(urlData, inputData, [
             'sortFilter'
         ]);
         if (shouldChangeSortFilter) {
-            dispatches.changeSortFilter(urlData.sortFilter);
+            changeSortFilter(urlData.sortFilter);
         }
     });
 
