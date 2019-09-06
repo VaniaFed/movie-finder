@@ -5,23 +5,15 @@ import { SearchPage } from 'components/search-page';
 import { actions } from 'actions';
 import { isMap } from 'lib/is-map';
 import { pushToHistory } from 'lib/push-to-history';
-import { searchValueSelector } from 'selectors/search-value-selector';
-import { searchFilterSelector } from 'selectors/search-filter-selector';
-import { sortFilterSelector } from 'selectors/sort-filter-selector';
+import { searchDataSelector } from 'selectors/search-data-selector';
 import { listSelector } from 'selectors/list-selector';
 
 export const SearchPageSmart = () => {
     const [isStartedLoading, setIsStartedLoading] = useState(false);
     const list = useSelector(listSelector);
-    const search = useSelector(searchValueSelector);
-    const searchFilter = useSelector(searchFilterSelector);
-    const sortFilter = useSelector(sortFilterSelector);
-    const controlsData = {
-        search,
-        searchFilter,
-        sortFilter
-    };
+    const controlsData = useSelector(searchDataSelector);
     const dispatch = useDispatch();
+
     const fetchMoviesByData = (searchValue, searchFilter, sortFilter) => {
         dispatch(
             actions.fetchMoviesByDataRequest(
@@ -48,6 +40,8 @@ export const SearchPageSmart = () => {
     };
 
     useEffect(() => {
+        // FIXME: isomorfic instead of window
+        // TODO: разделить в функции мб несколько useEffect
         const urlData = parse(window.location.search);
         const inputData = {
             search: controlsData.search,
