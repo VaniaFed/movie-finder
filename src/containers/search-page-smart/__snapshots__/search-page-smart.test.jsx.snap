@@ -22,6 +22,7 @@ Array [
         className="search-input__input"
         data-input="search-input__input"
         onInput={[Function]}
+        onKeyDown={[Function]}
         placeholder="Game of Thrones"
         type="text"
       />
@@ -49,7 +50,7 @@ Array [
           >
             <input
               className="toggle-button__input toggle-button__input--checked"
-              defaultChecked="checked"
+              defaultChecked={true}
               name="search"
               type="radio"
             />
@@ -115,7 +116,7 @@ Array [
         >
           <input
             className="toggle-button__input toggle-button__input--no-background toggle-button__input--checked"
-            defaultChecked="checked"
+            defaultChecked={true}
             name="sort"
             type="radio"
           />
@@ -144,10 +145,5 @@ Array [
       </div>
     </div>
   </div>,
-  <h2
-    className="not-found"
-  >
-    No films found
-  </h2>,
 ]
 `;

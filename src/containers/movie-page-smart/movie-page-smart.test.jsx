@@ -5,10 +5,13 @@ import { MoviePageSmart } from './index';
 
 const store = configureStore();
 describe('<MoviePageSmart />', () => {
+    const match = {
+        params: { id: 4 }
+    };
     const tree = renderer
         .create(
             <Provider store={store}>
-                <MoviePageSmart />
+                <MoviePageSmart match={match} />
             </Provider>
         )
         .toJSON();

@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<MoviePageSmart /> should render not found 1`] = `
+<h2
+  className="not-found"
+>
+  Film(s) not found
+</h2>
+`;

@@ -8,6 +8,7 @@ exports[`<SearchInput /> should be rendered 1`] = `
     className="search-input__input"
     data-input="search-input__input"
     onInput={[Function]}
+    onKeyDown={[Function]}
     placeholder="Game of Thrones"
     type="text"
   />

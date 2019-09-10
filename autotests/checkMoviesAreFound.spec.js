@@ -29,7 +29,7 @@ const inBrowser = url => async fn => {
     try {
         const page = await browser.newPage();
         await page.goto(url);
-        await fn(browser);
+        await fn({ browser, page });
     } finally {
         browser.close();
     }
@@ -37,7 +37,7 @@ const inBrowser = url => async fn => {
 
 describe('movies', () => {
     it('Quantity of movies should be is more than zero', async () => {
-        await inBrowser('http://localhost:3000/search')(async page => {
+        await inBrowser('http://localhost:3000/search')(async ({ page }) => {
             const header = headerBlock(page);
             header.find({ text: 'harry potter' });
 
