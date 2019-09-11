@@ -24,7 +24,7 @@ export const SearchBlock: FC<Props> = ({
             <SearchInput
                 searchValue={searchValue}
                 onSearch={(): void => {
-                    onSearch(searchValue);
+                    onSearch();
                 }}
                 onInput={onInput}
             />

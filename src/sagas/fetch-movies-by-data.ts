@@ -2,11 +2,16 @@ import { put, call, takeEvery } from 'redux-saga/effects';
 import { actions } from 'actions';
 import { FETCH_MOVIES_BY_DATA_REQUEST } from 'constants.js';
 import { services } from 'services';
+import { MovieType, ControlsData } from 'types/index';
 
-export function* fetchMoviesByData({ payload }) {
+interface Payload {
+    payload: {
+        data: ControlsData;
+    };
+}
+export function* fetchMoviesByData({ payload: { data } }: Payload) {
     try {
-        const response = yield call(services.getMovies, payload);
-        const movies = response.data;
+        const movies: MovieType[] = yield call(services.getMovies, data);
         yield put(actions.fetchMoviesByDataSuccess(movies));
     } catch (error) {
         yield put(actions.fetchMoviesByDataError(error.message));

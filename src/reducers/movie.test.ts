@@ -1,5 +1,6 @@
 import { Map } from 'immutable';
 import { actions } from 'actions';
+import { ControlsData } from 'types';
 import { movie } from './movie';
 
 let state = Map({
@@ -56,7 +57,12 @@ describe('movie reducer', () => {
     });
 
     it('FETCH_MOVIE_BY_DATA_REQUEST should\'t change store', () => {
-        const result = movie(state, actions.fetchMoviesByDataRequest(5));
+        const data: ControlsData = {
+            search: 'harry',
+            searchFilter: 'title',
+            sortFilter: 'release_date'
+        };
+        const result = movie(state, actions.fetchMoviesByDataRequest(data));
         expect(result.toJS()).toEqual(state.toJS());
     });
 

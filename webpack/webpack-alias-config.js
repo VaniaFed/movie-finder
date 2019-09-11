@@ -7,7 +7,7 @@ module.exports = {
             containers: path.resolve(__dirname, '../src/containers/'),
             src: path.resolve(__dirname, '../src/'),
             static: path.resolve(__dirname, '../static/'),
-            actions: path.resolve(__dirname, '../src/actions/'),
+            actions: path.resolve(__dirname, '../src/actions'),
             reducers: path.resolve(__dirname, '../src/reducers/'),
             selectors: path.resolve(__dirname, '../src/selectors/'),
             utils: path.resolve(__dirname, '../src/utils/'),

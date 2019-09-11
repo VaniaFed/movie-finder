@@ -9,6 +9,6 @@ export const fetchMoviesByData = action => sideEffects => (
     const shouldFetchMovies = !isMap(urlData, controlsData);
     if (shouldFetchMovies && !isStartedLoading) {
         sideEffects();
-        action(urlData.search, urlData.searchFilter, urlData.sortFilter);
+        action(urlData);
     }
 };

@@ -3,19 +3,19 @@ import {
     FETCH_MOVIES_BY_DATA_SUCCESS,
     FETCH_MOVIES_BY_DATA_ERROR
 } from 'constants.js';
+import { ControlsData } from 'types/index';
 
-export const fetchMoviesByDataRequest = (
-    search,
-    searchBy = 'title',
-    sortBy = 'rating'
-) => {
+export const fetchMoviesByDataRequest = (data: ControlsData) => {
+    const { search, searchFilter, sortFilter } = data;
     return {
         type: FETCH_MOVIES_BY_DATA_REQUEST,
         payload: {
-            search,
-            searchBy,
-            sortBy,
-            sortOrder: 'desc'
+            data: {
+                search,
+                searchBy: searchFilter,
+                sortBy: sortFilter,
+                sortOrder: 'desc'
+            }
         }
     };
 };

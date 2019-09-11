@@ -5,28 +5,23 @@ import { actions } from 'actions';
 import { pushToHistory } from 'lib/push-to-history';
 import { searchDataSelector } from 'selectors/search-data-selector';
 import { listSelector } from 'selectors/list-selector';
+import { ControlsData } from 'types/index';
 import { changeSearch } from './changeSearch';
 import { fetchMoviesByData } from './fetchMoviesByData';
 import { changeSearchFilter } from './changeSearchFilter';
 import { changeSortFilter } from './changeSortFilter';
 
-export const SearchPageSmart = ({ location }) => {
+interface Props {
+    location: ControlsData;
+}
+
+export const SearchPageSmart = ({ location }: Props) => {
     const [isStartedLoading, setIsStartedLoading] = useState(false);
-    const controlsData = useSelector(searchDataSelector);
+    const controlsData: ControlsData = useSelector(searchDataSelector);
     const dispatch = useDispatch();
 
-    const dispatchFetchMoviesByData = (
-        searchValue: string,
-        searchFilter: string,
-        sortFilter: string
-    ) => {
-        dispatch(
-            actions.fetchMoviesByDataRequest(
-                searchValue,
-                searchFilter,
-                sortFilter
-            )
-        );
+    const dispatchFetchMoviesByData = (data: ControlsData) => {
+        dispatch(actions.fetchMoviesByDataRequest(data));
     };
 
     const dispatchSearch = (value: string) => {
@@ -53,7 +48,8 @@ export const SearchPageSmart = ({ location }) => {
         dispatchFetchMoviesByData
     )(sideEffects);
 
-    const urlData = location;
+    const urlData: ControlsData = location;
+
     useEffect(() => {
         handleFetchMoviesByData(urlData, controlsData, isStartedLoading);
         handleChangeSearch(urlData, controlsData);
@@ -61,18 +57,16 @@ export const SearchPageSmart = ({ location }) => {
         handleChangeSortFilter(urlData, controlsData);
     }, []);
 
-    const list = useSelector(listSelector);
+    const movieList = useSelector(listSelector);
     useEffect(() => {
-        if (isStartedLoading && list.length !== 0) {
+        if (isStartedLoading && movieList.length !== 0) {
             setIsStartedLoading(false);
         }
     });
 
     return (
         <SearchPage
-            movies={list}
-            searchValue={controlsData.searchValue}
-            searchFilter={controlsData.searchFilter}
+            movies={movieList}
             sortFilter={controlsData.sortFilter}
             isStartedLoading={isStartedLoading}
             setIsStartedLoading={setIsStartedLoading}
