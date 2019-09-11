@@ -8,16 +8,19 @@ import { NotFound } from 'components/not-found';
 import { actions } from 'actions';
 import { currentSelector } from 'selectors/current-selector';
 import { sameGenreListSelector } from 'selectors/same-genre-list-selector';
+import { MovieType } from 'types/index';
 import { Props } from './props';
 
 export const MoviePageSmart: FC<Props> = memo(({ match }: Props) => {
     const dispatch = useDispatch();
-    const fetchMovieById = id => {
+    const fetchMovieById = (id: number) => {
         dispatch(actions.fetchMovieByIdRequest(id));
     };
 
-    const movie = useSelector(currentSelector);
-    const moviesWithTheSameGenre = useSelector(sameGenreListSelector);
+    const movie: MovieType = useSelector(currentSelector);
+    const moviesWithTheSameGenre: MovieType[] = useSelector(
+        sameGenreListSelector
+    );
 
     const { id } = match.params;
     const [isStartedLoading, setIsStartedLoading] = useState(false);

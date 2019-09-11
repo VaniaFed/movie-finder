@@ -1,8 +1,8 @@
 import PropTypes, { InferProps } from 'prop-types';
-import { MovieType } from 'types/index';
+import { MoviePropTypes } from 'types/index';
 
 const Types = {
-    movies: PropTypes.arrayOf(PropTypes.shape(MovieType))
+    movies: PropTypes.arrayOf(PropTypes.shape(MoviePropTypes))
 };
 
 export type Props = InferProps<typeof Types>;
