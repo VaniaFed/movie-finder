@@ -32,4 +32,4 @@ export const fetchMoviesByGenreError = message => ({
     }
 });
 
-console.log('hello');
+console.log('hello2');
