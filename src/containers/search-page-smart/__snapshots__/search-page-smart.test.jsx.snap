@@ -25,6 +25,7 @@ Array [
         onKeyDown={[Function]}
         placeholder="Game of Thrones"
         type="text"
+        value=""
       />
       <button
         className="search-input__btnIcon"
