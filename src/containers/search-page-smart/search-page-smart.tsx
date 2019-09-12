@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { SearchPage } from 'components/search-page';
+import { parse } from 'query-string';
 import { actions } from 'actions';
 import { pushToHistory } from 'lib/push-to-history';
 import { searchDataSelector } from 'selectors/search-data-selector';
@@ -17,7 +18,6 @@ interface Props {
 
 export const SearchPageSmart = ({ location }: Props) => {
     const [isStartedLoading, setIsStartedLoading] = useState(false);
-    const controlsData: ControlsData = useSelector(searchDataSelector);
     const dispatch = useDispatch();
 
     const dispatchFetchMoviesByData = (data: ControlsData) => {
@@ -46,8 +46,8 @@ export const SearchPageSmart = ({ location }: Props) => {
         dispatchFetchMoviesByData
     )(sideEffects);
 
-    const urlData: ControlsData = location;
-
+    const urlData: ControlsData = parse(location.search);
+    const controlsData: ControlsData = useSelector(searchDataSelector);
     useEffect(() => {
         handleFetchMoviesByData(urlData, controlsData, isStartedLoading);
         handleChangeSearch(urlData, controlsData);
