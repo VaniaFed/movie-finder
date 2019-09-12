@@ -12,7 +12,7 @@
         "esModuleInterop": true,
         "moduleResolution": "node",
         "resolveJsonModule": true,
-        "isolatedModules": true,
+        "isolatedModules": false,
         "outDir": "./dist/",
         "sourceMap": true,
         "noImplicitAny": true,

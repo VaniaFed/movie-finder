@@ -1,5 +1,6 @@
 export interface ControlsData {
     search: string;
-    searchFilter: string;
-    sortFilter: string;
+    searchBy: string;
+    sortBy: string;
+    sortOrder?: string;
 }

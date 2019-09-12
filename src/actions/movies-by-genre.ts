@@ -1,18 +1,17 @@
 import {
-    FETCH_MOVIES_BY_DATA_REQUEST,
-    FETCH_MOVIES_BY_DATA_SUCCESS,
-    FETCH_MOVIES_BY_DATA_ERROR
+    FETCH_MOVIES_BY_GENRE_REQUEST,
+    FETCH_MOVIES_BY_GENRE_SUCCESS,
+    FETCH_MOVIES_BY_GENRE_ERROR
 } from 'constants.js';
 import { ControlsData, MovieType } from 'types/index';
 import { FetchMoviesAction } from 'types/actions';
 
-export const fetchMoviesByDataRequest = (
+export const fetchMoviesByGenreRequest = (
     data: ControlsData
 ): FetchMoviesAction => {
     const { search, searchFilter, sortFilter } = data;
-    // TODO: replace searchFilter with searchBy and sortFilter with sortBy everywhere
     return {
-        type: FETCH_MOVIES_BY_DATA_REQUEST,
+        type: FETCH_MOVIES_BY_GENRE_REQUEST,
         payload: {
             data: {
                 search,
@@ -23,18 +22,18 @@ export const fetchMoviesByDataRequest = (
         }
     };
 };
-
-export const fetchMoviesByDataSuccess = (
+export const fetchMoviesByGenreSuccess = (
     movies: MovieType[]
 ): FetchMoviesAction => ({
-    type: FETCH_MOVIES_BY_DATA_SUCCESS,
+    type: FETCH_MOVIES_BY_GENRE_SUCCESS,
     payload: {
         movies
     }
 });
-
-export const fetchMoviesByDataError = (message: string): FetchMoviesAction => ({
-    type: FETCH_MOVIES_BY_DATA_ERROR,
+export const fetchMoviesByGenreError = (
+    message: string
+): FetchMoviesAction => ({
+    type: FETCH_MOVIES_BY_GENRE_ERROR,
     payload: {
         message
     }
