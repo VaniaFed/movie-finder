@@ -1,19 +1,18 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { pushToHistory } from 'lib/push-to-history';
-import { actions } from 'actions';
+import { actions } from 'actions/index';
 import { SearchBlock } from 'components/search-block';
 import { searchSelector } from 'selectors/search-selector';
 import { searchBySelector } from 'selectors/search-by-selector';
 import { ControlsData } from 'src/types';
 
-export const SmartSearchBlock = ({
-    sortBy,
-    setIsStartedLoading
-}: {
+interface Props {
     sortBy: string;
     setIsStartedLoading(isStartedLoading: boolean): void;
-}) => {
+}
+
+export const SmartSearchBlock = ({ sortBy, setIsStartedLoading }: Props) => {
     const search = useSelector(searchSelector);
     const searchBy = useSelector(searchBySelector);
 
