@@ -7,8 +7,8 @@ const state = {
         list: [{ id: 1, title: 'hello' }, { id: 2, title: 'hello 2' }],
         sameGenreList: [],
         error: '',
-        searchFilter: 'title',
-        sortFilter: 'release_date'
+        searchBy: 'title',
+        sortBy: 'release_date'
     })
 };
 

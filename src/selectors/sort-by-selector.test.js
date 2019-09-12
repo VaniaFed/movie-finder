@@ -1,5 +1,5 @@
 import { Map } from 'immutable';
-import { sortFilterSelector } from './sort-filter-selector';
+import { sortBySelector } from './sort-by-selector';
 
 const state = {
     movie: Map({
@@ -7,12 +7,12 @@ const state = {
         list: [{ id: 1, title: 'hello' }, { id: 2, title: 'hello 2' }],
         sameGenreList: [],
         error: '',
-        sortFilterSelector: 'title',
-        sortFilter: 'release_date'
+        sortBySelector: 'title',
+        sortBy: 'release_date'
     })
 };
 
 test('should get correct value', () => {
-    const sortFilter = sortFilterSelector(state);
-    expect(sortFilter).toEqual(state.movie.toJS().sortFilter);
+    const sortBy = sortBySelector(state);
+    expect(sortBy).toEqual(state.movie.toJS().sortBy);
 });

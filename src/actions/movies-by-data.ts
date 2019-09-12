@@ -9,15 +9,11 @@ import { FetchMoviesAction } from 'types/actions';
 export const fetchMoviesByDataRequest = (
     data: ControlsData
 ): FetchMoviesAction => {
-    const { search, searchFilter, sortFilter } = data;
-    // TODO: replace searchFilter with searchBy and sortFilter with sortBy everywhere
     return {
         type: FETCH_MOVIES_BY_DATA_REQUEST,
         payload: {
             data: {
-                search,
-                searchBy: searchFilter,
-                sortBy: sortFilter,
+                ...data,
                 sortOrder: 'desc'
             }
         }

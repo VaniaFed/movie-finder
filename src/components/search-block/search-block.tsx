@@ -10,11 +10,11 @@ import './search-block.scss';
 
 export const SearchBlock: FC<Props> = ({
     className,
-    searchValue,
-    searchFilter,
+    search,
+    searchBy,
     onSearch,
     onInput,
-    changeSearchFilter
+    changeSearchBy
 }: Props) => {
     const resultClass = classNames('search-block', className);
     return (
@@ -22,7 +22,7 @@ export const SearchBlock: FC<Props> = ({
             <Logo text="netfixroulette" className="search-block__logo" />
             <h3 className="search-block__title">Find your movie</h3>
             <SearchInput
-                searchValue={searchValue}
+                search={search}
                 onSearch={(): void => {
                     onSearch();
                 }}
@@ -30,14 +30,14 @@ export const SearchBlock: FC<Props> = ({
             />
             <div className="search-block__controll">
                 <SearchBy
-                    changeSearchFilter={changeSearchFilter}
+                    changeSearchBy={changeSearchBy}
                     className="search-block__search-by"
-                    searchFilter={searchFilter}
+                    searchBy={searchBy}
                 />
                 <Button
                     text="Find"
                     onClick={(): void => {
-                        onSearch(searchValue);
+                        onSearch(search);
                     }}
                     className="search-block__btn-search"
                 />

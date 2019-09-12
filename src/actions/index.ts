@@ -13,9 +13,9 @@ import {
     fetchMoviesByGenreSuccess,
     fetchMoviesByGenreError
 } from 'actions/movies-by-genre';
-import { searchFilter } from 'actions/search-filter';
-import { sortFilter } from 'actions/sort-filter';
-import { setSearchValue } from 'actions/set-search-value';
+import { setSearchBy } from 'actions/set-search-by';
+import { setSortBy } from 'actions/set-sort-by';
+import { setSearch } from 'actions/set-search';
 
 export const actions = {
     fetchMovieByIdRequest,
@@ -30,9 +30,9 @@ export const actions = {
     fetchMoviesByGenreSuccess,
     fetchMoviesByGenreError,
 
-    searchFilter,
+    setSearchBy,
 
-    sortFilter,
+    setSortBy,
 
-    setSearchValue
+    setSearch
 };

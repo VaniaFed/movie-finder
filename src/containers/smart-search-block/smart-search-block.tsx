@@ -3,27 +3,27 @@ import { useSelector, useDispatch } from 'react-redux';
 import { pushToHistory } from 'lib/push-to-history';
 import { actions } from 'actions';
 import { SearchBlock } from 'components/search-block';
-import { searchValueSelector } from 'selectors/search-value-selector';
-import { searchFilterSelector } from 'selectors/search-filter-selector';
+import { searchSelector } from 'selectors/search-selector';
+import { searchBySelector } from 'selectors/search-by-selector';
 import { ControlsData } from 'src/types';
 
 export const SmartSearchBlock = ({
-    sortFilter,
+    sortBy,
     setIsStartedLoading
 }: {
-    sortFilter: string;
+    sortBy: string;
     setIsStartedLoading(isStartedLoading: boolean): void;
 }) => {
-    const search = useSelector(searchValueSelector);
-    const searchFilter = useSelector(searchFilterSelector);
+    const search = useSelector(searchSelector);
+    const searchBy = useSelector(searchBySelector);
 
     const dispatch = useDispatch();
     const fetchMoviesByData = (data: ControlsData) => {
         dispatch(actions.fetchMoviesByDataRequest(data));
     };
 
-    const changeSearchValue = (value: string): void => {
-        dispatch(actions.setSearchValue(value));
+    const changeSearch = (value: string): void => {
+        dispatch(actions.setSearch(value));
     };
 
     const findMovies = (data: ControlsData) => {
@@ -31,29 +31,29 @@ export const SmartSearchBlock = ({
         fetchMoviesByData(data);
         pushToHistory({
             search,
-            searchFilter,
-            sortFilter
+            searchBy,
+            sortBy
         });
     };
     return (
         <SearchBlock
-            searchValue={search}
+            search={search}
             onSearch={() => {
                 const searchData: ControlsData = {
                     search,
-                    searchFilter,
-                    sortFilter
+                    searchBy,
+                    sortBy
                 };
                 findMovies(searchData);
             }}
             onInput={value => {
-                changeSearchValue(value);
+                changeSearch(value);
                 pushToHistory({ search: value });
             }}
-            changeSearchFilter={searchFilter => {
-                pushToHistory({ searchFilter });
+            changeSearchBy={searchBy => {
+                pushToHistory({ searchBy });
             }}
-            searchFilter={searchFilter}
+            searchBy={searchBy}
         />
     );
 };

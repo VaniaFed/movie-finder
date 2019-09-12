@@ -11,23 +11,23 @@ import './search-page.scss';
 
 export const SearchPage: FC<Props> = ({
     movies,
-    sortFilter,
+    sortBy,
     isStartedLoading,
     setIsStartedLoading,
-    changeSortFilter
+    changeSortBy
 }: Props): ReactElement => {
     const notFound: FC = () => <NotFound caption="Movies aren't found" />;
     return (
         <>
             <SmartSearchBlock
-                sortFilter={sortFilter}
+                sortBy={sortBy}
                 setIsStartedLoading={setIsStartedLoading}
             />
             <SearchPageInfo
                 quantityMovies={movies.length}
                 className="search-page__info"
-                changeSortFilter={changeSortFilter}
-                sortFilter={sortFilter}
+                changeSortBy={changeSortBy}
+                sortBy={sortBy}
             />
             {isStartedLoading ? (
                 <Preloader />

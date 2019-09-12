@@ -8,8 +8,8 @@ import './search-page-info.scss';
 export const SearchPageInfo: FC<Props> = ({
     quantityMovies,
     className,
-    sortFilter,
-    changeSortFilter
+    sortBy,
+    changeSortBy
 }: Props) => {
     const sortByData: ToggleData[] = [
         { key: 'release_date', text: 'Release date', onClick: f => f },
@@ -28,8 +28,8 @@ export const SearchPageInfo: FC<Props> = ({
                 <SortToggleContainer
                     className="search-page-info__toggle-container"
                     name="sort-by"
-                    changeFilterHistory={changeSortFilter}
-                    currentFilter={sortFilter}
+                    changeFilterHistory={changeSortBy}
+                    currentFilter={sortBy}
                     data={sortByData}
                 />
             </div>

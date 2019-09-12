@@ -8,8 +8,8 @@ let state = Map({
     list: [],
     sameGenreList: [],
     error: '',
-    searchFilter: 'title',
-    sortFilter: 'release_date'
+    searchBy: 'title',
+    sortBy: 'release_date'
 });
 
 describe('movie reducer', () => {
@@ -19,12 +19,12 @@ describe('movie reducer', () => {
             list: [],
             sameGenreList: [],
             error: '',
-            searchFilter: 'title',
-            sortFilter: 'release_date'
+            searchBy: 'title',
+            sortBy: 'release_date'
         });
     });
 
-    it('FETCH_MOVIE_BY_ID_REQUEST should\'t change store', () => {
+    it("FETCH_MOVIE_BY_ID_REQUEST should't change store", () => {
         const result = movie(state, actions.fetchMovieByIdRequest(5));
         expect(result.toJS()).toEqual(state.toJS());
     });
@@ -40,8 +40,8 @@ describe('movie reducer', () => {
             list: [],
             sameGenreList: [],
             error: '',
-            searchFilter: 'title',
-            sortFilter: 'release_date'
+            searchBy: 'title',
+            sortBy: 'release_date'
         });
     });
 
@@ -56,11 +56,11 @@ describe('movie reducer', () => {
         });
     });
 
-    it('FETCH_MOVIE_BY_DATA_REQUEST should\'t change store', () => {
+    it("FETCH_MOVIE_BY_DATA_REQUEST should't change store", () => {
         const data: ControlsData = {
             search: 'harry',
-            searchFilter: 'title',
-            sortFilter: 'release_date'
+            searchBy: 'title',
+            sortBy: 'release_date'
         };
         const result = movie(state, actions.fetchMoviesByDataRequest(data));
         expect(result.toJS()).toEqual(state.toJS());
@@ -81,8 +81,8 @@ describe('movie reducer', () => {
             list: expectedList,
             sameGenreList: [],
             error: '',
-            searchFilter: 'title',
-            sortFilter: 'release_date'
+            searchBy: 'title',
+            sortBy: 'release_date'
         });
     });
 
@@ -97,7 +97,7 @@ describe('movie reducer', () => {
         });
     });
 
-    it('FETCH_MOVIE_BY_GENRE_REQUEST should\'t change store', () => {
+    it("FETCH_MOVIE_BY_GENRE_REQUEST should't change store", () => {
         const result = movie(
             state,
             actions.fetchMoviesByGenreRequest('action')
@@ -120,8 +120,8 @@ describe('movie reducer', () => {
             list: [],
             sameGenreList: expectedSameGenres,
             error: '',
-            searchFilter: 'title',
-            sortFilter: 'release_date'
+            searchBy: 'title',
+            sortBy: 'release_date'
         });
     });
 
@@ -137,17 +137,17 @@ describe('movie reducer', () => {
     });
 
     it('SEARCH_FILTER should change field', () => {
-        const result = movie(state, actions.searchFilter('genre'));
+        const result = movie(state, actions.setSearchBy('genre'));
         expect(result.toJS()).toEqual({
             ...state.toJS(),
-            searchFilter: 'genre'
+            searchBy: 'genre'
         });
     });
     it('SORT_FILTER should change field', () => {
-        const result = movie(state, actions.sortFilter('rating'));
+        const result = movie(state, actions.setSortBy('rating'));
         expect(result.toJS()).toEqual({
             ...state.toJS(),
-            sortFilter: 'rating'
+            sortBy: 'rating'
         });
     });
 });

@@ -3,10 +3,10 @@ import { MoviePropTypes } from 'types/index';
 
 const Types = {
     movies: PropTypes.arrayOf(PropTypes.shape(MoviePropTypes)),
-    sortFilter: PropTypes.string,
+    sortBy: PropTypes.string,
     isStartedLoading: PropTypes.bool,
     setIsStartedLoading: PropTypes.func,
-    changeSortFilter: PropTypes.func
+    changeSortBy: PropTypes.func
 };
 
 export type Props = InferProps<typeof Types>;

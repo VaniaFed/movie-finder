@@ -9,14 +9,11 @@ import { FetchMoviesAction } from 'types/actions';
 export const fetchMoviesByGenreRequest = (
     data: ControlsData
 ): FetchMoviesAction => {
-    const { search, searchFilter, sortFilter } = data;
     return {
         type: FETCH_MOVIES_BY_GENRE_REQUEST,
         payload: {
             data: {
-                search,
-                searchBy: searchFilter,
-                sortBy: sortFilter,
+                ...data,
                 sortOrder: 'desc'
             }
         }

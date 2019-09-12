@@ -1,10 +1,10 @@
 import { SET_SEARCH_VALUE } from 'constants.js';
-import { SetSearchValueAction } from 'types/actions';
+import { SetSearchAction } from 'types/actions';
 import { ControlsData } from 'types/index';
 
-export const setSearchValue = (
+export const setSearch = (
     search: keyof ControlsData
-): SetSearchValueAction => ({
+): SetSearchAction => ({
     type: SET_SEARCH_VALUE,
     payload: {
         search

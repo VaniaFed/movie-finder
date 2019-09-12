@@ -7,8 +7,8 @@ import './search-by.scss';
 
 export const SearchBy: FC<Props> = ({
     className,
-    searchFilter,
-    changeSearchFilter
+    searchBy,
+    changeSearchBy
 }: Props) => {
     const resultClass: string = classNames('search-by', className);
     const searchByData: Array<ToggleData> = [
@@ -19,10 +19,10 @@ export const SearchBy: FC<Props> = ({
         <div className={resultClass}>
             <span className="search-by__title">Search by</span>
             <SearchToggleContainer
-                changeFilterHistory={changeSearchFilter}
+                changeFilterHistory={changeSearchBy}
                 name="search-by"
                 data={searchByData}
-                currentFilter={searchFilter}
+                currentFilter={searchBy}
             />
         </div>
     );

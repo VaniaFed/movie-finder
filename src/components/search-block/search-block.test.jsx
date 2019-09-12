@@ -10,7 +10,7 @@ describe('<SearchBlock />', () => {
         .create(
             <Provider store={store}>
                 <SearchBlock
-                    searchValue="harry potter"
+                    search="harry potter"
                     onSearch={f => f}
                     onInput={f => f}
                 />

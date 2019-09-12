@@ -48,11 +48,11 @@ export const ToggleContainerHOC: FC = ({ name, background }) => {
 export const SearchToggleContainer = connect(
     null,
     dispatch => ({
-        changeFilter: by => dispatch(actions.searchFilter(by))
+        changeFilter: by => dispatch(actions.setSearchBy(by))
     })
 )(ToggleContainerHOC({ name: 'search', background: true }));
 
 export const SortToggleContainer = connect(
     null,
-    dispatch => ({ changeFilter: by => dispatch(actions.sortFilter(by)) })
+    dispatch => ({ changeFilter: by => dispatch(actions.setSortBy(by)) })
 )(ToggleContainerHOC({ name: 'sort', background: false }));

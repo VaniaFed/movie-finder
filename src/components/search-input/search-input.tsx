@@ -4,7 +4,7 @@ import { Props } from './props';
 import './search-input.scss';
 
 export const SearchInput: FC<Props> = ({
-    searchValue,
+    search,
     className,
     onSearch,
     onInput
@@ -14,7 +14,7 @@ export const SearchInput: FC<Props> = ({
             className="search-input__input"
             type="text"
             placeholder="Game of Thrones"
-            value={searchValue}
+            value={search}
             onInput={(e): void => {
                 onInput(e.currentTarget.value);
             }}

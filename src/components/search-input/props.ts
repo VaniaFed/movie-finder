@@ -1,7 +1,7 @@
 import PropTypes, { InferProps } from 'prop-types';
 
 const Types = {
-    searchValue: PropTypes.string,
+    search: PropTypes.string,
     className: PropTypes.string,
     onSearch: PropTypes.func,
     onInput: PropTypes.func

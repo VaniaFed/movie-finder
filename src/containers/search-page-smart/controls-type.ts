@@ -1,5 +1,5 @@
 export interface ControlsType {
     search: string;
-    searchFilter: string;
-    sortFilter: string;
+    searchBy: string;
+    sortBy: string;
 }
