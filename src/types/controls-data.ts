@@ -1,6 +1,6 @@
 export interface ControlsData {
     search: string;
-    searchBy: string;
-    sortBy: string;
-    sortOrder?: string;
+    searchBy: 'title' | 'genre';
+    sortBy: 'release_date' | 'rating';
+    sortOrder?: 'desc' | 'asc';
 }
