@@ -9,13 +9,17 @@ exports[`<MovieHeader /> should be rendered 1`] = `
   >
     netfixroulette
   </h1>
-  <button
-    className="movie-header__search-button movie-header__search-button--reversed button"
-    data-button="search-page__button-search"
+  <a
+    href="/search"
     onClick={[Function]}
-    type="button"
   >
-    search
-  </button>
+    <button
+      className="movie-header__search-button movie-header__search-button--reversed button"
+      data-button="search-page__button-search"
+      type="button"
+    >
+      search
+    </button>
+  </a>
 </div>
 `;

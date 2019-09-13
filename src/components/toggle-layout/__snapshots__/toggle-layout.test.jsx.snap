@@ -8,7 +8,7 @@ exports[`<ToggleLayout /> should be rendered 1`] = `
   >
     <input
       className="toggle-button__input toggle-button__input--checked"
-      defaultChecked="checked"
+      defaultChecked={true}
       name="test"
       type="radio"
     />
@@ -24,7 +24,7 @@ exports[`<ToggleLayout /> should be rendered 1`] = `
   >
     <input
       className="toggle-button__input toggle-button__input--checked"
-      defaultChecked="checked"
+      defaultChecked={true}
       name="test"
       type="radio"
     />

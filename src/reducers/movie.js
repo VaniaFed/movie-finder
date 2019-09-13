@@ -16,9 +16,9 @@ const initialState = Map({
     list: [],
     sameGenreList: [],
     error: '',
-    searchValue: '',
-    searchFilter: 'title',
-    sortFilter: 'release_date'
+    search: '',
+    searchBy: 'title',
+    sortBy: 'release_date'
 });
 
 export const movie = (state = initialState, action) => {
@@ -42,14 +42,14 @@ export const movie = (state = initialState, action) => {
         case FETCH_MOVIES_BY_GENRE_ERROR: {
             return state.setIn(['error'], action.payload.message);
         }
-        case SEARCH_FILTER: {
-            return state.setIn(['searchFilter'], action.payload.searchBy);
-        }
-        case SORT_FILTER: {
-            return state.setIn(['sortFilter'], action.payload.sortBy);
-        }
         case SET_SEARCH_VALUE: {
             return state.setIn(['search'], action.payload.search);
+        }
+        case SEARCH_FILTER: {
+            return state.setIn(['searchBy'], action.payload.searchBy);
+        }
+        case SORT_FILTER: {
+            return state.setIn(['sortBy'], action.payload.sortBy);
         }
         default:
             return state;

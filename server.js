@@ -1,5 +1,3 @@
-const cacheableResponse = require('cacheable-response');
-
 const express = require('express');
 const next = require('next');
 

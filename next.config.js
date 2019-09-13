@@ -1,5 +1,8 @@
 const withSass = require('@zeit/next-sass');
 const withTypescript = require('@zeit/next-typescript');
+const withImages = require('next-images');
+const withPlugins = require('next-compose-plugins');
+
 const webpack = require('webpack');
 
 const merge = require('webpack-merge');
@@ -13,10 +16,8 @@ const serverConfig = {
     ]
 };
 
-module.exports = withTypescript(
-    withSass({
-        webpack: config => {
-            return merge(config, aliasConfig, serverConfig);
-        }
-    })
-);
+module.exports = withPlugins([withTypescript, withSass, withImages], {
+    webpack: config => {
+        return merge(config, aliasConfig, serverConfig);
+    }
+});

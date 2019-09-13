@@ -1,6 +1,5 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { v4 } from 'uuid';
 
 import { MovieLayout } from './index';
 
@@ -12,7 +11,7 @@ const threeMovies = [
         releaseDate: '2014',
         posterPath:
             'https://pp.userapi.com/c844521/v844521991/f808b/TCjtAXN8SdA.jpg',
-        id: v4()
+        id: 4
     },
     {
         title: 'movei1',
@@ -21,7 +20,7 @@ const threeMovies = [
         releaseDate: '2014',
         posterPath:
             'https://pp.userapi.com/c844521/v844521991/f808b/TCjtAXN8SdA.jpg',
-        id: v4()
+        id: 4
     },
     {
         title: 'movei1',
@@ -30,7 +29,7 @@ const threeMovies = [
         releaseDate: '2014',
         posterPath:
             'https://pp.userapi.com/c844521/v844521991/f808b/TCjtAXN8SdA.jpg',
-        id: v4()
+        id: 4
     }
 ];
 
@@ -42,7 +41,7 @@ const fiveMovies = [
         releaseDate: '2014',
         posterPath:
             'https://pp.userapi.com/c844521/v844521991/f808b/TCjtAXN8SdA.jpg',
-        id: v4()
+        id: 4
     },
     {
         title: 'movei1',
@@ -51,7 +50,7 @@ const fiveMovies = [
         releaseDate: '2014',
         posterPath:
             'https://pp.userapi.com/c844521/v844521991/f808b/TCjtAXN8SdA.jpg',
-        id: v4()
+        id: 4
     },
     {
         title: 'movei1',
@@ -60,25 +59,7 @@ const fiveMovies = [
         releaseDate: '2014',
         posterPath:
             'https://pp.userapi.com/c844521/v844521991/f808b/TCjtAXN8SdA.jpg',
-        id: v4()
-    },
-    {
-        title: 'movei1',
-        genres: 'action',
-        tagline: 'some tagline',
-        releaseDate: '2014',
-        posterPath:
-            'https://pp.userapi.com/c844521/v844521991/f808b/TCjtAXN8SdA.jpg',
-        id: v4()
-    },
-    {
-        title: 'movei1',
-        genres: 'action',
-        tagline: 'some tagline',
-        releaseDate: '2014',
-        posterPath:
-            'https://pp.userapi.com/c844521/v844521991/f808b/TCjtAXN8SdA.jpg',
-        id: v4()
+        id: 4
     }
 ];
 storiesOf('MovieLayout', module)

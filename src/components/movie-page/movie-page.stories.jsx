@@ -1,7 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { v4 } from 'uuid';
 import { MoviePage } from './index';
 
 const movie = {
@@ -12,7 +11,7 @@ const movie = {
     releaseDate: '2014',
     overview:
         'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deleniti ipsam voluptas magnam totam! Veritatis rerum et dolorum unde porro assumenda dicta hic! Odio eaque dolore quos vitae ea quia consequatur.',
-    id: v4()
+    id: 11
 };
 const moviesWithTheSameGenre = [
     {
@@ -22,7 +21,7 @@ const moviesWithTheSameGenre = [
         releaseDate: '2014',
         posterPath:
             'https://pp.userapi.com/c844521/v844521991/f808b/TCjtAXN8SdA.jpg',
-        id: v4()
+        id: 1
     },
     {
         title: 'movei1',
@@ -31,7 +30,7 @@ const moviesWithTheSameGenre = [
         releaseDate: '2014',
         posterPath:
             'https://pp.userapi.com/c844521/v844521991/f808b/TCjtAXN8SdA.jpg',
-        id: v4()
+        id: 1
     },
     {
         title: 'movei1',
@@ -40,7 +39,7 @@ const moviesWithTheSameGenre = [
         releaseDate: '2014',
         posterPath:
             'https://pp.userapi.com/c844521/v844521991/f808b/TCjtAXN8SdA.jpg',
-        id: v4()
+        id: 1
     }
 ];
 storiesOf('MoviePage', module).add('regular', () => (

@@ -17,5 +17,5 @@ export const getMovies = async params => {
         query: getMoviesQuery,
         variables: { searchParam }
     });
-    return movies.data.data;
+    return movies.data.data.data;
 };

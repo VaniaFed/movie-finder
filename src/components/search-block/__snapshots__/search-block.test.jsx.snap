@@ -21,6 +21,7 @@ exports[`<SearchBlock /> should be rendered 1`] = `
       className="search-input__input"
       data-input="search-input__input"
       onInput={[Function]}
+      onKeyDown={[Function]}
       placeholder="Game of Thrones"
       type="text"
       value="harry potter"
@@ -49,7 +50,7 @@ exports[`<SearchBlock /> should be rendered 1`] = `
         >
           <input
             className="toggle-button__input toggle-button__input--checked"
-            defaultChecked="checked"
+            defaultChecked={true}
             name="search"
             type="radio"
           />

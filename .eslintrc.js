@@ -1,4 +1,5 @@
 module.exports = {
+    parser: '@typescript-eslint/parser',
     env: {
         browser: true,
         es6: true,
@@ -8,6 +9,7 @@ module.exports = {
     extends: [
         'airbnb',
         'eslint:recommended',
+        'plugin:@typescript-eslint/recommended',
         'plugin:import/errors',
         'plugin:import/warnings',
         'prettier',
@@ -25,7 +27,7 @@ module.exports = {
         ecmaVersion: 2018,
         sourceType: 'module'
     },
-    plugins: ['react', 'react-hooks', 'prettier', 'jest'],
+    plugins: ['react', 'react-hooks', '@typescript-eslint', 'prettier', 'jest'],
     settings: {
         'import/resolver': {
             alias: {
@@ -36,13 +38,14 @@ module.exports = {
                     ['reducers', './src/reducers'],
                     ['constants.js', './src/constants.js'],
                     ['selectors', './src/selectors'],
+                    ['types', './src/types'],
                     ['utils', './src/utils'],
                     ['lib', './src/lib'],
                     ['src', './src'],
                     ['sagas', './src/sagas'],
                     ['services', './src/services']
                 ],
-                extensions: ['.ts', '.js', '.jsx', '.json']
+                extensions: ['.ts', '.tsx', '.js', '.jsx', '.json']
             }
         }
     },
@@ -57,6 +60,12 @@ module.exports = {
         'prettier/prettier': [2, { singleQuote: true }],
         indent: ['error', 4, { SwitchCase: 1 }],
         'import/prefer-default-export': 0,
-        'react/require-default-props': 0
+        'react/require-default-props': 0,
+        '@typescript-eslint/no-explicit-any': 0,
+        '@typescript-eslint/explicit-function-return-type': 0,
+        'react/jsx-filename-extension': [
+            2,
+            { extensions: ['.js', '.jsx', '.ts', '.tsx'] }
+        ]
     }
 };

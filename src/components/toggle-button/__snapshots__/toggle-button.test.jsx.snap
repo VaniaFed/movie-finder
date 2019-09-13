@@ -7,7 +7,7 @@ exports[`<ToggleButton /> should be rendered 1`] = `
 >
   <input
     className="toggle-button__input toggle-button__input--checked"
-    defaultChecked="checked"
+    defaultChecked={true}
     name="some_name"
     type="radio"
   />
