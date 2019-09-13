@@ -1,6 +1,7 @@
 import renderer from 'react-test-renderer';
 import { MemoryRouter } from 'react-router';
-
+import { Provider } from 'react-redux';
+import { configureStore } from 'src/store';
 import { MovieBlock } from './index';
 
 const movie = {
@@ -19,11 +20,14 @@ const movie = {
     vote_average: 7.6,
     vote_count: 5584
 };
+const store = configureStore();
 describe('<MovieBlock />', () => {
     const tree = renderer
         .create(
             <MemoryRouter>
-                <MovieBlock movie={movie} />
+                <Provider store={store}>
+                    <MovieBlock movie={movie} />
+                </Provider>
             </MemoryRouter>
         )
         .toJSON();

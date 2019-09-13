@@ -10,7 +10,7 @@ exports[`<MovieHeader /> should be rendered 1`] = `
     netfixroulette
   </h1>
   <a
-    href="/search"
+    href="/search?undefined"
     onClick={[Function]}
   >
     <button

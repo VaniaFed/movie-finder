@@ -5,12 +5,15 @@ import { BrowserRouter } from 'react-router-dom';
 import { SearchPageSmart } from './index';
 
 const store = configureStore();
+const location = {
+    search: '?search=hello?params=hi'
+};
 describe('<SearchPageSmart />', () => {
     const tree = renderer
         .create(
             <BrowserRouter>
                 <Provider store={store}>
-                    <SearchPageSmart />
+                    <SearchPageSmart location={location} />
                 </Provider>
             </BrowserRouter>
         )
