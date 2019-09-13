@@ -1,20 +1,33 @@
-import React, { useState, useEffect, FC } from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { ToggleButton } from 'components/toggle-button';
 import { ToggleLayout } from 'components/toggle-layout';
 import { actions } from 'actions';
+import { ToggleData, ControlsData } from 'types/index';
 
-export const ToggleContainerHOC: FC = ({ name, background }) => {
+interface PropsHoc {
+    name: string;
+    background: boolean;
+}
+
+interface Props {
+    data: Array<ToggleData>;
+    changeFilter(value: keyof ControlsData): void;
+    currentFilter: keyof ControlsData;
+    changeFilterHistory(key: keyof ControlsData): void;
+}
+
+export const ToggleContainerHOC = ({ name, background }: PropsHoc) => {
     const ToggleContainer = ({
         data,
         changeFilter,
         currentFilter,
         changeFilterHistory
-    }) => {
+    }: Props) => {
         const [checked, check] = useState(data[0].key);
 
-        const onClick = key => () => {
+        const onClick = (key: keyof ToggleData) => () => {
             check(key);
             changeFilter(key);
             changeFilterHistory(key);

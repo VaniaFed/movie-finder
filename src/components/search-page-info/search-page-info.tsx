@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import classNames from 'classnames';
 import { SortToggleContainer } from 'containers/toggle-container';
-import { ToggleData } from 'types';
+import { ToggleData } from 'types/index';
 import { Props } from './props';
 import './search-page-info.scss';
 

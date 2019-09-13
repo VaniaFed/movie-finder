@@ -1,7 +1,8 @@
-// TODO: вынести в общие типы
+import { SearchBy, SortBy, SortOrder } from 'types/common';
+
 export interface ControlsData {
     search: string;
-    searchBy: 'title' | 'genre'; // SearchBy
-    sortBy: 'release_date' | 'rating';
-    sortOrder: 'desc' | 'asc';
+    searchBy: SearchBy;
+    sortBy: SortBy;
+    sortOrder: SortOrder;
 }

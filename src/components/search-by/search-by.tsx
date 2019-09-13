@@ -11,9 +11,9 @@ export const SearchBy: FC<Props> = ({
     changeSearchBy
 }: Props) => {
     const resultClass: string = classNames('search-by', className);
-    const searchByData: Array<ToggleData> = [
+    const searchByData: ToggleData[] = [
         { key: 'title', text: 'Title', onClick: f => f },
-        { key: 'genres', text: 'Genre', onClick: f => f }
+        { key: 'genre', text: 'Genre', onClick: f => f }
     ];
     return (
         <div className={resultClass}>

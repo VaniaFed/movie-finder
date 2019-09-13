@@ -8,8 +8,8 @@ export class ErrorBoundary extends React.Component {
     }
 
     render() {
-        const { hasError } = this.state;
-        const { children } = this.props;
+        const { hasError }: { hasError: boolean } = this.state;
+        const { children }: { children: React.ReactNode } = this.props;
 
         if (hasError) {
             return <h1>Something went wrong.</h1>;

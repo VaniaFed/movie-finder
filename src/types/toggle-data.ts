@@ -1,5 +1,7 @@
+import { SearchBy, SortBy } from 'types/common';
+
 export interface ToggleData {
-    key: string;
+    key: SortBy | SearchBy;
     text: string;
-    onClick?(): any;
+    onClick?(any: any): any;
 }
