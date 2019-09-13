@@ -9,7 +9,7 @@ import {
 import { MovieType } from 'types/index';
 import { ControlsData } from '../controls-data';
 
-interface FetchMoviesRequest {
+export interface FetchMoviesRequest {
     type:
         | typeof FETCH_MOVIES_BY_DATA_REQUEST
         | typeof FETCH_MOVIES_BY_GENRE_REQUEST;
@@ -18,7 +18,7 @@ interface FetchMoviesRequest {
     };
 }
 
-interface FetchMoviesSuccess {
+export interface FetchMoviesSuccess {
     type:
         | typeof FETCH_MOVIES_BY_DATA_SUCCESS
         | typeof FETCH_MOVIES_BY_GENRE_SUCCESS;
@@ -27,7 +27,7 @@ interface FetchMoviesSuccess {
     };
 }
 
-interface FetchMoviesError {
+export interface FetchMoviesError {
     type:
         | typeof FETCH_MOVIES_BY_DATA_ERROR
         | typeof FETCH_MOVIES_BY_GENRE_ERROR;
@@ -35,8 +35,3 @@ interface FetchMoviesError {
         message: string;
     };
 }
-
-export type FetchMoviesAction =
-    | FetchMoviesRequest
-    | FetchMoviesSuccess
-    | FetchMoviesError;

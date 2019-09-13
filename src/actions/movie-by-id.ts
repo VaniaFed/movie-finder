@@ -3,10 +3,14 @@ import {
     FETCH_MOVIE_BY_ID_SUCCESS,
     FETCH_MOVIE_BY_ID_ERROR
 } from 'constants.js';
-import { FetchMovieByIdAction } from 'types/actions';
+import {
+    FetchMovieByIdRequest,
+    FetchMovieByIdSuccess,
+    FetchMovieByIdError
+} from 'types/actions';
 import { MovieType } from 'types/index';
 
-export const fetchMovieByIdRequest = (id: number): FetchMovieByIdAction => {
+export const fetchMovieByIdRequest = (id: number): FetchMovieByIdRequest => {
     return {
         type: FETCH_MOVIE_BY_ID_REQUEST,
         payload: {
@@ -17,14 +21,14 @@ export const fetchMovieByIdRequest = (id: number): FetchMovieByIdAction => {
 
 export const fetchMovieByIdSuccess = (
     movie: MovieType
-): FetchMovieByIdAction => ({
+): FetchMovieByIdSuccess => ({
     type: FETCH_MOVIE_BY_ID_SUCCESS,
     payload: {
         movie
     }
 });
 
-export const fetchMovieByIdError = (message: string): FetchMovieByIdAction => ({
+export const fetchMovieByIdError = (message: string): FetchMovieByIdError => ({
     type: FETCH_MOVIE_BY_ID_ERROR,
     payload: {
         message

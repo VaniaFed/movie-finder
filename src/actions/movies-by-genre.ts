@@ -4,11 +4,15 @@ import {
     FETCH_MOVIES_BY_GENRE_ERROR
 } from 'constants.js';
 import { ControlsData, MovieType } from 'types/index';
-import { FetchMoviesAction } from 'types/actions';
+import {
+    FetchMoviesRequest,
+    FetchMoviesSuccess,
+    FetchMoviesError
+} from 'types/actions';
 
 export const fetchMoviesByGenreRequest = (
     data: ControlsData
-): FetchMoviesAction => {
+): FetchMoviesRequest => {
     return {
         type: FETCH_MOVIES_BY_GENRE_REQUEST,
         payload: {
@@ -19,17 +23,17 @@ export const fetchMoviesByGenreRequest = (
         }
     };
 };
+
 export const fetchMoviesByGenreSuccess = (
     movies: MovieType[]
-): FetchMoviesAction => ({
+): FetchMoviesSuccess => ({
     type: FETCH_MOVIES_BY_GENRE_SUCCESS,
     payload: {
         movies
     }
 });
-export const fetchMoviesByGenreError = (
-    message: string
-): FetchMoviesAction => ({
+
+export const fetchMoviesByGenreError = (message: string): FetchMoviesError => ({
     type: FETCH_MOVIES_BY_GENRE_ERROR,
     payload: {
         message
