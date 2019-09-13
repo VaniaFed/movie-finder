@@ -1,7 +1,8 @@
-import PropTypes, { InferProps } from 'prop-types';
+import PropTypes, { InferProps, string } from 'prop-types';
 
 const Types = {
-    className: PropTypes.string
+    className: PropTypes.string,
+    urlParams: string
 };
 
 export type Props = InferProps<typeof Types>;

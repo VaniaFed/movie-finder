@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { MovieHeader } from 'components/movie-header/';
+import { SmartMovieHeader } from 'containers/smart-movie-header';
 import { Movie } from 'components/movie';
 import { Props } from './props';
 import './movie-block.scss';
@@ -7,7 +7,7 @@ import './movie-block.scss';
 export const MovieBlock: FC<Props> = ({ movie }: Props) => {
     return (
         <div className="movie-block">
-            <MovieHeader />
+            <SmartMovieHeader />
             <Movie movie={movie} className="movie-block__movie" />
         </div>
     );
