@@ -10,8 +10,22 @@ import {
     SORT_FILTER,
     SET_SEARCH_VALUE
 } from 'constants.js';
+import { MovieType } from 'types/index';
 
-export const initialState = {
+interface MovieState {
+    current: MovieType,
+    list: MovieType[],
+    sameGenreList: MovieType[],
+    error: string,
+    search: string,
+    searchBy: 'title' | 'genre',
+    sortBy: 'release_date' | 'rating'
+
+}
+
+// TODO: add type for action
+
+const initialState: MovieState = {
     current: {},
     list: [],
     sameGenreList: [],
@@ -21,7 +35,7 @@ export const initialState = {
     sortBy: 'release_date'
 };
 
-export const movie = (state = initialState, action) => {
+export const movie = (state = initialState, action): MovieState => {
     const { type } = action;
     return produce(state, draft => {
         switch (type) {
