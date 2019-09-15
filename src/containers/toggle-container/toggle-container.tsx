@@ -10,13 +10,14 @@ export const ToggleContainerHOC: FC = ({ name, background }) => {
         data,
         changeFilter,
         currentFilter,
-        changeFilterHistory
+        changeFilterHistory,
+        fetchMovies
     }) => {
         const [checked, check] = useState(data[0].key);
-
         const onClick = key => () => {
             check(key);
             changeFilter(key);
+            fetchMovies(key)
             changeFilterHistory(key);
         };
         useEffect(() => {

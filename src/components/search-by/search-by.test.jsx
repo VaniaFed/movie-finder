@@ -5,11 +5,15 @@ import { SearchBy } from './index';
 
 const store = configureStore();
 
+const searchByData = [
+    { key: 'title', text: 'Title', onClick: f => f },
+    { key: 'genres', text: 'Genre', onClick: f => f }
+];
 describe('<SearchBy />', () => {
     const tree = renderer
         .create(
             <Provider store={store}>
-                <SearchBy />
+                <SearchBy searchByData={searchByData} />
             </Provider>
         )
         .toJSON();

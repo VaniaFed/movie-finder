@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import classNames from 'classnames';
 import { SearchInput } from 'components/search-input';
-import { SearchBy } from 'components/search-by';
+import { SmartSearchBy } from 'containers/smart-search-by';
 import { Logo } from 'components/logo';
 import { Button } from 'components/button';
 import { Props } from './props';
@@ -29,7 +29,7 @@ export const SearchBlock: FC<Props> = ({
                 onInput={onInput}
             />
             <div className="search-block__controll">
-                <SearchBy
+                <SmartSearchBy
                     changeSearchBy={changeSearchBy}
                     className="search-block__search-by"
                     searchBy={searchBy}
