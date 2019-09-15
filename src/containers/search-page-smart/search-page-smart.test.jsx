@@ -6,11 +6,12 @@ import { SearchPageSmart } from './index';
 
 const store = configureStore();
 describe('<SearchPageSmart />', () => {
+    const location = { search: '?search=harry&potter' };
     const tree = renderer
         .create(
             <BrowserRouter>
                 <Provider store={store}>
-                    <SearchPageSmart />
+                    <SearchPageSmart location={location} />
                 </Provider>
             </BrowserRouter>
         )

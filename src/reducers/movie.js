@@ -1,4 +1,4 @@
-import { Map } from 'immutable';
+import produce from 'immer';
 import {
     FETCH_MOVIE_BY_ID_SUCCESS,
     FETCH_MOVIE_BY_ID_ERROR,
@@ -11,7 +11,7 @@ import {
     SET_SEARCH_VALUE
 } from 'constants.js';
 
-const initialState = Map({
+export const initialState = {
     current: {},
     list: [],
     sameGenreList: [],
@@ -19,39 +19,51 @@ const initialState = Map({
     search: '',
     searchBy: 'title',
     sortBy: 'release_date'
-});
+};
 
 export const movie = (state = initialState, action) => {
     const { type } = action;
-    switch (type) {
-        case FETCH_MOVIE_BY_ID_SUCCESS: {
-            return state.setIn(['current'], action.payload.movie);
+    return produce(state, draft => {
+        switch (type) {
+            case FETCH_MOVIE_BY_ID_SUCCESS: {
+                draft.current = action.payload.movie;
+                break;
+            }
+            case FETCH_MOVIE_BY_ID_ERROR: {
+                draft.error = action.payload.message;
+                break;
+            }
+            case FETCH_MOVIES_BY_DATA_SUCCESS: {
+                draft.list = action.payload.movies;
+                break;
+            }
+            case FETCH_MOVIES_BY_DATA_ERROR: {
+                draft.error = action.payload.message;
+                break;
+            }
+            case FETCH_MOVIES_BY_GENRE_SUCCESS: {
+                draft.sameGenreList = action.payload.movies;
+                break;
+            }
+            case FETCH_MOVIES_BY_GENRE_ERROR: {
+                draft.error = action.payload.message;
+                break;
+            }
+            case SET_SEARCH_VALUE: {
+                draft.search = action.payload.search;
+                break;
+            }
+            case SEARCH_FILTER: {
+                draft.searchBy = action.payload.searchBy;
+                break;
+            }
+            case SORT_FILTER: {
+                draft.sortBy = action.payload.sortBy;
+                break;
+            }
+            default: {
+                break;
+            }
         }
-        case FETCH_MOVIE_BY_ID_ERROR: {
-            return state.setIn(['error'], action.payload.message);
-        }
-        case FETCH_MOVIES_BY_DATA_SUCCESS: {
-            return state.setIn(['list'], action.payload.movies);
-        }
-        case FETCH_MOVIES_BY_DATA_ERROR: {
-            return state.setIn(['error'], action.payload.message);
-        }
-        case FETCH_MOVIES_BY_GENRE_SUCCESS: {
-            return state.setIn(['sameGenreList'], action.payload.movies);
-        }
-        case FETCH_MOVIES_BY_GENRE_ERROR: {
-            return state.setIn(['error'], action.payload.message);
-        }
-        case SET_SEARCH_VALUE: {
-            return state.setIn(['search'], action.payload.search);
-        }
-        case SEARCH_FILTER: {
-            return state.setIn(['searchBy'], action.payload.searchBy);
-        }
-        case SORT_FILTER: {
-            return state.setIn(['sortBy'], action.payload.sortBy);
-        }
-        default:
-            return state;
-    }
+    });
 };

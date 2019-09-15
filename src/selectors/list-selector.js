@@ -3,5 +3,5 @@ import { movieSelector } from './movie-selector';
 
 export const listSelector = createSelector(
     movieSelector,
-    movie => movie.get('list')
+    movie => movie.list
 );
