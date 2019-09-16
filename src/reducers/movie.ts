@@ -9,10 +9,24 @@ import {
     SEARCH_FILTER,
     SORT_FILTER,
     SET_SEARCH_VALUE
-} from 'constants.js';
+} from 'constants.ts';
 import { MovieState } from 'types/index';
+import {
+    FetchMovieByIdRequest,
+    FetchMovieByIdSuccess,
+    FetchMovieByIdError,
+    FetchMoviesRequest,
+    FetchMoviesSuccess,
+    FetchMoviesError
+} from 'types/actions';
 
 // TODO: add type for action
+type Action =
+    | FetchMovieByIdSuccess
+    | FetchMovieByIdError
+    | FetchMoviesRequest
+    | FetchMoviesSuccess
+    | FetchMoviesError;
 
 const initialState: MovieState = {
     current: {},
@@ -24,7 +38,7 @@ const initialState: MovieState = {
     sortBy: 'release_date'
 };
 
-export const movie = (state = initialState, action): MovieState => {
+export const movie = (state = initialState, action: Action): MovieState => {
     const { type } = action;
     return produce(state, draft => {
         switch (type) {

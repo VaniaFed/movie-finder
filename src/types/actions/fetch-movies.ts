@@ -5,7 +5,7 @@ import {
     FETCH_MOVIES_BY_GENRE_REQUEST,
     FETCH_MOVIES_BY_GENRE_SUCCESS,
     FETCH_MOVIES_BY_GENRE_ERROR
-} from 'constants.js';
+} from 'constants.ts';
 import { MovieType } from 'types/index';
 import { ControlsData } from '../controls-data';
 

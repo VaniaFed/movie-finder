@@ -1,4 +1,4 @@
-import { SEARCH_FILTER } from 'constants.js';
+import { SEARCH_FILTER } from 'constants.ts';
 import { SetSearchByAction } from 'types/actions';
 import { ControlsData } from 'types/index';
 

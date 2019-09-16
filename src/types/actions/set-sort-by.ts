@@ -1,4 +1,4 @@
-import { SORT_FILTER } from 'constants.js';
+import { SORT_FILTER } from 'constants.ts';
 import { ControlsData } from 'types/index';
 
 export interface SetSortByAction {

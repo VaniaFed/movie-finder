@@ -1,6 +1,6 @@
 import { put, call, takeEvery } from 'redux-saga/effects';
 import { actions } from 'actions';
-import { FETCH_MOVIES_BY_DATA_REQUEST } from 'constants.js';
+import { FETCH_MOVIES_BY_DATA_REQUEST } from 'constants.ts';
 import { services } from 'services';
 import { MovieType, ControlsData } from 'types/index';
 

@@ -2,7 +2,7 @@ import {
     FETCH_MOVIE_BY_ID_REQUEST,
     FETCH_MOVIE_BY_ID_SUCCESS,
     FETCH_MOVIE_BY_ID_ERROR
-} from 'constants.js';
+} from 'constants.ts';
 import { MovieType } from 'types/index';
 
 export interface FetchMovieByIdRequest {

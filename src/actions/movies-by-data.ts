@@ -2,7 +2,7 @@ import {
     FETCH_MOVIES_BY_DATA_REQUEST,
     FETCH_MOVIES_BY_DATA_SUCCESS,
     FETCH_MOVIES_BY_DATA_ERROR
-} from 'constants.js';
+} from 'constants.ts';
 import { ControlsData, MovieType } from 'types/index';
 import {
     FetchMoviesRequest,

@@ -9,7 +9,12 @@ describe('<SearchInput />', () => {
     const tree = renderer
         .create(
             <Provider store={store}>
-                <SearchInput onSearch={f => f} onInput={f => f} />
+                <SearchInput
+                    search="harry"
+                    className=""
+                    onSearch={f => f}
+                    onInput={f => f}
+                />
             </Provider>
         )
         .toJSON();

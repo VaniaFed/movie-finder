@@ -2,7 +2,7 @@ import regeneratorRuntime from 'regenerator-runtime';
 import { put, call, takeEvery } from 'redux-saga/effects';
 import { actions } from 'actions';
 
-import { FETCH_MOVIE_BY_ID_REQUEST } from 'constants.js';
+import { FETCH_MOVIE_BY_ID_REQUEST } from 'constants.ts';
 import { services } from 'services';
 import { MovieType, ControlsData } from 'types/index';
 

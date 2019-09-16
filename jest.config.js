@@ -5,7 +5,7 @@ module.exports = {
         '^components(.*)$': '<rootDir>/src/components$1',
         '^containers(.*)$': '<rootDir>/src/containers$1',
         '^actions(.*)$': '<rootDir>/src/actions$1',
-        '^constants.js(.*)$': '<rootDir>/src/constants.js$1',
+        '^constants.ts(.*)$': '<rootDir>/src/constants.ts$1',
         '^src(.*)$': '<rootDir>/src$1',
         '^selectors(.*)$': '<rootDir>/src/selectors$1',
         '^reducers(.*)$': '<rootDir>/src/reducers$1',

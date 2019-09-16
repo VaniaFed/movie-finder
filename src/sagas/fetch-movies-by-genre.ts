@@ -1,6 +1,6 @@
 import { put, call, takeEvery, select } from 'redux-saga/effects';
 import { actions } from 'actions';
-import { FETCH_MOVIES_BY_GENRE_REQUEST } from 'constants.js';
+import { FETCH_MOVIES_BY_GENRE_REQUEST } from 'constants.ts';
 import { services } from 'services';
 import { sameGenreListSelector } from 'selectors/same-genre-list-selector';
 import { MovieType } from 'types/index';
