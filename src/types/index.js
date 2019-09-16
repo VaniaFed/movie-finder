@@ -3,3 +3,5 @@ export { MovieType } from './movie-type';
 export { ToggleData } from './toggle-data';
 export { ToggleDataPropTypes } from './toggle-data-prop-types';
 export { ControlsData } from './controls-data';
+export { SortBy, SearchBy, SortOrder } from './common';
+export { MovieState } from './movie-state';

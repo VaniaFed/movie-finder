@@ -1,9 +1,8 @@
 import { createSelector } from 'reselect';
 import { movieSelector } from 'selectors/movie-selector';
+import { MovieState } from 'types/index';
 
 export const currentSelector = createSelector(
     movieSelector,
-    movie => {
-        return movie.current;
-    }
+    (movie: MovieState) => movie.current
 );

@@ -1,9 +1,8 @@
 import { createSelector } from 'reselect';
 import { movieSelector } from 'selectors/movie-selector';
+import { MovieState } from 'types/index';
 
 export const sameGenreListSelector = createSelector(
     movieSelector,
-    movie => {
-        return movie.sameGenreList;
-    }
+    (movie: MovieState) => movie.sameGenreList
 );
