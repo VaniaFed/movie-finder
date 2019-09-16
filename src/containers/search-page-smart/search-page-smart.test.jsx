@@ -9,6 +9,7 @@ const location = {
     search: '?search=hello?params=hi'
 };
 describe('<SearchPageSmart />', () => {
+    const location = { search: '?search=harry&potter' };
     const tree = renderer
         .create(
             <BrowserRouter>

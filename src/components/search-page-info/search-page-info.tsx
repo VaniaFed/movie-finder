@@ -9,7 +9,8 @@ export const SearchPageInfo: FC<Props> = ({
     quantityMovies,
     className,
     sortBy,
-    changeSortBy
+    changeSortBy,
+    fetchMovies
 }: Props) => {
     const sortByData: ToggleData[] = [
         { key: 'release_date', text: 'Release date', onClick: f => f },
@@ -31,6 +32,7 @@ export const SearchPageInfo: FC<Props> = ({
                     changeFilterHistory={changeSortBy}
                     currentFilter={sortBy}
                     data={sortByData}
+                    fetchMovies={fetchMovies}
                 />
             </div>
         </div>

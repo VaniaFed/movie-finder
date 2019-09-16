@@ -1,1 +1,1 @@
-export const searchSelector = state => state.movie.get('search');
+export const searchSelector = state => state.movie.search;

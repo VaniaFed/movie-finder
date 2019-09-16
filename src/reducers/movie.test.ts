@@ -1,32 +1,31 @@
-import { Map } from 'immutable';
 import { actions } from 'actions';
 import { ControlsData } from 'types';
 import { movie } from './movie';
 
-let state = Map({
+let state = {
     current: {},
     list: [],
     sameGenreList: [],
     error: '',
     searchBy: 'title',
     sortBy: 'release_date'
-});
+};
 
 describe('movie reducer', () => {
     afterAll(() => {
-        state = Map({
+        state = {
             current: {},
             list: [],
             sameGenreList: [],
             error: '',
             searchBy: 'title',
             sortBy: 'release_date'
-        });
+        };
     });
 
     it("FETCH_MOVIE_BY_ID_REQUEST should't change store", () => {
         const result = movie(state, actions.fetchMovieByIdRequest(5));
-        expect(result.toJS()).toEqual(state.toJS());
+        expect(result).toEqual(state);
     });
 
     it('FETCH_MOVIE_BY_ID_SUCCESS should work', () => {
@@ -35,7 +34,7 @@ describe('movie reducer', () => {
             state,
             actions.fetchMovieByIdSuccess(expectedMovie)
         );
-        expect(result.toJS()).toEqual({
+        expect(result).toEqual({
             current: expectedMovie,
             list: [],
             sameGenreList: [],
@@ -50,8 +49,8 @@ describe('movie reducer', () => {
             state,
             actions.fetchMovieByIdError('some error so sorry...')
         );
-        expect(result.toJS()).toEqual({
-            ...state.toJS(),
+        expect(result).toEqual({
+            ...state,
             error: 'some error so sorry...'
         });
     });
@@ -63,7 +62,7 @@ describe('movie reducer', () => {
             sortBy: 'release_date'
         };
         const result = movie(state, actions.fetchMoviesByDataRequest(data));
-        expect(result.toJS()).toEqual(state.toJS());
+        expect(result).toEqual(state);
     });
 
     it('FETCH_MOVIE_BY_DATA_SUCCESS should work', () => {
@@ -76,7 +75,7 @@ describe('movie reducer', () => {
             state,
             actions.fetchMoviesByDataSuccess(expectedList)
         );
-        expect(result.toJS()).toEqual({
+        expect(result).toEqual({
             current: {},
             list: expectedList,
             sameGenreList: [],
@@ -91,8 +90,8 @@ describe('movie reducer', () => {
             state,
             actions.fetchMoviesByDataError('some error so sorry...')
         );
-        expect(result.toJS()).toEqual({
-            ...state.toJS(),
+        expect(result).toEqual({
+            ...state,
             error: 'some error so sorry...'
         });
     });
@@ -102,7 +101,7 @@ describe('movie reducer', () => {
             state,
             actions.fetchMoviesByGenreRequest('action')
         );
-        expect(result.toJS()).toEqual(state.toJS());
+        expect(result).toEqual(state);
     });
 
     it('FETCH_MOVIE_BY_GENRE_SUCCESS should work', () => {
@@ -115,7 +114,7 @@ describe('movie reducer', () => {
             state,
             actions.fetchMoviesByGenreSuccess(expectedSameGenres)
         );
-        expect(result.toJS()).toEqual({
+        expect(result).toEqual({
             current: {},
             list: [],
             sameGenreList: expectedSameGenres,
@@ -130,23 +129,23 @@ describe('movie reducer', () => {
             state,
             actions.fetchMoviesByGenreError('some error so sorry...')
         );
-        expect(result.toJS()).toEqual({
-            ...state.toJS(),
+        expect(result).toEqual({
+            ...state,
             error: 'some error so sorry...'
         });
     });
 
     it('SEARCH_FILTER should change field', () => {
         const result = movie(state, actions.setSearchBy('genre'));
-        expect(result.toJS()).toEqual({
-            ...state.toJS(),
+        expect(result).toEqual({
+            ...state,
             searchBy: 'genre'
         });
     });
     it('SORT_FILTER should change field', () => {
         const result = movie(state, actions.setSortBy('rating'));
-        expect(result.toJS()).toEqual({
-            ...state.toJS(),
+        expect(result).toEqual({
+            ...state,
             sortBy: 'rating'
         });
     });

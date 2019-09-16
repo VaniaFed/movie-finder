@@ -23,13 +23,14 @@ export const ToggleContainerHOC = ({ name, background }: PropsHoc) => {
         data,
         changeFilter,
         currentFilter,
-        changeFilterHistory
-    }: Props) => {
+        changeFilterHistory,
+        fetchMovies
+    }) => {
         const [checked, check] = useState(data[0].key);
-
-        const onClick = (key: keyof ToggleData) => () => {
+        const onClick = key => () => {
             check(key);
             changeFilter(key);
+            fetchMovies(key);
             changeFilterHistory(key);
         };
         useEffect(() => {
