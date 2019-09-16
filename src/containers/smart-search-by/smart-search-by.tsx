@@ -1,23 +1,19 @@
-import React from 'react'
+import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { SearchBy } from 'components/search-by'
+import { SearchBy } from 'components/search-by';
 import { ToggleData } from 'types/index';
-import { searchDataSelector } from 'selectors/search-data-selector'
-import { actions } from 'actions/index'
+import { searchDataSelector } from 'selectors/search-data-selector';
+import { actions } from 'actions/index';
 
-export const SmartSearchBy = ({
-    className,
-    searchBy,
-    changeSearchBy,
-}) => {
+export const SmartSearchBy = ({ className, searchBy, changeSearchBy }) => {
     const dispatch = useDispatch();
     const controlsData = useSelector(searchDataSelector);
     const fetchMovies = () => {
-        dispatch(actions.fetchMoviesByDataRequest(controlsData))
+        dispatch(actions.fetchMoviesByDataRequest(controlsData));
     };
     const searchByData: ToggleData[] = [
         { key: 'title', text: 'Title', onClick: f => f },
-        { key: 'genres', text: 'Genre', onClick: f => f }
+        { key: 'genre', text: 'Genre', onClick: f => f }
     ];
     return (
         <SearchBy
@@ -27,5 +23,5 @@ export const SmartSearchBy = ({
             searchByData={searchByData}
             fetchMovies={fetchMovies}
         />
-    )
-}
+    );
+};

@@ -13,7 +13,11 @@ export const SearchPageInfo: FC<Props> = ({
     fetchMovies
 }: Props) => {
     const sortByData: ToggleData[] = [
-        { key: 'release_date', text: 'Release date', onClick: f => f },
+        {
+            key: 'release_date',
+            text: 'Release date',
+            onClick: f => f
+        },
         { key: 'rating', text: 'Rating', onClick: f => f }
     ];
     const resultClass: string = classNames('search-page-info', className);

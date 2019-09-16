@@ -10,17 +10,7 @@ import {
     SORT_FILTER,
     SET_SEARCH_VALUE
 } from 'constants.js';
-import { MovieType } from 'types/index';
-
-interface MovieState {
-    current: MovieType;
-    list: MovieType[];
-    sameGenreList: MovieType[];
-    error: string;
-    search: string;
-    searchBy: 'title' | 'genre';
-    sortBy: 'release_date' | 'rating';
-}
+import { MovieState } from 'types/index';
 
 // TODO: add type for action
 
