@@ -21,7 +21,7 @@ Array [
       <input
         className="search-input__input"
         data-input="search-input__input"
-        onInput={[Function]}
+        onChange={[Function]}
         onKeyDown={[Function]}
         placeholder="Game of Thrones"
         type="text"

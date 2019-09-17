@@ -1,14 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<NotFound /> should be rendered with text "Not found we
-e so sorry..." 1`] = `
-<h2
-  className="not-found"
->
-  Not found we're so sorry...
-</h2>
-`;
-
 exports[`<NotFound /> should be rendered with text "Not found wee so sorry..." 1`] = `
 <h2
   className="not-found"
