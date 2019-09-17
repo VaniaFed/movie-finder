@@ -11,6 +11,7 @@ exports[`<SearchInput /> should be rendered 1`] = `
     onKeyDown={[Function]}
     placeholder="Game of Thrones"
     type="text"
+    value="harry"
   />
   <button
     className="search-input__btnIcon"
