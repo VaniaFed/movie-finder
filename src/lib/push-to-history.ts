@@ -1,6 +1,7 @@
 import { stringify, parse } from 'query-string';
+import { ControlsData } from 'types/index';
 
-export const pushToHistory = params => {
+export const pushToHistory = (params: ControlsData) => {
     const existedHistoryData = parse(window.location.search);
     const dataToPush = {
         ...existedHistoryData,

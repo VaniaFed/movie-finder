@@ -1,6 +1,14 @@
-export const isMap = (data, target, changeOption = []) => {
-    const dataList = Object.entries(data);
-    const targetList = Object.entries(target);
+const getValueFromListByKey = <T>(list: any[], key: T): T => list.filter(el => {
+        return el[0] === key;
+    })[0][1];
+
+export const isMap = (
+    data: object,
+    target: object,
+    changeOption: string[] = []
+): boolean => {
+    const dataList: [string, string][] = Object.entries(data);
+    const targetList: [string, string][] = Object.entries(target);
     let isEqual = true;
 
     dataList.forEach(item => {
@@ -19,7 +27,3 @@ export const isMap = (data, target, changeOption = []) => {
     });
     return isEqual;
 };
-
-const getValueFromListByKey = (list, key) => list.filter(el => {
-        return el[0] === key;
-    })[0][1];
