@@ -4,6 +4,7 @@ import { createHttpLink } from 'apollo-link-http';
 import { RestLink } from 'apollo-link-rest';
 import fetch from 'node-fetch';
 import _ from 'lodash';
+import { MovieType } from 'types/index';
 
 const httpLink = createHttpLink({
     uri: 'http://react-cdp-api.herokuapp.com/movies',
@@ -11,7 +12,7 @@ const httpLink = createHttpLink({
     fetch
 });
 const cache = new InMemoryCache({
-    dataIdFromObject: movie => movie.id || null
+    dataIdFromObject: (movie: MovieType) => movie.id || null
 });
 
 export const httpClient = () => new ApolloClient({

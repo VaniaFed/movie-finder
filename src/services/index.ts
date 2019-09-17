@@ -1,4 +1,5 @@
 import { pipe } from 'rxjs';
+import { ControlsData } from 'types/index';
 import { getMovieById } from './get-movie-by-id';
 import { getMovies } from './get-movies';
 
@@ -7,14 +8,14 @@ const fetch = {
     getMovies
 };
 
-const logger = f => ({
-    getMovieById: id => {
+const logger = (f: any) => ({
+    getMovieById: (id: string) => {
         console.group('getMovieById');
         console.log('id:', id);
         console.groupEnd();
         return f.getMovieById(id);
     },
-    getMovies: params => {
+    getMovies: (params: ControlsData) => {
         console.group('getMovies');
         console.log('params:', params);
         console.groupEnd();
