@@ -32,14 +32,14 @@ export const SearchPage: FC<Props> = ({
             {isStartedLoading ? (
                 <Preloader />
             ) : (
-                    <YetLoader
-                        condition={
-                            typeof movies !== 'undefined' && movies.length !== 0
-                        }
-                        cap={notFound}
-                        content={() => <MovieLayout movies={movies} />}
-                    />
-                )}
+                <YetLoader
+                    condition={
+                        typeof movies !== 'undefined' && movies.length !== 0
+                    }
+                    cap={notFound}
+                    content={() => <MovieLayout movies={movies} />}
+                />
+            )}
         </>
     );
 };

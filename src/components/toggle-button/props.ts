@@ -6,7 +6,7 @@ const Types = {
     label: PropTypes.string,
     checked: PropTypes.bool,
     name: PropTypes.string,
-    background: PropTypes.string,
+    background: PropTypes.bool,
     onClick: PropTypes.func
 };
 

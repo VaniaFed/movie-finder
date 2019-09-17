@@ -1,19 +1,19 @@
-import React from 'react'
+import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { SearchPageInfo } from 'components/search-page-info'
-import { searchDataSelector } from 'selectors/search-data-selector'
-import { actions } from 'actions/index'
+import { SearchPageInfo } from 'components/search-page-info';
+import { searchDataSelector } from 'selectors/search-data-selector';
+import { actions } from 'actions/index';
 
 export const SmartSearchPageInfo = ({
     quantityMovies,
     className,
     sortBy,
-    changeSortBy,
+    changeSortBy
 }) => {
     const dispatch = useDispatch();
     const controlsData = useSelector(searchDataSelector);
     const fetchMovies = () => {
-        dispatch(actions.fetchMoviesByDataRequest(controlsData))
+        dispatch(actions.fetchMoviesByDataRequest(controlsData));
     };
     return (
         <SearchPageInfo
@@ -23,5 +23,5 @@ export const SmartSearchPageInfo = ({
             changeSortBy={changeSortBy}
             fetchMovies={fetchMovies}
         />
-    )
-}
+    );
+};

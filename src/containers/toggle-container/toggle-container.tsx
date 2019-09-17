@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { ToggleButton } from 'components/toggle-button';
 import { ToggleLayout } from 'components/toggle-layout';
 import { actions } from 'actions';
-import { ToggleData, ControlsData } from 'types/index';
+import { ToggleData, ControlsData, SearchBy, SortBy } from 'types/index';
 
 interface PropsHoc {
     name: string;
@@ -12,10 +12,11 @@ interface PropsHoc {
 }
 
 interface Props {
-    data: Array<ToggleData>;
+    data: ToggleData[];
     changeFilter(value: keyof ControlsData): void;
-    currentFilter: keyof ControlsData;
+    currentFilter: SearchBy | SortBy;
     changeFilterHistory(key: keyof ControlsData): void;
+    fetchMovies(key: keyof ControlsData): void;
 }
 
 export const ToggleContainerHOC = ({ name, background }: PropsHoc) => {
@@ -25,7 +26,7 @@ export const ToggleContainerHOC = ({ name, background }: PropsHoc) => {
         currentFilter,
         changeFilterHistory,
         fetchMovies
-    }) => {
+    }: Props) => {
         const [checked, check] = useState(data[0].key);
         const onClick = key => () => {
             check(key);
