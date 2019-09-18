@@ -1,15 +1,15 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { SearchBy } from 'components/search-by';
-import { ToggleData, SearchBy } from 'types/index';
+import { ToggleData, SearchBy as SearchByType } from 'types/index';
 import { searchDataSelector } from 'selectors/search-data-selector';
 import { actions } from 'actions/index';
 
 interface Props {
     quantityMovies: number;
     className: string;
-    searchBy: SearchBy;
-    changeSearchBy(value: SearchBy): void;
+    searchBy: SearchByType;
+    changeSearchBy(value: SearchByType): void;
 }
 
 export const SmartSearchBy = ({

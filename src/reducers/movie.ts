@@ -1,3 +1,4 @@
+/* eslint-disable no-param-reassign */
 import produce from 'immer';
 import {
     FETCH_MOVIE_BY_ID_SUCCESS,
@@ -20,7 +21,6 @@ import {
     FetchMoviesError
 } from 'types/actions';
 
-// TODO: add type for action
 type Action =
     | FetchMovieByIdSuccess
     | FetchMovieByIdError
@@ -39,9 +39,8 @@ const initialState: MovieState = {
 };
 
 export const movie = (state = initialState, action: Action): MovieState => {
-    const { type } = action;
     return produce(state, draft => {
-        switch (type) {
+        switch (action.type) {
             case FETCH_MOVIE_BY_ID_SUCCESS: {
                 draft.current = action.payload.movie;
                 break;

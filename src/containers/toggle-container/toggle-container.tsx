@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 import { ToggleButton } from 'components/toggle-button';
 import { ToggleLayout } from 'components/toggle-layout';
 import { actions } from 'actions/index';
-import { ToggleData, ControlsData, SearchBy, SortBy } from 'types/index';
+import { ToggleData, SearchBy, SortBy } from 'types/index';
 
 interface PropsHoc {
     name: string;
@@ -14,8 +14,8 @@ interface Props {
     data: ToggleData[];
     currentFilter: SearchBy | SortBy;
     changeFilter(value: SearchBy | SortBy): void;
-    changeFilterHistory(key: keyof ControlsData): void;
-    fetchMovies(key: keyof ControlsData): void;
+    changeFilterHistory(key: SearchBy | SortBy): void;
+    fetchMovies(key: SearchBy | SortBy): void;
 }
 
 export const ToggleContainerHOC = ({ name, background }: PropsHoc) => {
@@ -27,7 +27,7 @@ export const ToggleContainerHOC = ({ name, background }: PropsHoc) => {
         changeFilter
     }: Props) => {
         const [checked, check] = useState(data[0].key);
-        const onClick = key => () => {
+        const onClick = (key: SearchBy | SortBy) => () => {
             check(key);
             changeFilter(key);
             fetchMovies(key);
