@@ -1,10 +1,8 @@
 import { SEARCH_FILTER } from 'constants.ts';
 import { SetSearchByAction } from 'types/actions';
-import { ControlsData } from 'types/index';
+import { SearchBy } from 'types/index';
 
-export const setSearchBy = (
-    searchBy: keyof ControlsData
-): SetSearchByAction => ({
+export const setSearchBy = (searchBy: SearchBy): SetSearchByAction => ({
     type: SEARCH_FILTER,
     payload: {
         searchBy

@@ -1,11 +1,22 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { SearchBy } from 'components/search-by';
-import { ToggleData } from 'types/index';
+import { ToggleData, SearchBy } from 'types/index';
 import { searchDataSelector } from 'selectors/search-data-selector';
 import { actions } from 'actions/index';
 
-export const SmartSearchBy = ({ className, searchBy, changeSearchBy }) => {
+interface Props {
+    quantityMovies: number;
+    className: string;
+    searchBy: SearchBy;
+    changeSearchBy(value: SearchBy): void;
+}
+
+export const SmartSearchBy = ({
+    className,
+    searchBy,
+    changeSearchBy
+}: Props) => {
     const dispatch = useDispatch();
     const controlsData = useSelector(searchDataSelector);
     const fetchMovies = () => {

@@ -1,7 +1,7 @@
 import { isMap } from 'lib/is-map';
 import { ControlsType } from './controls-type';
 
-export const changeSearchBy = action => (
+export const changeSearchBy = (action: any) => (
     urlData: ControlsType,
     controlsData: ControlsType
 ) => {
