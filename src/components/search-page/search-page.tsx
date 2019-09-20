@@ -16,7 +16,7 @@ export const SearchPage: FC<Props> = ({
     setIsStartedLoading,
     changeSortBy
 }: Props): ReactElement => {
-    const notFound: FC = () => <NotFound caption="Movies aren't found" />;
+    const notFound = <NotFound caption="Movies aren't found" />;
     return (
         <>
             <SmartSearchBlock

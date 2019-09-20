@@ -21,7 +21,6 @@ export const MoviePageSmart: FC<Props> = memo(({ match }: Props) => {
     const moviesWithTheSameGenre: MovieType[] = useSelector(
         sameGenreListSelector
     );
-    console.log(movie);
 
     const { id } = match.params;
     const [isStartedLoading, setIsStartedLoading] = useState(false);
@@ -43,7 +42,7 @@ export const MoviePageSmart: FC<Props> = memo(({ match }: Props) => {
         }
     }, [movie, moviesWithTheSameGenre, isStartedLoading]);
 
-    const FilmsNotFound = () => <NotFound caption="Film(s) not found" />;
+    const FilmsNotFound = <NotFound caption="Film(s) not found" />;
     return (
         <>
             {isStartedLoading ? (
