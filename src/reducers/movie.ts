@@ -13,12 +13,14 @@ import {
 } from 'constants.ts';
 import { MovieState } from 'types/index';
 import {
-    FetchMovieByIdRequest,
     FetchMovieByIdSuccess,
     FetchMovieByIdError,
     FetchMoviesRequest,
     FetchMoviesSuccess,
-    FetchMoviesError
+    FetchMoviesError,
+    SetSearchAction,
+    SetSearchByAction,
+    SetSortByAction
 } from 'types/actions';
 
 type Action =
@@ -26,10 +28,12 @@ type Action =
     | FetchMovieByIdError
     | FetchMoviesRequest
     | FetchMoviesSuccess
-    | FetchMoviesError;
+    | FetchMoviesError
+    | SetSearchAction
+    | SetSearchByAction
+    | SetSortByAction;
 
 const initialState: MovieState = {
-    current: {},
     list: [],
     sameGenreList: [],
     error: '',

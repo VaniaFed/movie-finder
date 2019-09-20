@@ -5,7 +5,7 @@ import { Preloader } from 'components/preloader';
 import { YetLoader } from 'containers/yet-loader';
 import { MovieLayout } from 'components/movie-layout/';
 import { NotFound } from 'components/not-found';
-import { actions } from 'actions';
+import { actions } from 'actions/index';
 import { currentSelector } from 'selectors/current-selector';
 import { sameGenreListSelector } from 'selectors/same-genre-list-selector';
 import { MovieType } from 'types/index';
@@ -21,6 +21,7 @@ export const MoviePageSmart: FC<Props> = memo(({ match }: Props) => {
     const moviesWithTheSameGenre: MovieType[] = useSelector(
         sameGenreListSelector
     );
+    console.log(movie);
 
     const { id } = match.params;
     const [isStartedLoading, setIsStartedLoading] = useState(false);
@@ -33,6 +34,7 @@ export const MoviePageSmart: FC<Props> = memo(({ match }: Props) => {
 
     useEffect(() => {
         if (
+            movie !== undefined &&
             'genres' in movie &&
             moviesWithTheSameGenre.length !== 0 &&
             isStartedLoading
@@ -54,7 +56,7 @@ export const MoviePageSmart: FC<Props> = memo(({ match }: Props) => {
                         typeof moviesWithTheSameGenre !== 'undefined' &&
                         moviesWithTheSameGenre.length !== 0
                     }
-                    cap={<FilmsNotFound />}
+                    cap={FilmsNotFound}
                     content={() => (
                         <>
                             <MoviePage movie={movie} />

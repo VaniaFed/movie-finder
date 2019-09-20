@@ -49,8 +49,8 @@ export const SmartSearchBlock = ({ sortBy, setIsStartedLoading }: Props) => {
                 changeSearch(value);
                 pushToHistory({ search: value });
             }}
-            changeSearchBy={searchBy => {
-                pushToHistory({ searchBy });
+            changeSearchBy={value => {
+                pushToHistory({ searchBy: value });
             }}
             searchBy={searchBy}
         />

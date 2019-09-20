@@ -1,6 +1,10 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-export class ErrorBoundary extends React.Component {
+interface Props {
+    children: JSX.Element[] | JSX.Element;
+}
+
+export class ErrorBoundary extends Component<Props> {
     state = { hasError: false };
 
     componentDidCatch() {
@@ -9,7 +13,7 @@ export class ErrorBoundary extends React.Component {
 
     render() {
         const { hasError }: { hasError: boolean } = this.state;
-        const { children }: { children: React.ReactNode } = this.props;
+        const { children } = this.props;
 
         if (hasError) {
             return <h1>Something went wrong.</h1>;

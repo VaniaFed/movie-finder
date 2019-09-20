@@ -1,4 +1,4 @@
-import React, { FC, ReactElement } from 'react';
+import React, { FC } from 'react';
 import classNames from 'classnames';
 import { useRouter } from 'next/router';
 import styled from 'styled-components';

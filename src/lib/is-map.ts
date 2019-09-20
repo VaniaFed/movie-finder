@@ -1,4 +1,5 @@
-const getValueFromListByKey = <T>(list: any[], key: T): T => list.filter(el => {
+const getValueFromListByKey = <T>(list: any[], key: T): T =>
+    list.filter(el => {
         return el[0] === key;
     })[0][1];
 
@@ -14,7 +15,7 @@ export const isMap = (
     dataList.forEach(item => {
         const key = item[0];
         if (changeOption.length !== 0 && !changeOption.includes(key)) {
-            return;
+            return false;
         }
         if (!(key in target)) {
             return false;

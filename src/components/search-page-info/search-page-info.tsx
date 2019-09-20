@@ -31,8 +31,6 @@ export const SearchPageInfo: FC<Props> = ({
             <div className="search-page-info__right">
                 <span className="search-page-info__text">Sort by</span>
                 <SortToggleContainer
-                    className="search-page-info__toggle-container"
-                    name="sort-by"
                     changeFilterHistory={changeSortBy}
                     currentFilter={sortBy}
                     data={sortByData}

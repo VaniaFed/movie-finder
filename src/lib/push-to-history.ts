@@ -1,7 +1,13 @@
 import { stringify, parse } from 'query-string';
-import { ControlsData } from 'types/index';
+import { SearchBy, SortBy, SortOrder } from 'types/index';
 
-export const pushToHistory = (params: ControlsData) => {
+interface ControlsDataPush {
+    search: string;
+    searchBy?: SearchBy;
+    sortBy?: SortBy;
+    sortOrder?: SortOrder;
+}
+export const pushToHistory = (params: ControlsDataPush | any) => {
     const existedHistoryData = parse(window.location.search);
     const dataToPush = {
         ...existedHistoryData,

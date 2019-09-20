@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { SearchPage } from 'components/search-page';
 import { parse } from 'query-string';
-import { actions } from 'actions';
+import { actions } from 'actions/index';
 import { pushToHistory } from 'lib/push-to-history';
 import { searchDataSelector } from 'selectors/search-data-selector';
 import { listSelector } from 'selectors/list-selector';
@@ -46,7 +46,9 @@ export const SearchPageSmart = ({ location }: Props) => {
         dispatchFetchMoviesByData
     )(sideEffects);
 
-    const urlData: ControlsData = parse(location.search);
+    const urlData: ControlsData = (parse(
+        location.search
+    ) as any) as ControlsData;
     const controlsData: ControlsData = useSelector(searchDataSelector);
     useEffect(() => {
         handleFetchMoviesByData(urlData, controlsData, isStartedLoading);
@@ -69,7 +71,7 @@ export const SearchPageSmart = ({ location }: Props) => {
             isStartedLoading={isStartedLoading}
             setIsStartedLoading={setIsStartedLoading}
             changeSortBy={sortBy => {
-                const historyData = {
+                const historyData: { sortBy: SortBy } = {
                     sortBy
                 };
                 pushToHistory(historyData);

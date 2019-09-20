@@ -1,7 +1,7 @@
 import { MovieType } from 'types/index';
 
 export interface MovieState {
-    current: MovieType;
+    current?: MovieType;
     list: MovieType[];
     sameGenreList: MovieType[];
     error: string;

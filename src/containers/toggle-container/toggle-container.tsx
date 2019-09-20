@@ -3,19 +3,12 @@ import { useDispatch } from 'react-redux';
 import { ToggleButton } from 'components/toggle-button';
 import { ToggleLayout } from 'components/toggle-layout';
 import { actions } from 'actions/index';
-import { ToggleData, SearchBy, SortBy } from 'types/index';
+import { SearchBy, SortBy } from 'types/index';
+import { Props } from './props';
 
 interface PropsHoc {
     name: string;
     background: boolean;
-}
-
-interface Props {
-    data: ToggleData[];
-    currentFilter: SearchBy | SortBy;
-    changeFilter(value: SearchBy | SortBy): void;
-    changeFilterHistory(key: SearchBy | SortBy): void;
-    fetchMovies(key: SearchBy | SortBy): void;
 }
 
 export const ToggleContainerHOC = ({ name, background }: PropsHoc) => {
