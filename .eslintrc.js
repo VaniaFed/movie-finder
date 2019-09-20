@@ -50,6 +50,7 @@ module.exports = {
         }
     },
     rules: {
+        indent: 4,
         'arrow-parens': 0,
         'no-param-reassign': 1,
         'implicit-arrow-linebreak': 1,
@@ -66,6 +67,10 @@ module.exports = {
         'react/jsx-filename-extension': [
             2,
             { extensions: ['.js', '.jsx', '.ts', '.tsx'] }
-        ]
+        ],
+        'jsx-a11y/label-has-for': 0,
+        'jsx-a11y/anchor-is-valid': 0,
+        'implicit-arrow-linebreak': 0,
+        'consistent-return': 0
     }
 };
