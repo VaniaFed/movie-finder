@@ -16,9 +16,6 @@ const getMovie = gql`
         }
     }
 `;
-type Payload = {
-    id: string;
-};
 
 interface Query {
     query(
@@ -34,10 +31,11 @@ interface Query {
         id: string;
     };
 }
-export const getMovieById = async (payload: Payload) => {
+
+export const getMovieById = async (id: string) => {
     const query: Query = {
         query: getMovie,
-        variables: { id: String(payload.id) }
+        variables: { id: String(id) }
     };
     const movie = await client().query(query);
     // transformator

@@ -1,5 +1,3 @@
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-import regeneratorRuntime from 'regenerator-runtime';
 import { put, call, takeEvery } from 'redux-saga/effects';
 import { actions } from 'actions/index';
 
@@ -9,13 +7,13 @@ import { MovieType, ControlsData } from 'types/index';
 
 interface Payload {
     payload: {
-        id: number;
+        id: string;
     };
 }
 
-export function* fetchMovieById({ payload }: Payload) {
+export function* fetchMovieById({ payload: { id } }: Payload) {
     try {
-        const movie: MovieType = yield call(services.getMovieById, payload);
+        const movie: MovieType = yield call(services.getMovieById, id);
         yield put(actions.fetchMovieByIdSuccess(movie));
         const genre: string = movie.genres[0];
         const data: ControlsData = {
@@ -30,5 +28,5 @@ export function* fetchMovieById({ payload }: Payload) {
 }
 
 export function* watchFetchMovieById() {
-    yield takeEvery(FETCH_MOVIE_BY_ID_REQUEST, fetchMovieById);
+    yield takeEvery(FETCH_MOVIE_BY_ID_REQUEST as any, fetchMovieById);
 }
