@@ -10,7 +10,7 @@ import {
 } from 'types/actions';
 import { MovieType } from 'types/index';
 
-export const fetchMovieByIdRequest = (id: number): FetchMovieByIdRequest => {
+export const fetchMovieByIdRequest = (id: string): FetchMovieByIdRequest => {
     return {
         type: FETCH_MOVIE_BY_ID_REQUEST,
         payload: {

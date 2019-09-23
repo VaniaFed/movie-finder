@@ -13,7 +13,7 @@ import { Props } from './props';
 
 export const MoviePageSmart: FC<Props> = memo(({ match }: Props) => {
     const dispatch = useDispatch();
-    const fetchMovieById = (id: number) => {
+    const fetchMovieById = (id: string) => {
         dispatch(actions.fetchMovieByIdRequest(id));
     };
 

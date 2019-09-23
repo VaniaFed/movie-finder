@@ -8,7 +8,7 @@ import { MovieType } from 'types/index';
 export interface FetchMovieByIdRequest {
     type: typeof FETCH_MOVIE_BY_ID_REQUEST;
     payload: {
-        id: number;
+        id: string;
     };
 }
 
