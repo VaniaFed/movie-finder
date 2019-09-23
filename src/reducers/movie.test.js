@@ -1,5 +1,4 @@
 import { actions } from 'actions/index';
-import { ControlsData } from 'types/index';
 import { movie } from './movie';
 
 let state = {
@@ -56,7 +55,7 @@ describe('movie reducer', () => {
     });
 
     it('FETCH_MOVIE_BY_DATA_REQUEST should not change store', () => {
-        const data: ControlsData = {
+        const data = {
             search: 'harry',
             searchBy: 'title',
             sortBy: 'release_date'
