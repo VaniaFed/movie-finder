@@ -108,6 +108,7 @@
         "next-apollo": "^3.0.3",
         "next-compose-plugins": "^2.2.0",
         "next-images": "^1.1.2",
+        "node-fetch": "^2.6.0",
         "prop-types": "^15.7.2",
         "query-string": "^6.8.2",
         "react": "^16.8.6",
@@ -120,6 +121,7 @@
         "redux-saga-test-plan": "^4.0.0-beta.4",
         "regenerator-runtime": "^0.13.3",
         "reselect": "^4.0.0",
+        "rxjs": "^6.5.3",
         "styled-components": "^4.3.2"
     }
 }
