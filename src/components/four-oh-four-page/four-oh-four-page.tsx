@@ -8,7 +8,7 @@ const H1 = styled('h1')`
     color: red;
 `;
 
-export const FourOfFourPage: FC<Props> = ({ className }: Props) => {
+export const FourOfFourPage: FC<Props> = ({ className = '' }: Props) => {
     const resultClass = classNames(className, 'four-oh-four-page');
     const { asPath } = useRouter();
     return (
