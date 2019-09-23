@@ -1,10 +1,10 @@
-import React, { FC } from 'react';
+import React from 'react';
 import classNames from 'classnames';
 import { SearchToggleContainer } from 'containers/toggle-container';
 import { Props } from './props';
 import './search-by.scss';
 
-export const SearchBy: FC<Props> = ({
+export const SearchBy = ({
     className,
     searchBy,
     changeSearchBy,
@@ -17,7 +17,6 @@ export const SearchBy: FC<Props> = ({
             <span className="search-by__title">Search by</span>
             <SearchToggleContainer
                 changeFilterHistory={changeSearchBy}
-                name="search-by"
                 data={searchByData}
                 currentFilter={searchBy}
                 fetchMovies={fetchMovies}
