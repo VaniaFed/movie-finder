@@ -6,7 +6,7 @@ import {
 } from 'apollo-cache-inmemory';
 import { createHttpLink } from 'apollo-link-http';
 import { RestLink } from 'apollo-link-rest';
-import fetch from 'node-fetch';
+import fetch from 'cross-fetch';
 import _ from 'lodash';
 
 const httpLink = createHttpLink({
