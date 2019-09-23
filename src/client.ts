@@ -1,19 +1,26 @@
 import { ApolloClient } from 'apollo-client';
-import { InMemoryCache } from 'apollo-cache-inmemory';
+import {
+    InMemoryCache,
+    IdGetter,
+    InMemoryCacheConfig
+} from 'apollo-cache-inmemory';
 import { createHttpLink } from 'apollo-link-http';
 import { RestLink } from 'apollo-link-rest';
 import fetch from 'node-fetch';
 import _ from 'lodash';
-import { MovieType } from 'types/index';
 
 const httpLink = createHttpLink({
     uri: 'http://react-cdp-api.herokuapp.com/movies',
     useGETForQueries: true,
     fetch
 });
-const cache = new InMemoryCache({
-    dataIdFromObject: (movie: MovieType) => movie.id || null
-});
+const dataIdFromObject: IdGetter = movie => movie.id || null;
+
+const config: InMemoryCacheConfig = {
+    dataIdFromObject
+};
+
+const cache = new InMemoryCache(config);
 
 export const httpClient = () =>
     new ApolloClient({
