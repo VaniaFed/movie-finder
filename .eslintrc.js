@@ -56,9 +56,7 @@ module.exports = {
         'implicit-arrow-linebreak': 1,
         'no-use-before-define': 0,
         'linebreak-style': 0,
-        'prettier/prettier': 2,
         quotes: [2, 'single'],
-        'prettier/prettier': [2, { singleQuote: true }],
         indent: ['error', 4, { SwitchCase: 1 }],
         'import/prefer-default-export': 0,
         'react/require-default-props': 0,
@@ -71,6 +69,11 @@ module.exports = {
         'jsx-a11y/label-has-for': 0,
         'jsx-a11y/anchor-is-valid': 0,
         'implicit-arrow-linebreak': 0,
-        'consistent-return': 0
+        'consistent-return': 0,
+        'no-console': 0,
+        'global-require': 0,
+        'prettier/prettier': 0,
+        'jsx-a11y/label-has-associated-control': 0,
+        'no-undef': 0
     }
 };
