@@ -26,7 +26,7 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.(js|jsx|ts|tsx)$/,
+                test: /\.(ts|tsx)$/,
                 use: ['ts-loader', 'eslint-loader']
             },
             {
