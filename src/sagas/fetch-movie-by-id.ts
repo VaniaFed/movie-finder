@@ -1,9 +1,10 @@
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import regeneratorRuntime from 'regenerator-runtime';
 import { put, call, takeEvery } from 'redux-saga/effects';
-import { actions } from 'actions';
+import { actions } from 'actions/index';
 
 import { FETCH_MOVIE_BY_ID_REQUEST } from 'constants.ts';
-import { services } from 'services';
+import { services } from 'services/index';
 import { MovieType, ControlsData } from 'types/index';
 
 interface Payload {

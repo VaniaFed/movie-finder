@@ -1,5 +1,5 @@
-import { actions } from 'actions';
-import { ControlsData } from 'types';
+import { actions } from 'actions/index';
+import { ControlsData } from 'types/index';
 import { movie } from './movie';
 
 let state = {
@@ -23,7 +23,7 @@ describe('movie reducer', () => {
         };
     });
 
-    it("FETCH_MOVIE_BY_ID_REQUEST should't change store", () => {
+    it('FETCH_MOVIE_BY_ID_REQUEST should not change store', () => {
         const result = movie(state, actions.fetchMovieByIdRequest(5));
         expect(result).toEqual(state);
     });
@@ -55,7 +55,7 @@ describe('movie reducer', () => {
         });
     });
 
-    it("FETCH_MOVIE_BY_DATA_REQUEST should't change store", () => {
+    it('FETCH_MOVIE_BY_DATA_REQUEST should not change store', () => {
         const data: ControlsData = {
             search: 'harry',
             searchBy: 'title',
@@ -96,7 +96,7 @@ describe('movie reducer', () => {
         });
     });
 
-    it("FETCH_MOVIE_BY_GENRE_REQUEST should't change store", () => {
+    it('FETCH_MOVIE_BY_GENRE_REQUEST should not change store', () => {
         const result = movie(
             state,
             actions.fetchMoviesByGenreRequest('action')
