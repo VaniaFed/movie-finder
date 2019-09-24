@@ -74,6 +74,7 @@ module.exports = {
         'global-require': 0,
         'prettier/prettier': 0,
         'jsx-a11y/label-has-associated-control': 0,
-        'no-undef': 0
+        'no-undef': 0,
+        'no-underscore-dangle': 0
     }
 };
