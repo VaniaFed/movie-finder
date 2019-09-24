@@ -14,7 +14,7 @@
         "isolatedModules": false,
         "outDir": "./dist/",
         "sourceMap": true,
-        "noImplicitAny": true,
+        "noImplicitAny": false,
         "baseUrl": ".",
         "typeRoots": ["types"],
         "types": ["node"],
