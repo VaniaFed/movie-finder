@@ -1,7 +1,7 @@
 import { put, call, takeEvery } from 'redux-saga/effects';
-import { actions } from 'actions';
-import { FETCH_MOVIES_BY_DATA_REQUEST } from 'constants.js';
-import { services } from 'services';
+import { actions } from 'actions/index';
+import { FETCH_MOVIES_BY_DATA_REQUEST } from 'constants.ts';
+import { services } from 'services/index';
 import { MovieType, ControlsData } from 'types/index';
 
 interface Payload {
@@ -9,6 +9,7 @@ interface Payload {
         data: ControlsData;
     };
 }
+
 export function* fetchMoviesByData({ payload: { data } }: Payload) {
     try {
         const movies: MovieType[] = yield call(services.getMovies, data);
@@ -19,5 +20,5 @@ export function* fetchMoviesByData({ payload: { data } }: Payload) {
 }
 
 export function* watchFetchMoviesByData() {
-    yield takeEvery(FETCH_MOVIES_BY_DATA_REQUEST, fetchMoviesByData);
+    yield takeEvery(FETCH_MOVIES_BY_DATA_REQUEST as any, fetchMoviesByData);
 }

@@ -2,11 +2,11 @@ import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { SearchPage } from 'components/search-page';
 import { parse } from 'query-string';
-import { actions } from 'actions';
+import { actions } from 'actions/index';
 import { pushToHistory } from 'lib/push-to-history';
 import { searchDataSelector } from 'selectors/search-data-selector';
 import { listSelector } from 'selectors/list-selector';
-import { ControlsData } from 'types/index';
+import { ControlsData, MovieType, SearchBy, SortBy } from 'types/index';
 import { changeSearch } from './changeSearch';
 import { fetchMoviesByData } from './fetchMoviesByData';
 import { changeSearchBy } from './changeSearchBy';
@@ -28,11 +28,11 @@ export const SearchPageSmart = ({ location }: Props) => {
         dispatch(actions.setSearch(value));
     };
 
-    const dispatchChangeSearchBy = (value: string) => {
+    const dispatchChangeSearchBy = (value: SearchBy) => {
         dispatch(actions.setSearchBy(value));
     };
 
-    const dispatchChangeSortBy = (value: string) => {
+    const dispatchChangeSortBy = (value: SortBy) => {
         dispatch(actions.setSortBy(value));
     };
 
@@ -46,7 +46,9 @@ export const SearchPageSmart = ({ location }: Props) => {
         dispatchFetchMoviesByData
     )(sideEffects);
 
-    const urlData: ControlsData = parse(location.search);
+    const urlData: ControlsData = (parse(
+        location.search
+    ) as any) as ControlsData;
     const controlsData: ControlsData = useSelector(searchDataSelector);
     useEffect(() => {
         handleFetchMoviesByData(urlData, controlsData, isStartedLoading);
@@ -55,7 +57,7 @@ export const SearchPageSmart = ({ location }: Props) => {
         handleChangeSortBy(urlData, controlsData);
     }, []);
 
-    const movieList = useSelector(listSelector);
+    const movieList: MovieType[] = useSelector(listSelector);
     useEffect(() => {
         if (isStartedLoading && movieList.length !== 0) {
             setIsStartedLoading(false);
@@ -69,7 +71,7 @@ export const SearchPageSmart = ({ location }: Props) => {
             isStartedLoading={isStartedLoading}
             setIsStartedLoading={setIsStartedLoading}
             changeSortBy={sortBy => {
-                const historyData = {
+                const historyData: { sortBy: SortBy } = {
                     sortBy
                 };
                 pushToHistory(historyData);

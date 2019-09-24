@@ -1,22 +1,29 @@
-import React, { useState, useEffect, FC } from 'react';
-import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
+import React, { useState, useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 import { ToggleButton } from 'components/toggle-button';
 import { ToggleLayout } from 'components/toggle-layout';
-import { actions } from 'actions';
+import { actions } from 'actions/index';
+import { SearchBy, SortBy } from 'types/index';
+import { Props } from './props';
 
-export const ToggleContainerHOC: FC = ({ name, background }) => {
+interface PropsHoc {
+    name: string;
+    background: boolean;
+}
+
+export const ToggleContainerHOC = ({ name, background }: PropsHoc) => {
     const ToggleContainer = ({
         data,
-        changeFilter,
         currentFilter,
-        changeFilterHistory
-    }) => {
+        changeFilterHistory,
+        fetchMovies,
+        changeFilter
+    }: Props) => {
         const [checked, check] = useState(data[0].key);
-
-        const onClick = key => () => {
+        const onClick = (key: SearchBy | SortBy) => () => {
             check(key);
             changeFilter(key);
+            fetchMovies(key);
             changeFilterHistory(key);
         };
         useEffect(() => {
@@ -36,23 +43,26 @@ export const ToggleContainerHOC: FC = ({ name, background }) => {
         ));
         return <ToggleLayout>{buttons}</ToggleLayout>;
     };
-    ToggleContainer.propTypes = {
-        data: PropTypes.arrayOf(PropTypes.string).isRequired,
-        changeFilter: PropTypes.func.isRequired,
-        currentFilter: PropTypes.string,
-        changeFilterHistory: PropTypes.func
-    };
     return ToggleContainer;
 };
 
-export const SearchToggleContainer = connect(
-    null,
-    dispatch => ({
-        changeFilter: by => dispatch(actions.setSearchBy(by))
-    })
-)(ToggleContainerHOC({ name: 'search', background: true }));
+const ToggleSearchHoc = ToggleContainerHOC({
+    name: 'search',
+    background: true
+});
 
-export const SortToggleContainer = connect(
-    null,
-    dispatch => ({ changeFilter: by => dispatch(actions.setSortBy(by)) })
-)(ToggleContainerHOC({ name: 'sort', background: false }));
+export const SearchToggleContainer = (props: Props) => {
+    const dispatch = useDispatch();
+    const changeFilter = (by: SearchBy) => dispatch(actions.setSearchBy(by));
+    return <ToggleSearchHoc {...props} changeFilter={changeFilter} />;
+};
+
+const ToggleSortHoc = ToggleContainerHOC({ name: 'sort', background: false });
+
+export const SortToggleContainer = (props: Props) => {
+    const dispatch = useDispatch();
+    const changeFilter = (sortBy: SortBy) => {
+        dispatch(actions.setSortBy(sortBy));
+    };
+    return <ToggleSortHoc {...props} changeFilter={changeFilter} />;
+};

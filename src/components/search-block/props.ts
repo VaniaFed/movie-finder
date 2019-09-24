@@ -1,4 +1,5 @@
 import PropTypes, { InferProps } from 'prop-types';
+import { SearchBy } from 'src/types';
 
 const Types = {
     caption: PropTypes.string.isRequired,
@@ -10,4 +11,4 @@ const Types = {
     changeSearchBy: PropTypes.func
 };
 
-export type Props = InferProps<typeof Types>;
+export type Props = InferProps<typeof Types> & { searchBy: SearchBy };

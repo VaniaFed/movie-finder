@@ -36,7 +36,7 @@ module.exports = {
                     ['containers', './src/containers'],
                     ['actions', './src/actions'],
                     ['reducers', './src/reducers'],
-                    ['constants.js', './src/constants.js'],
+                    ['constants.ts', './src/constants.ts'],
                     ['selectors', './src/selectors'],
                     ['types', './src/types'],
                     ['utils', './src/utils'],
@@ -50,14 +50,13 @@ module.exports = {
         }
     },
     rules: {
+        indent: 4,
         'arrow-parens': 0,
         'no-param-reassign': 1,
         'implicit-arrow-linebreak': 1,
         'no-use-before-define': 0,
         'linebreak-style': 0,
-        'prettier/prettier': 2,
         quotes: [2, 'single'],
-        'prettier/prettier': [2, { singleQuote: true }],
         indent: ['error', 4, { SwitchCase: 1 }],
         'import/prefer-default-export': 0,
         'react/require-default-props': 0,
@@ -66,6 +65,16 @@ module.exports = {
         'react/jsx-filename-extension': [
             2,
             { extensions: ['.js', '.jsx', '.ts', '.tsx'] }
-        ]
+        ],
+        'jsx-a11y/label-has-for': 0,
+        'jsx-a11y/anchor-is-valid': 0,
+        'implicit-arrow-linebreak': 0,
+        'consistent-return': 0,
+        'no-console': 0,
+        'global-require': 0,
+        'prettier/prettier': 0,
+        'jsx-a11y/label-has-associated-control': 0,
+        'no-undef': 0,
+        'no-underscore-dangle': 0
     }
 };

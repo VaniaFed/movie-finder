@@ -1,5 +1,7 @@
 import renderer from 'react-test-renderer';
 import { MemoryRouter } from 'react-router-dom';
+import { Provider } from 'react-redux';
+import { configureStore } from 'src/store';
 import { MoviePage } from './index';
 
 describe('<MoviePage />', () => {
@@ -19,11 +21,14 @@ describe('<MoviePage />', () => {
         vote_average: 7.6,
         vote_count: 5584
     };
+    const store = configureStore();
     const tree = renderer
         .create(
-            <MemoryRouter>
-                <MoviePage movie={movie} />
-            </MemoryRouter>
+            <Provider store={store}>
+                <MemoryRouter>
+                    <MoviePage movie={movie} />
+                </MemoryRouter>
+            </Provider>
         )
         .toJSON();
     it('should be rendered with movie', () => {

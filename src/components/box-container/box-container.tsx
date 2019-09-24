@@ -9,7 +9,10 @@ const Div = styled.div`
     margin: 0 auto;
 `;
 
-export const BoxContainer: FC<Props> = ({ children, className }: Props) => {
+export const BoxContainer: FC<Props> = ({
+    children,
+    className = ''
+}: Props) => {
     const resultClass = classNames('container', className);
     return <Div className={resultClass}>{children}</Div>;
 };

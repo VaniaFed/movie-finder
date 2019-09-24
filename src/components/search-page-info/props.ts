@@ -1,10 +1,13 @@
 import PropTypes, { InferProps } from 'prop-types';
+import { SortBy } from 'src/types';
 
 const Types = {
     quantityMovies: PropTypes.number.isRequired,
     className: PropTypes.string,
-    sortBy: PropTypes.string,
-    changeSortBy: PropTypes.func
+    changeSortBy: PropTypes.func,
+    fetchMovies: PropTypes.func
 };
 
-export type Props = InferProps<typeof Types>;
+export type Props = InferProps<typeof Types> & {
+    sortBy: SortBy;
+};

@@ -1,6 +1,6 @@
 import React, { ReactElement, FC } from 'react';
 import { SmartSearchBlock } from 'containers/smart-search-block';
-import { SearchPageInfo } from 'components/search-page-info';
+import { SmartSearchPageInfo } from 'containers/smart-search-page-info';
 import { MovieLayout } from 'components/movie-layout';
 import { Preloader } from 'components/preloader';
 import { NotFound } from 'components/not-found';
@@ -16,14 +16,14 @@ export const SearchPage: FC<Props> = ({
     setIsStartedLoading,
     changeSortBy
 }: Props): ReactElement => {
-    const notFound: FC = () => <NotFound caption="Movies aren't found" />;
+    const notFound = <NotFound caption="Movies aren't found" />;
     return (
         <>
             <SmartSearchBlock
                 sortBy={sortBy}
                 setIsStartedLoading={setIsStartedLoading}
             />
-            <SearchPageInfo
+            <SmartSearchPageInfo
                 quantityMovies={movies.length}
                 className="search-page__info"
                 changeSortBy={changeSortBy}

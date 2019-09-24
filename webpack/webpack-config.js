@@ -9,11 +9,6 @@ module.exports = {
                 use: ['html-loader']
             },
             {
-                test: /\.(jsx|js)$/,
-                exclude: /node_modules/,
-                use: ['babel-loader']
-            },
-            {
                 test: /\.(ts|tsx)$/,
                 exclude: /node_modules/,
                 use: ['awesome-typescript-loader']

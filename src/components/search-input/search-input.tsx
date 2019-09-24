@@ -15,7 +15,7 @@ export const SearchInput: FC<Props> = ({
             type="text"
             placeholder="Game of Thrones"
             value={search}
-            onInput={(e): void => {
+            onChange={(e): void => {
                 onInput(e.currentTarget.value);
             }}
             onKeyDown={({ key }) => {

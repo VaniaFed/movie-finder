@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 
 export const MoviePropTypes = {
-    id: PropTypes.number.isRequired,
+    id: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
     release_date: PropTypes.string.isRequired,
     runtime: PropTypes.string.isRequired,

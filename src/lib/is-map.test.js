@@ -1,9 +1,5 @@
 import { isMap } from './is-map';
 
-// get two objects
-// return true if both of them are equal
-// если в changeOption указаны поля, то проверять нужно только их
-// если changeOption не задан, проверять все поля
 describe('isMap', () => {
     const data = {
         name: 'Ivan',

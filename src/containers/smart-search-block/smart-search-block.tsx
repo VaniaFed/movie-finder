@@ -5,16 +5,16 @@ import { actions } from 'actions/index';
 import { SearchBlock } from 'components/search-block';
 import { searchSelector } from 'selectors/search-selector';
 import { searchBySelector } from 'selectors/search-by-selector';
-import { ControlsData } from 'src/types';
+import { ControlsData, SearchBy, SortBy } from 'src/types';
 
 interface Props {
-    sortBy: string;
+    sortBy: SortBy;
     setIsStartedLoading(isStartedLoading: boolean): void;
 }
 
 export const SmartSearchBlock = ({ sortBy, setIsStartedLoading }: Props) => {
-    const search = useSelector(searchSelector);
-    const searchBy = useSelector(searchBySelector);
+    const search: string = useSelector(searchSelector);
+    const searchBy: SearchBy = useSelector(searchBySelector);
 
     const dispatch = useDispatch();
     const fetchMoviesByData = (data: ControlsData) => {
@@ -49,8 +49,8 @@ export const SmartSearchBlock = ({ sortBy, setIsStartedLoading }: Props) => {
                 changeSearch(value);
                 pushToHistory({ search: value });
             }}
-            changeSearchBy={searchBy => {
-                pushToHistory({ searchBy });
+            changeSearchBy={value => {
+                pushToHistory({ searchBy: value });
             }}
             searchBy={searchBy}
         />

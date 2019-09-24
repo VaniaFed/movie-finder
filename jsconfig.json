@@ -15,7 +15,7 @@
             "services/*": ["./src/services/*"],
             "sagas/*": ["./src/sagas/*"],
             "_vars.scss": ["./src/_vars.scss"],
-            "constants.js": ["./src/constants.js"]
+            "constants.ts": ["./src/constants.ts"]
         }
     }
 }

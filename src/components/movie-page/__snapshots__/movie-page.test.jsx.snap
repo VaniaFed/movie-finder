@@ -14,7 +14,7 @@ Array [
         netfixroulette
       </h1>
       <a
-        href="/search"
+        href="/search?search=&searchBy=title&sortBy=release_date"
         onClick={[Function]}
       >
         <button
