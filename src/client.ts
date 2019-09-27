@@ -10,7 +10,7 @@ import fetch from 'cross-fetch';
 import _ from 'lodash';
 
 const httpLink = createHttpLink({
-    uri: 'http://react-cdp-api.herokuapp.com/movies',
+    uri: '/api/movies/',
     useGETForQueries: true,
     fetch
 });
@@ -31,7 +31,7 @@ export const httpClient = () =>
 
 const restLink = () =>
     new RestLink({
-        uri: 'http://react-cdp-api.herokuapp.com/movies'
+        uri: '/api/movies/'
     });
 
 export const restClient = () => {
