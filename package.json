@@ -1,6 +1,6 @@
 {
     "scripts": {
-        "dev-start": "webpack-dev-server --watch --config webpack.dev.config.js",
+        "dev:start": "webpack-dev-server --watch --config webpack.dev.config.js",
         "start": "live-server dist/ --entry-file=index.html",
         "build": "webpack --config webpack.prod.config.js",
         "storybook": "start-storybook",
