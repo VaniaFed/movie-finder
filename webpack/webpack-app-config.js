@@ -4,13 +4,13 @@ const HtmlWebPackPlugin = require('html-webpack-plugin');
 module.exports = {
     output: {
         path: path.resolve(__dirname, '../dist'),
-        publicPath: './',
-        filename: 'bundle.js'
+        publicPath: '/',
+        filename: 'bundle[hash].js'
     },
     plugins: [
         new HtmlWebPackPlugin({
             template: './src/index.html',
-            filename: './index.html'
+            filename: 'index.html'
         })
     ]
 };
